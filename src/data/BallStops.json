@@ -1,0 +1,55 @@
+{
+  "styles": [
+    {
+      "styleType": "Signature Style",
+      "description": "Cammegh's standard ball stops are curved in all 3 axes in order to increase the game's randomness",
+
+      "items": [
+        {
+          "id": 10,
+          "imagePath": "/assets/BallStops/bsCanoe.png",
+          "imageName": "Stainless Steel",
+          "style": "Signature"
+        },
+        {
+          "id": 11,
+          "imagePath": "/assets/BallStops/bsCanoeGold.png",
+          "imageName": "Gold Plated",
+          "style": "Signature"
+        },
+        {
+          "id": 12,
+          "imagePath": "/assets/BallStops/bsCanoeBrass.png",
+          "imageName": "Polished Brass",
+          "style": "Signature"
+        }
+      ]
+    },
+
+    {
+      "styleType": "Traditional Style",
+      "description": "Cammegh's standard ball stops are curved in all 3 axes in order to increase the game's randomness",
+
+      "items": [
+        {
+          "id": 13,
+          "imagePath": "/assets/BallStops/bsSharp.png",
+          "imageName": "Stainless Steel",
+          "style": "Traditional"
+        },
+        {
+          "id": 14,
+          "imagePath": "/assets/BallStops/bsSharpGold.png",
+          "imageName": "Gold Plated",
+          "style": "Traditional"
+        },
+        {
+          "id": 15,
+          "imagePath": "/assets/BallStops/bsSharpBrass.png",
+          "imageName": "Polished Brass",
+          "style": "Traditional"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+.sideMenu {
+  display: flex;
+  max-width: 400px;
+  flex-direction: column;
+  background-color: #e2e1e1;
+  color: #000;
+  text-align: center;
+  max-height: 720px;
+  overflow: hidden scroll;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+.menuHeader {
+  font-weight: 300;
+  width: 400px;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  background-color: #c9c6c6;
+  color: #000;
+  z-index: 1;
+}
+
+.menuHeader .btn {
+  transition: scale 0.1s linear;
+}
+.menuHeader .btn:active {
+  scale: 0.9;
+}
+
+.feature-select {
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  text-align: center;
+  background-color: #c9c6c6;
+  color: #000;
+  border: none;
+  outline: none;
+  font-family: 'Lato', sans-serif;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #000;
+}
+
+.side-options-icon {
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.btn:disabled {
+  opacity: 0.3;
+}
+
+.divider {
+  border-color: #f3f3f3;
+  width: 100%;
+}

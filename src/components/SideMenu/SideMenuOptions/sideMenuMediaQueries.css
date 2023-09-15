@@ -1,0 +1,140 @@
+@media screen and (width < 1520px) {
+  .sideMenu {
+    max-width: 1280px;
+    flex-direction: row;
+    overflow: auto hidden;
+  }
+
+  .menuHeader {
+    height: 200px;
+    max-width: 117px;
+  }
+
+  .divider {
+    height: 150px;
+    width: 0;
+    margin-right: 0.5rem;
+  }
+
+  ::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .menuHeader {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .options-section {
+    overflow: auto hidden;
+    max-height: 200px;
+
+    & .options-container {
+      flex-direction: row;
+      align-items: center;
+      overflow: auto hidden;
+      height: 100%;
+      gap: 1rem;
+
+      &.ballstop {
+        gap: 0;
+      }
+
+      & .turret-list {
+        flex-wrap: nowrap;
+
+        & li {
+          margin: 0;
+        }
+
+        & .turret-img {
+          height: 90px;
+          width: 90px;
+        }
+      }
+
+      & .style-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .option-list {
+          display: flex;
+
+          & .ballstop-option {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    & .option {
+      padding: 0;
+
+      & .option-rim {
+        margin-right: 0.3rem;
+      }
+    }
+
+    & .option-style {
+      gap: 0.5rem;
+    }
+
+    & .option-img {
+      height: 120px;
+      max-width: max-content;
+    }
+  }
+
+  .tooltip-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .tooltip {
+      padding: 0.5rem;
+      right: -100px;
+    }
+  }
+
+  .options-section .options-container-numbers {
+    height: 100%;
+  }
+
+  .ballstop-option {
+    & .ballstop {
+      height: 90px;
+      max-width: max-content;
+    }
+  }
+
+  section.index-section {
+    flex-direction: row;
+    height: 200px;
+
+    & .divider-index {
+      height: 200px;
+    }
+
+    & .chosen-option-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+
+      & li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .chosen-option {
+          padding: 1.1rem;
+        }
+
+        & .Rims {
+          width: 140px;
+        }
+      }
+    }
+  }
+}

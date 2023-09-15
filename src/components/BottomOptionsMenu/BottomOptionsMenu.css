@@ -1,0 +1,46 @@
+.bottom-menu {
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  font-weight: 400;
+  color: #b1b1b1;
+  gap: 3em;
+  display: flex;
+  align-items: end;
+  padding-bottom: 1rem;
+  user-select: none;
+}
+
+.bottom-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 100ms all;
+  &:hover {
+    scale: 1.2;
+    color: #f3f3f3;
+  }
+}
+
+.views {
+  padding-bottom: 1.2rem;
+}
+
+.view-container {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+input[type='radio'] {
+  &:hover {
+    scale: 1.7;
+  }
+  scale: 1.5;
+}

@@ -1,0 +1,79 @@
+{
+  "styles": [
+    {
+      "styleType": "Signature Style",
+      "description": "The wheel's central ornament. Traditional French wheels used a cross-piece turret, while American roulette tend to feature simpler cylindrical designs. Cammegh's iconic turret is based on a bishop chess piece.",
+
+      "items": [
+        {
+          "id": 100,
+          "imagePath": "/assets/Turrets/turrSigNickel.jpg",
+          "imageName": "Nickel Plated",
+          "style": "Signature"
+        },
+        {
+          "id": 101,
+          "imagePath": "/assets/Turrets/turrSigGold.jpg",
+          "imageName": "Gold Plated",
+          "style": "Signature"
+        },
+        {
+          "id": 102,
+          "imagePath": "/assets/Turrets/turrSigBrass.jpg",
+          "imageName": "Polished Brass",
+          "style": "Signature"
+        }
+      ]
+    },
+    {
+      "styleType": "Continental Style",
+      "description": "The wheel's central ornament. Traditional French wheels used a cross-piece turret, while American roulette tend to feature simpler cylindrical designs. Cammegh's iconic turret is based on a bishop chess piece.",
+
+      "items": [
+        {
+          "id": 103,
+          "imagePath": "/assets/Turrets/turrContNickel.jpg",
+          "imageName": "Nickel Plated",
+          "style": "Continental"
+        },
+        {
+          "id": 104,
+          "imagePath": "/assets/Turrets/turrContGold.jpg",
+          "imageName": "Gold Plated",
+          "style": "Continental"
+        },
+        {
+          "id": 105,
+          "imagePath": "/assets/Turrets/turrContBrass.jpg",
+          "imageName": "Polished Brass",
+          "style": "Continental"
+        }
+      ]
+    },
+    {
+      "styleType": "French Style",
+      "description": "The wheel's central ornament. Traditional French wheels used a cross-piece turret, while American roulette tend to feature simpler cylindrical designs. Cammegh's iconic turret is based on a bishop chess piece.",
+
+      "items": [
+        {
+          "id": 106,
+          "imagePath": "/assets/Turrets/turrFrenchNickel.jpg",
+          "imageName": "Nickel Plated",
+          "style": "French"
+        },
+        {
+          "id": 107,
+          "imagePath": "/assets/Turrets/turrFrenchGold.jpg",
+          "imageName": "Gold Plated",
+          "style": "French"
+        },
+        {
+          "id": 108,
+          "imagePath": "/assets/Turrets/turrFrenchBrass.jpg",
+          "imageName": "Polished Brass",
+          "style": "French"
+        }
+      ]
+    }
+  ]
+}
