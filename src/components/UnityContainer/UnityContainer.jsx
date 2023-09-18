@@ -1,10 +1,8 @@
 import { Fragment } from 'react';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import BottomOptionsMenu from '../BottomOptionsMenu/BottomOptions';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import SideMenu from '../SideMenu/SideMenu';
-import html2canvas from 'html2canvas';
-import ScreenshotModal from './ScreenShotModal';
 import './modal.css';
 import './unityContainer.css';
 import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
@@ -17,43 +15,40 @@ export default function UnityContainer({
   handleComponentSelect,
 }) {
   const [openSideMenu, setOpenSideMenu] = useState(true);
-  const [screenshotModalOpen, setScreenshotModalOpen] = useState(false);
-  const [screenshotImage, setScreenshotImage] = useState(null);
-  const [screenshotURL, setScreenshotURL] = useState(null);
-  const contentRef = useRef(null);
 
-  const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
+  const {
+    unityProvider,
+    takeScreenshot,
+    sendMessage,
+    isLoaded,
+    loadingProgression,
+  } = useUnityContext({
     loaderUrl: '/assets/Unity/CMGH_React.loader.js',
     dataUrl: '/assets/Unity/CMGH_React.data',
     frameworkUrl: '/assets/Unity/CMGH_React.framework.js',
     codeUrl: '/assets/Unity/CMGH_React.wasm',
+    webglContextAttributes: {
+      preserveDrawingBuffer: true,
+    },
   });
 
-  const takeScreenshotAndShowModal = () => {
-    if (contentRef.current) {
-      html2canvas(contentRef.current).then((canvas) => {
-        const screenshotURL = canvas.toDataURL('image/jpeg');
-        setScreenshotImage(screenshotURL);
-        setScreenshotURL(screenshotURL);
-        setScreenshotModalOpen(true);
-      });
-    }
-  };
+  function handleScreenShot() {
+    const dataUrl = takeScreenshot('image/jpg', 0.5);
+    window.open(dataUrl, '_blank');
+  }
 
-  const downloadScreenshot = () => {
-    const a = document.createElement('a');
-    a.href = screenshotURL;
-    a.download = 'Cammegh';
-    a.click();
-  };
-
-  const closeModal = () => {
-    setScreenshotModalOpen(false);
-  };
-
-  const handleSideMenuButton = () => {
-    setOpenSideMenu((prev) => !prev);
-  };
+  function focusOnTurrets() {
+    sendMessage('Cameras', 'FocusOnTurrets');
+  }
+  function focusOnBallTrack() {
+    sendMessage('Cameras', 'FocusOnBallTrack');
+  }
+  function focusOnNumbers() {
+    sendMessage('Cameras', 'FocusOnWheelNumbers');
+  }
+  function focusOnDefault() {
+    sendMessage('Cameras', 'UnFocusFromTarget');
+  }
 
   const loadingPercentage = Math.round(loadingProgression * 100);
 
@@ -70,14 +65,17 @@ export default function UnityContainer({
             </div>
           )}
 
-          <Unity
-            unityProvider={unityProvider}
-            className='unity-canvas'
-          />
+          <Unity unityProvider={unityProvider} className='unity-canvas' />
           <BottomOptionsMenu
-            takeScreenshotAndShowModal={takeScreenshotAndShowModal}
+            focusOnDefault={focusOnDefault}
+            focusOnTurrets={focusOnTurrets}
+            focusOnBallTrack={focusOnBallTrack}
+            focusOnNumbers={focusOnNumbers}
           />
-          <button className='sideMenu-btn' onClick={handleSideMenuButton}>
+          <button
+            className='sideMenu-btn'
+            onClick={() => setOpenSideMenu((prev) => !prev)}
+          >
             <DotsVerticalIcon width={20} height={20} />
           </button>
         </div>
@@ -96,7 +94,7 @@ export default function UnityContainer({
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {screenshotModalOpen && (
           <ScreenshotModal
             screenshotImage={screenshotImage}
@@ -104,7 +102,25 @@ export default function UnityContainer({
             closeModal={closeModal}
           />
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </Fragment>
   );
+
+  // const takeScreenshotAndShowModal = () => {
+  //   if (contentRef.current) {
+  //     html2canvas(contentRef.current).then((canvas) => {
+  //       const screenshotURL = canvas.toDataURL('image/jpeg');
+  //       setScreenshotImage(screenshotURL);
+  //       setScreenshotURL(screenshotURL);
+  //       setScreenshotModalOpen(true);
+  //     });
+  //   }
+  // };
+
+  // const downloadScreenshot = () => {
+  //   const a = document.createElement('a');
+  //   a.href = screenshotURL;
+  //   a.download = 'Cammegh';
+  //   a.click();
+  // };
 }

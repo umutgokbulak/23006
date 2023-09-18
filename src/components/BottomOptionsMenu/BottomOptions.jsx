@@ -2,10 +2,16 @@ import { CiSettings } from 'react-icons/ci';
 import { BsPlay } from 'react-icons/bs';
 import { BiHelpCircle } from 'react-icons/bi';
 import { FiCamera } from 'react-icons/fi';
-import { SymbolIcon} from '@radix-ui/react-icons';
+import { SymbolIcon } from '@radix-ui/react-icons';
 import './BottomOptionsMenu.css';
 
-export default function BottomOptions({ takeScreenshotAndShowModal }) {
+export default function BottomOptions({
+  takeScreenshot,
+  focusOnDefault,
+  focusOnTurrets,
+  focusOnBallTrack,
+  focusOnNumbers,
+}) {
   return (
     <div className='bottom-menu'>
       <div className='spin bottom-option'>
@@ -25,20 +31,54 @@ export default function BottomOptions({ takeScreenshotAndShowModal }) {
       <div className='views bottom-option'>
         <div className='bottom-option-header'>Views</div>
         <div className='view-container'>
-          <input className='radio-btn' type='radio' name='radioGroup' id='1' />
-          <input className='radio-btn' type='radio' name='radioGroup' id='2' />
-          <input className='radio-btn' type='radio' name='radioGroup' id='3' />
-          <input className='radio-btn' type='radio' name='radioGroup' id='4' />
-          <input className='radio-btn' type='radio' name='radioGroup' id='5' />
-          <input className='radio-btn' type='radio' name='radioGroup' id='6' />
+          <input
+            className='radio-btn'
+            type='radio'
+            name='radioGroup'
+            id='default'
+            onChange={focusOnDefault}
+          />
+          <input
+            className='radio-btn'
+            type='radio'
+            name='radioGroup'
+            id='rims'
+          />
+          <input
+            className='radio-btn'
+            type='radio'
+            name='radioGroup'
+            id='ballstops'
+            onChange={focusOnBallTrack}
+          />
+          <input
+            className='radio-btn'
+            type='radio'
+            name='radioGroup'
+            id='turrets'
+            onChange={focusOnTurrets}
+          />
+          <input
+            className='radio-btn'
+            type='radio'
+            name='radioGroup'
+            id='numbers'
+            onChange={focusOnNumbers}
+          />
+          <input
+            className='radio-btn'
+            type='radio'
+            name='radioGroup'
+            id='index'
+          />
           <input className='radio-btn' type='radio' name='radioGroup' id='7' />
         </div>
       </div>
 
       <div className='screenshot bottom-option'>
         <div className='bottom-option-header'>Screenshot</div>
-        <div onClick={takeScreenshotAndShowModal} className='option-icon'>
-          <FiCamera />
+        <div className='option-icon'>
+          <FiCamera onClick={takeScreenshot} />
         </div>
       </div>
 
