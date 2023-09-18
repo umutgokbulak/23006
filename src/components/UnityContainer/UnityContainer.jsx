@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BottomOptionsMenu from '../BottomOptionsMenu/BottomOptions';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import SideMenu from '../SideMenu/SideMenu';
@@ -15,6 +15,8 @@ export default function UnityContainer({
   handleComponentSelect,
 }) {
   const [openSideMenu, setOpenSideMenu] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedFeature, setSelectedFeature] = useState('rims');
 
   const {
     unityProvider,
@@ -22,6 +24,7 @@ export default function UnityContainer({
     sendMessage,
     isLoaded,
     loadingProgression,
+    requestPointerLock,
   } = useUnityContext({
     loaderUrl: '/assets/Unity/CMGH_React.loader.js',
     dataUrl: '/assets/Unity/CMGH_React.data',
@@ -31,6 +34,81 @@ export default function UnityContainer({
       preserveDrawingBuffer: true,
     },
   });
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      updateSelectedFeature(currentPage - 1);
+    }
+  };
+  const handleNext = () => {
+    if (currentPage < 5) {
+      setCurrentPage(currentPage + 1);
+      updateSelectedFeature(currentPage + 1);
+    }
+  };
+
+  const updateSelectedFeature = (page) => {
+    switch (page) {
+      case 1:
+        setSelectedFeature('rims');
+        break;
+
+      case 2:
+        setSelectedFeature('ballStops');
+        focusOnBallTrack();
+        break;
+
+      case 3:
+        setSelectedFeature('turrets');
+        focusOnTurrets();
+        break;
+
+      case 4:
+        setSelectedFeature('numbers');
+        focusOnNumbers();
+        break;
+
+      case 5:
+        setSelectedFeature('index');
+        focusOnDefault();
+        break;
+    }
+  };
+
+  const handleFeatureSelect = (e) => {
+    setSelectedFeature(e.target.value);
+
+    switch (e.target.value) {
+      case 'rims':
+        setCurrentPage(1);
+
+        break;
+
+      case 'ballStops':
+        setCurrentPage(2);
+        focusOnBallTrack();
+        break;
+
+      case 'turrets':
+        setCurrentPage(3);
+        focusOnTurrets();
+        break;
+
+      case 'numbers':
+        setCurrentPage(4);
+        focusOnNumbers();
+        break;
+
+      case 'index':
+        setCurrentPage(5);
+        focusOnDefault();
+        break;
+
+      default:
+        break;
+    }
+  };
 
   function handleScreenShot() {
     const dataUrl = takeScreenshot('image/jpg', 0.5);
@@ -50,6 +128,10 @@ export default function UnityContainer({
     sendMessage('Cameras', 'UnFocusFromTarget');
   }
 
+  function handlePointerLock() {
+    requestPointerLock();
+  }
+
   const loadingPercentage = Math.round(loadingProgression * 100);
 
   return (
@@ -65,12 +147,18 @@ export default function UnityContainer({
             </div>
           )}
 
-          <Unity unityProvider={unityProvider} className='unity-canvas' />
+          <Unity
+            unityProvider={unityProvider}
+            className='unity-canvas'
+            onClick={handlePointerLock}
+          />
           <BottomOptionsMenu
             focusOnDefault={focusOnDefault}
             focusOnTurrets={focusOnTurrets}
             focusOnBallTrack={focusOnBallTrack}
             focusOnNumbers={focusOnNumbers}
+            setCurrentPage={setCurrentPage}
+            setSelectedFeature={setSelectedFeature}
           />
           <button
             className='sideMenu-btn'
@@ -89,6 +177,15 @@ export default function UnityContainer({
               selectedItems={selectedItems}
               handleComponentSelect={handleComponentSelect}
               isSideMenuOpen={openSideMenu}
+              focusOnBallTrack={focusOnBallTrack}
+              focusOnDefault={focusOnDefault}
+              focusOnNumbers={focusOnNumbers}
+              focusOnTurrets={focusOnTurrets}
+              handlePrevious={handlePrevious}
+              handleNext={handleNext}
+              selectedFeature={selectedFeature}
+              currentPage={currentPage}
+              handleFeatureSelect={handleFeatureSelect}
             />
           </LazyMotion>
         )}

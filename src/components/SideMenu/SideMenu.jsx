@@ -3,89 +3,25 @@ import './SideMenuOptions/sideMenuMediaQueries.css';
 import { BsArrowRight } from 'react-icons/bs';
 import { BsArrowLeft } from 'react-icons/bs';
 import { useState } from 'react';
+import { m } from 'framer-motion';
 import Rims from './SideMenuOptions/Rims.jsx';
 import Turrets from './SideMenuOptions/Turrets.jsx';
 import BallStops from './SideMenuOptions/BallStops';
 import IndexPage from './SideMenuOptions/IndexPage/IndexPage';
 import Numbers from './SideMenuOptions/Numbers';
-import { m } from 'framer-motion';
 
 export default function SideMenu({
   selectedOptions,
   selectedItems,
   handleComponentSelect,
+  focusOnNumbers,
+  handlePrevious,
+  handleNext,
+  handleFeatureSelect,
+  currentPage,
+  selectedFeature,
 }) {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [selectedFeature, setSelectedFeature] = useState('rims');
-
-
-  const handlePrevious = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-      updateSelectedFeature(currentPage - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (currentPage < 5) {
-      setCurrentPage(currentPage + 1);
-      updateSelectedFeature(currentPage + 1);
-    }
-  };
-
-  const updateSelectedFeature = (page) => {
-    switch (page) {
-      case 1:
-        setSelectedFeature('rims');
-        break;
-
-      case 2:
-        setSelectedFeature('ballStops');
-        break;
-
-      case 3:
-        setSelectedFeature('turrets');
-        break;
-
-      case 4:
-        setSelectedFeature('numbers');
-        break;
-
-      case 5:
-        setSelectedFeature('index');
-        break;
-    }
-  };
-
-  const handleFeatureSelect = (e) => {
-    setSelectedFeature(e.target.value);
-
-    switch (e.target.value) {
-      case 'rims':
-        setCurrentPage(1);
-        break;
-
-      case 'ballStops':
-        setCurrentPage(2);
-        break;
-
-      case 'turrets':
-        setCurrentPage(3);
-        break;
-
-      case 'numbers':
-        setCurrentPage(4);
-        break;
-
-      case 'index':
-        setCurrentPage(5);
-        break;
-
-      default:
-        break;
-    }
-  };
-
+  
   const selectFeatures = ['rims', 'ballStops', 'turrets', 'numbers', 'index'];
 
   return (
@@ -110,7 +46,7 @@ export default function SideMenu({
           onChange={handleFeatureSelect}
           className='feature-select'
           name='featureSelect'
-          id=''
+          id='feature-Select'
         >
           {selectFeatures.map((feature) => (
             <option key={feature} value={feature}>
@@ -151,6 +87,7 @@ export default function SideMenu({
 
       {selectedFeature === 'numbers' && currentPage === 4 && (
         <Numbers
+          focusOnNumbers={focusOnNumbers}
           selectedOption={selectedOptions['Numbers']}
           onSelect={(item) => handleComponentSelect('Numbers', item)}
         />

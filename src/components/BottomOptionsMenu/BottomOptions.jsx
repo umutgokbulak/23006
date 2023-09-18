@@ -11,7 +11,15 @@ export default function BottomOptions({
   focusOnTurrets,
   focusOnBallTrack,
   focusOnNumbers,
+  setCurrentPage,
+  setSelectedFeature,
 }) {
+  function handleViewChange(feature, page, focusOption) {
+    setSelectedFeature(feature);
+    setCurrentPage(page);
+    focusOption();
+  }
+
   return (
     <div className='bottom-menu'>
       <div className='spin bottom-option'>
@@ -35,13 +43,6 @@ export default function BottomOptions({
             className='radio-btn'
             type='radio'
             name='radioGroup'
-            id='default'
-            onChange={focusOnDefault}
-          />
-          <input
-            className='radio-btn'
-            type='radio'
-            name='radioGroup'
             id='rims'
           />
           <input
@@ -49,29 +50,32 @@ export default function BottomOptions({
             type='radio'
             name='radioGroup'
             id='ballstops'
-            onChange={focusOnBallTrack}
+            onChange={() => handleViewChange('ballStops', 2, focusOnBallTrack)}
           />
           <input
             className='radio-btn'
             type='radio'
             name='radioGroup'
             id='turrets'
-            onChange={focusOnTurrets}
+            onChange={() => handleViewChange('turrets', 3, focusOnTurrets)}
           />
           <input
             className='radio-btn'
             type='radio'
             name='radioGroup'
             id='numbers'
-            onChange={focusOnNumbers}
+            onChange={() => handleViewChange('numbers', 4, focusOnNumbers)}
           />
           <input
             className='radio-btn'
             type='radio'
             name='radioGroup'
             id='index'
+            onChange={() => handleViewChange('index', 5, focusOnDefault)}
           />
-          <input className='radio-btn' type='radio' name='radioGroup' id='7' />
+
+          <input className='radio-btn' type='radio' name='radioGroup' />
+          <input className='radio-btn' type='radio' name='radioGroup' />
         </div>
       </div>
 
