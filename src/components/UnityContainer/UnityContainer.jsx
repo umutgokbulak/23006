@@ -5,7 +5,7 @@ import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 import BottomOptionsMenu from '../BottomOptionsMenu/BottomOptions';
 import SideMenu from '../SideMenu/SideMenu';
 import Loader from '../Loader/Loader.jsx';
-import ScreenShotModal from './ScreenshotModal';
+import ScreenShotModal from './ScreenSghotModal';
 import './unityContainer.css';
 import './modal.css';
 
@@ -146,16 +146,6 @@ export default function UnityContainer({
 
   // TODO IMPLEMENT POINTER LOCK FOR UNITY
   // FIX INPUT READING FOR UNITY
-  function handlePointerLock() {
-    requestPointerLock();
-  }
-
-  useEffect(() => {
-    document.addEventListener('mouseup', requestPointerLock);
-    return () => {
-      document.removeEventListener('mouseup', requestPointerLock);
-    };
-  }, [requestPointerLock]);
 
   const loadingPercentage = Math.round(loadingProgression * 100);
 
@@ -176,7 +166,6 @@ export default function UnityContainer({
             id='canvas'
             unityProvider={unityProvider}
             className='unity-canvas'
-            // onClick={handlePointerLock}
           />
           <BottomOptionsMenu
             focusOnDefault={focusOnDefault}
