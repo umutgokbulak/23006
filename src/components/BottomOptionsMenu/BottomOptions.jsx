@@ -44,6 +44,7 @@ export default function BottomOptions({
             type='radio'
             name='radioGroup'
             id='rims'
+            onChange={() => handleViewChange('rims', 1)}
           />
           <input
             className='radio-btn'

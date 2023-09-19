@@ -128,9 +128,12 @@ export default function UnityContainer({
     sendMessage('Cameras', 'UnFocusFromTarget');
   }
 
+  // TODO IMPLEMENT POINTER LOCK FOR UNITY
+  // FIX INPUT READING FOR UNITY
   function handlePointerLock() {
     requestPointerLock();
   }
+
 
   const loadingPercentage = Math.round(loadingProgression * 100);
 
@@ -148,6 +151,7 @@ export default function UnityContainer({
           )}
 
           <Unity
+            id='canvas'
             unityProvider={unityProvider}
             className='unity-canvas'
             onClick={handlePointerLock}
