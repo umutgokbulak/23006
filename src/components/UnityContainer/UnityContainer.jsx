@@ -5,7 +5,7 @@ import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 import BottomOptionsMenu from '../BottomOptionsMenu/BottomOptions';
 import SideMenu from '../SideMenu/SideMenu';
 import Loader from '../Loader/Loader.jsx';
-import ScreenShotModal from './ScreenSghotModal';
+import ScreenShotModal from './ScreenShotModal';
 import './unityContainer.css';
 import './modal.css';
 
