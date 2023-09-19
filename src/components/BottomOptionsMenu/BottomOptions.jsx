@@ -13,6 +13,7 @@ export default function BottomOptions({
   focusOnNumbers,
   setCurrentPage,
   setSelectedFeature,
+  handleScreenShot,
 }) {
   function handleViewChange(feature, page, focusOption) {
     setSelectedFeature(feature);
@@ -83,7 +84,7 @@ export default function BottomOptions({
       <div className='screenshot bottom-option'>
         <div className='bottom-option-header'>Screenshot</div>
         <div className='option-icon'>
-          <FiCamera onClick={takeScreenshot} />
+          <FiCamera onClick={handleScreenShot} />
         </div>
       </div>
 

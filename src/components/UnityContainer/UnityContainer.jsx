@@ -1,13 +1,13 @@
-import { Fragment } from 'react';
-import { useState, useEffect } from 'react';
-import BottomOptionsMenu from '../BottomOptionsMenu/BottomOptions';
+import { Fragment, useState, useEffect } from 'react';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
-import SideMenu from '../SideMenu/SideMenu';
-import './modal.css';
-import './unityContainer.css';
-import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 import { Unity, useUnityContext } from 'react-unity-webgl';
+import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
+import BottomOptionsMenu from '../BottomOptionsMenu/BottomOptions';
+import SideMenu from '../SideMenu/SideMenu';
 import Loader from '../Loader/Loader.jsx';
+import ScreenShotModal from './ScreenshotModal';
+import './unityContainer.css';
+import './modal.css';
 
 export default function UnityContainer({
   selectedOptions,
@@ -16,6 +16,9 @@ export default function UnityContainer({
 }) {
   const [openSideMenu, setOpenSideMenu] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [screenshotModalOpen, setScreenshotModalOpen] = useState(false);
+  const [screenshotImage, setScreenshotImage] = useState('');
+  const [screenshotURL, setScreenshotURL] = useState('');
   const [selectedFeature, setSelectedFeature] = useState('rims');
 
   const {
@@ -26,10 +29,10 @@ export default function UnityContainer({
     loadingProgression,
     requestPointerLock,
   } = useUnityContext({
-    loaderUrl: '/assets/Unity/CMGH_React.loader.js',
-    dataUrl: '/assets/Unity/CMGH_React.data',
-    frameworkUrl: '/assets/Unity/CMGH_React.framework.js',
-    codeUrl: '/assets/Unity/CMGH_React.wasm',
+    loaderUrl: '/assets/Unity/CMGH_React_gzip.loader.js',
+    dataUrl: '/assets/Unity/CMGH_React_gzip.data.unityweb',
+    frameworkUrl: '/assets/Unity/CMGH_React_gzip.framework.js.unityweb',
+    codeUrl: '/assets/Unity/CMGH_React_gzip.wasm.unityweb',
     webglContextAttributes: {
       preserveDrawingBuffer: true,
     },
@@ -111,8 +114,21 @@ export default function UnityContainer({
   };
 
   function handleScreenShot() {
-    const dataUrl = takeScreenshot('image/jpg', 0.5);
-    window.open(dataUrl, '_blank');
+    const dataUrl = takeScreenshot('image/png', 1);
+    setScreenshotImage(dataUrl);
+    setScreenshotURL(dataUrl);
+    setScreenshotModalOpen(true);
+  }
+
+  const downloadScreenshot = () => {
+    const a = document.createElement('a');
+    a.href = screenshotURL;
+    a.download = 'Cammegh';
+    a.click();
+  };
+
+  function closeModal() {
+    setScreenshotModalOpen(false);
   }
 
   function focusOnTurrets() {
@@ -134,6 +150,12 @@ export default function UnityContainer({
     requestPointerLock();
   }
 
+  useEffect(() => {
+    document.addEventListener('mouseup', requestPointerLock);
+    return () => {
+      document.removeEventListener('mouseup', requestPointerLock);
+    };
+  }, [requestPointerLock]);
 
   const loadingPercentage = Math.round(loadingProgression * 100);
 
@@ -154,13 +176,14 @@ export default function UnityContainer({
             id='canvas'
             unityProvider={unityProvider}
             className='unity-canvas'
-            onClick={handlePointerLock}
+            // onClick={handlePointerLock}
           />
           <BottomOptionsMenu
             focusOnDefault={focusOnDefault}
             focusOnTurrets={focusOnTurrets}
             focusOnBallTrack={focusOnBallTrack}
             focusOnNumbers={focusOnNumbers}
+            handleScreenShot={handleScreenShot}
             setCurrentPage={setCurrentPage}
             setSelectedFeature={setSelectedFeature}
           />
@@ -195,33 +218,15 @@ export default function UnityContainer({
         )}
       </AnimatePresence>
 
-      {/* <AnimatePresence>
+      <AnimatePresence>
         {screenshotModalOpen && (
-          <ScreenshotModal
+          <ScreenShotModal
             screenshotImage={screenshotImage}
             downloadScreenshot={downloadScreenshot}
             closeModal={closeModal}
           />
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
     </Fragment>
   );
-
-  // const takeScreenshotAndShowModal = () => {
-  //   if (contentRef.current) {
-  //     html2canvas(contentRef.current).then((canvas) => {
-  //       const screenshotURL = canvas.toDataURL('image/jpeg');
-  //       setScreenshotImage(screenshotURL);
-  //       setScreenshotURL(screenshotURL);
-  //       setScreenshotModalOpen(true);
-  //     });
-  //   }
-  // };
-
-  // const downloadScreenshot = () => {
-  //   const a = document.createElement('a');
-  //   a.href = screenshotURL;
-  //   a.download = 'Cammegh';
-  //   a.click();
-  // };
 }
