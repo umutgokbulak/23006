@@ -29,10 +29,10 @@ export default function UnityContainer({
     loadingProgression,
     requestPointerLock,
   } = useUnityContext({
-    loaderUrl: '/assets/Unity/CMGH_React_gzip.loader.js',
-    dataUrl: '/assets/Unity/CMGH_React_gzip.data',
-    frameworkUrl: '/assets/Unity/CMGH_React_gzip.framework.js',
-    codeUrl: '/assets/Unity/CMGH_React_gzip.wasm',
+    loaderUrl: '/assets/Unity/CMGH_React.loader.js',
+    dataUrl: '/assets/Unity/CMGH_React.data',
+    frameworkUrl: '/assets/Unity/CMGH_React.framework.js',
+    codeUrl: '/assets/Unity/CMGH_React.wasm',
     webglContextAttributes: {
       preserveDrawingBuffer: true,
     },

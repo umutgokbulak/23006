@@ -23,7 +23,7 @@ export default function IndexPage({ selectedItems }) {
             <li key={componentName}>
               {index > 0 && <hr className='divider-index' />}
               {selectedItem.id !== null ? (
-                <div className='chosen-option'>
+                <div className='chosen-option' >
                   <img
                     className={`chosen-img ${
                       componentName === componentName ? componentName : ''
