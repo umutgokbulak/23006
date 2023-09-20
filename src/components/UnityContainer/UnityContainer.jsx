@@ -27,7 +27,6 @@ export default function UnityContainer({
     sendMessage,
     isLoaded,
     loadingProgression,
-    requestPointerLock,
   } = useUnityContext({
     loaderUrl: '/assets/Unity/CMGH_React.loader.js',
     dataUrl: '/assets/Unity/CMGH_React.data',
