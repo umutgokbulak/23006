@@ -30,9 +30,9 @@ export default function UnityContainer({
     requestPointerLock,
   } = useUnityContext({
     loaderUrl: '/assets/Unity/CMGH_React.loader.js',
-    dataUrl: '/assets/Unity/CMGH_React.data.br',
-    frameworkUrl: '/assets/Unity/CMGH_React.framework.js.br',
-    codeUrl: '/assets/Unity/CMGH_React.wasm.br',
+    dataUrl: '/assets/Unity/CMGH_React.data',
+    frameworkUrl: '/assets/Unity/CMGH_React.framework.js',
+    codeUrl: '/assets/Unity/CMGH_React.wasm',
     webglContextAttributes: {
       preserveDrawingBuffer: true,
     },
