@@ -114,6 +114,9 @@ export default function UnityContainer({
   };
 
   function handleScreenShot() {
+
+    if(isLoaded == false) return;
+
     const dataUrl = takeScreenshot('image/png', 1);
     setScreenshotImage(dataUrl);
     setScreenshotURL(dataUrl);
