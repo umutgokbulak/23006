@@ -3,104 +3,141 @@ import { BsPlay } from 'react-icons/bs';
 import { BiHelpCircle } from 'react-icons/bi';
 import { FiCamera } from 'react-icons/fi';
 import { SymbolIcon } from '@radix-ui/react-icons';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import './BottomOptionsMenu.css';
 
 export default function BottomOptions({
-  takeScreenshot,
-  focusOnDefault,
-  focusOnTurrets,
-  focusOnBallTrack,
-  focusOnNumbers,
-  setCurrentPage,
-  setSelectedFeature,
+  focusDefault,
+  focusTurrets,
+  focusBallTrack,
+  focusNumbers,
+  currentPage,
   handleScreenShot,
+  setSelectedFeature,
+  setCurrentPage,
 }) {
-  function handleViewChange(feature, page, focusOption) {
-    setSelectedFeature(feature);
-    setCurrentPage(page);
-    focusOption();
+  function handleRims() {
+    setSelectedFeature('rims');
+    setCurrentPage(1);
   }
 
   return (
-    <div className='bottom-menu'>
-      <div className='spin bottom-option'>
-        <div className='bottom-option-header'>Spin</div>
-        <div className='option-icon'>
-          <SymbolIcon width={25} height={25} />
-        </div>
-      </div>
+    <LazyMotion features={domAnimation}>
+      <div className='bottom-menu'>
+        <m.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.1 }}
+          className='spin bottom-option'
+        >
+          <div className='bottom-option-header'>Spin</div>
+          <div className='option-icon'>
+            <SymbolIcon width={25} height={25} />
+          </div>
+        </m.div>
 
-      <div className='play-game bottom-option'>
-        <div className='bottom-option-header'>Play Game</div>
-        <div className='option-icon'>
-          <BsPlay />
-        </div>
-      </div>
+        <m.div
+          initial={{ opacity: 0, x: -80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.3 }}
+          className='play-game bottom-option'
+        >
+          <div className='bottom-option-header'>Play Game</div>
+          <div className='option-icon'>
+            <BsPlay />
+          </div>
+        </m.div>
 
-      <div className='views bottom-option'>
-        <div className='bottom-option-header'>Views</div>
-        <div className='view-container'>
-          <input
-            className='radio-btn'
-            type='radio'
-            name='radioGroup'
-            id='rims'
-            onChange={() => handleViewChange('rims', 1)}
-          />
-          <input
-            className='radio-btn'
-            type='radio'
-            name='radioGroup'
-            id='ballstops'
-            onChange={() => handleViewChange('ballStops', 2, focusOnBallTrack)}
-          />
-          <input
-            className='radio-btn'
-            type='radio'
-            name='radioGroup'
-            id='turrets'
-            onChange={() => handleViewChange('turrets', 3, focusOnTurrets)}
-          />
-          <input
-            className='radio-btn'
-            type='radio'
-            name='radioGroup'
-            id='numbers'
-            onChange={() => handleViewChange('numbers', 4, focusOnNumbers)}
-          />
-          <input
-            className='radio-btn'
-            type='radio'
-            name='radioGroup'
-            id='index'
-            onChange={() => handleViewChange('index', 5, focusOnDefault)}
-          />
+        <m.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.7 }}
+          className='views bottom-option'
+        >
+          <div className='bottom-option-header'>Views</div>
+          <div className='view-container'>
+            <input
+              className='radio-btn'
+              type='radio'
+              name='radioGroup'
+              checked={currentPage === 1}
+              id='rims'
+              onChange={handleRims}
+            />
+            <input
+              className='radio-btn'
+              type='radio'
+              name='radioGroup'
+              id='ballstops'
+              checked={currentPage === 2}
+              onChange={focusBallTrack}
+            />
+            <input
+              className='radio-btn'
+              type='radio'
+              name='radioGroup'
+              id='turrets'
+              checked={currentPage === 3}
+              onChange={focusTurrets}
+            />
+            <input
+              className='radio-btn'
+              type='radio'
+              name='radioGroup'
+              id='numbers'
+              checked={currentPage === 4}
+              onChange={focusNumbers}
+            />
+            <input
+              className='radio-btn'
+              type='radio'
+              name='radioGroup'
+              id='index'
+              checked={currentPage === 5}
+              onChange={focusDefault}
+            />
 
-          <input className='radio-btn' type='radio' name='radioGroup' />
-          <input className='radio-btn' type='radio' name='radioGroup' />
-        </div>
-      </div>
+            <input className='radio-btn' type='radio' name='radioGroup' />
+            <input className='radio-btn' type='radio' name='radioGroup' />
+          </div>
+        </m.div>
 
-      <div className='screenshot bottom-option'>
-        <div className='bottom-option-header'>Screenshot</div>
-        <div className='option-icon'>
-          <FiCamera onClick={handleScreenShot} />
-        </div>
-      </div>
+        <m.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.7 }}
+          className='screenshot bottom-option'
+        >
+          <div className='bottom-option-header'>Screenshot</div>
+          <div className='option-icon'>
+            <FiCamera onClick={handleScreenShot} />
+          </div>
+        </m.div>
 
-      <div className='settings bottom-option'>
-        <div className='bottom-option-header'>Settings</div>
-        <div className='option-icon'>
-          <CiSettings />
-        </div>
-      </div>
+        <m.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.1 }}
+          className='settings bottom-option'
+        >
+          <div className='bottom-option-header'>Settings</div>
+          <div className='option-icon'>
+            <CiSettings />
+          </div>
+        </m.div>
 
-      <div className='help bottom-option'>
-        <div className='bottom-option-header'>Help</div>
-        <div className='option-icon'>
-          <BiHelpCircle />
-        </div>
+        <m.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.3 }}
+          className='help bottom-option'
+        >
+          <div className='bottom-option-header'>Help</div>
+          <div className='option-icon'>
+            <BiHelpCircle />
+          </div>
+        </m.div>
       </div>
-    </div>
+    </LazyMotion>
   );
 }

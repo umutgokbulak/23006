@@ -38,14 +38,14 @@ export default function Rims({ onSelect, selectedOption }) {
                     handleItemClick(item.id, item.imagePath, item.imageName)
                   }
                 >
-                  <m.li initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+                  <li>
                     <img
                       src={item.imagePath}
                       alt={item.imageName}
                       className='option-img'
                     />
                     <p className='option-header'>{item.imageName}</p>
-                  </m.li>
+                  </li>
                 </ul>
               </div>
             ))}

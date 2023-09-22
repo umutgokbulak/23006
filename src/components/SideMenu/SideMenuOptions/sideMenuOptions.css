@@ -225,6 +225,7 @@
   width: 60%;
   height: 65px;
   margin-bottom: 0.5rem;
+  cursor: pointer;
   object-fit: cover;
   object-position: center top;
   border-radius: 10px;

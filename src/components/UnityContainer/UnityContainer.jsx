@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState, useEffect, useRef } from 'react';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import { Unity, useUnityContext } from 'react-unity-webgl';
 import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
@@ -16,10 +16,9 @@ export default function UnityContainer({
 }) {
   const [openSideMenu, setOpenSideMenu] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedFeature, setSelectedFeature] = useState('rims');
   const [screenshotModalOpen, setScreenshotModalOpen] = useState(false);
   const [screenshotImage, setScreenshotImage] = useState('');
-  const [screenshotURL, setScreenshotURL] = useState('');
-  const [selectedFeature, setSelectedFeature] = useState('rims');
 
   const {
     unityProvider,
@@ -27,6 +26,7 @@ export default function UnityContainer({
     sendMessage,
     isLoaded,
     loadingProgression,
+    requestPointerLock,
   } = useUnityContext({
     loaderUrl: '/assets/Unity/CMGH_React.loader.js',
     dataUrl: '/assets/Unity/CMGH_React.data',
@@ -58,22 +58,22 @@ export default function UnityContainer({
 
       case 2:
         setSelectedFeature('ballStops');
-        focusOnBallTrack();
+        focusBallTrack();
         break;
 
       case 3:
         setSelectedFeature('turrets');
-        focusOnTurrets();
+        focusTurrets();
         break;
 
       case 4:
         setSelectedFeature('numbers');
-        focusOnNumbers();
+        focusNumbers();
         break;
 
       case 5:
         setSelectedFeature('index');
-        focusOnDefault();
+        focusDefault();
         break;
     }
   };
@@ -89,22 +89,22 @@ export default function UnityContainer({
 
       case 'ballStops':
         setCurrentPage(2);
-        focusOnBallTrack();
+        focusBallTrack();
         break;
 
       case 'turrets':
         setCurrentPage(3);
-        focusOnTurrets();
+        focusTurrets();
         break;
 
       case 'numbers':
         setCurrentPage(4);
-        focusOnNumbers();
+        focusNumbers();
         break;
 
       case 'index':
         setCurrentPage(5);
-        focusOnDefault();
+        focusDefault();
         break;
 
       default:
@@ -117,13 +117,12 @@ export default function UnityContainer({
 
     const dataUrl = takeScreenshot('image/png', 1);
     setScreenshotImage(dataUrl);
-    setScreenshotURL(dataUrl);
     setScreenshotModalOpen(true);
   }
 
   const downloadScreenshot = () => {
     const a = document.createElement('a');
-    a.href = screenshotURL;
+    a.href = screenshotImage;
     a.download = 'Cammegh';
     a.click();
   };
@@ -132,21 +131,40 @@ export default function UnityContainer({
     setScreenshotModalOpen(false);
   }
 
-  function focusOnTurrets() {
+  function focusTurrets() {
     sendMessage('Cameras', 'FocusOnTurrets');
+    setSelectedFeature('turrets');
+    setCurrentPage(3);
   }
-  function focusOnBallTrack() {
+  function focusBallTrack() {
     sendMessage('Cameras', 'FocusOnBallTrack');
+    setSelectedFeature('ballStops');
+    setCurrentPage(2);
   }
-  function focusOnNumbers() {
+  function focusNumbers() {
     sendMessage('Cameras', 'FocusOnWheelNumbers');
+    setSelectedFeature('numbers');
+    setCurrentPage(4);
   }
-  function focusOnDefault() {
+  function focusDefault() {
     sendMessage('Cameras', 'UnFocusFromTarget');
+    setSelectedFeature('index');
+    setCurrentPage(5);
   }
 
-  // TODO IMPLEMENT POINTER LOCK FOR UNITY
-  // FIX INPUT READING FOR UNITY
+  const unityRef = useRef(null);
+
+  useEffect(() => {
+    const unity = unityRef.current;
+
+    if (unity) {
+      unity.addEventListener('mousedown', requestPointerLock);
+
+      return () => {
+        unity.removeEventListener('mousedown', requestPointerLock);
+      };
+    }
+  }, [requestPointerLock]);
 
   const loadingPercentage = Math.round(loadingProgression * 100);
 
@@ -167,22 +185,29 @@ export default function UnityContainer({
             id='canvas'
             unityProvider={unityProvider}
             className='unity-canvas'
+            ref={unityRef}
           />
-          <BottomOptionsMenu
-            focusOnDefault={focusOnDefault}
-            focusOnTurrets={focusOnTurrets}
-            focusOnBallTrack={focusOnBallTrack}
-            focusOnNumbers={focusOnNumbers}
-            handleScreenShot={handleScreenShot}
-            setCurrentPage={setCurrentPage}
-            setSelectedFeature={setSelectedFeature}
-          />
-          <button
-            className='sideMenu-btn'
-            onClick={() => setOpenSideMenu((prev) => !prev)}
-          >
-            <DotsVerticalIcon width={20} height={20} />
-          </button>
+          {isLoaded !== false && (
+            <>
+              <BottomOptionsMenu
+                focusDefault={focusDefault}
+                focusTurrets={focusTurrets}
+                focusBallTrack={focusBallTrack}
+                focusNumbers={focusNumbers}
+                handleScreenShot={handleScreenShot}
+                setCurrentPage={setCurrentPage}
+                setSelectedFeature={setSelectedFeature}
+                selectedFeature={selectedFeature}
+                currentPage={currentPage}
+              />
+              <button
+                className='sideMenu-btn'
+                onClick={() => setOpenSideMenu((prev) => !prev)}
+              >
+                <DotsVerticalIcon width={20} height={20} />
+              </button>
+            </>
+          )}
         </div>
       </div>
 
@@ -194,10 +219,10 @@ export default function UnityContainer({
               selectedItems={selectedItems}
               handleComponentSelect={handleComponentSelect}
               isSideMenuOpen={openSideMenu}
-              focusOnBallTrack={focusOnBallTrack}
-              focusOnDefault={focusOnDefault}
-              focusOnNumbers={focusOnNumbers}
-              focusOnTurrets={focusOnTurrets}
+              focusBallTrack={focusBallTrack}
+              focusDefault={focusDefault}
+              focusNumbers={focusNumbers}
+              focusTurrets={focusTurrets}
               handlePrevious={handlePrevious}
               handleNext={handleNext}
               selectedFeature={selectedFeature}

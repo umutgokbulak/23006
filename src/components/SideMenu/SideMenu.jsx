@@ -2,7 +2,6 @@ import './sideMenu.css';
 import './SideMenuOptions/sideMenuMediaQueries.css';
 import { BsArrowRight } from 'react-icons/bs';
 import { BsArrowLeft } from 'react-icons/bs';
-import { useState } from 'react';
 import { m } from 'framer-motion';
 import Rims from './SideMenuOptions/Rims.jsx';
 import Turrets from './SideMenuOptions/Turrets.jsx';
@@ -14,14 +13,15 @@ export default function SideMenu({
   selectedOptions,
   selectedItems,
   handleComponentSelect,
-  focusOnNumbers,
   handlePrevious,
   handleNext,
   handleFeatureSelect,
   currentPage,
   selectedFeature,
+  focusNumbers,
+  focusTurrets,
+  focusBallTrack
 }) {
-  
   const selectFeatures = ['rims', 'ballStops', 'turrets', 'numbers', 'index'];
 
   return (
@@ -87,14 +87,18 @@ export default function SideMenu({
 
       {selectedFeature === 'numbers' && currentPage === 4 && (
         <Numbers
-          focusOnNumbers={focusOnNumbers}
           selectedOption={selectedOptions['Numbers']}
           onSelect={(item) => handleComponentSelect('Numbers', item)}
         />
       )}
 
       {selectedFeature === 'index' && currentPage === 5 && (
-        <IndexPage selectedItems={selectedItems} />
+        <IndexPage
+          selectedItems={selectedItems}
+          focusNumbers={focusNumbers}
+          focusTurrets={focusTurrets}
+          focusBallTrack={focusBallTrack}
+        />
       )}
     </m.div>
   );

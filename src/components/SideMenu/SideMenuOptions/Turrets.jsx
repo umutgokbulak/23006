@@ -34,10 +34,7 @@ export default function Turrets({ onSelect, selectedOption }) {
               </div>
               <ul className='turret-list'>
                 {style.items.map((item) => (
-                  <m.li
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
+                  <li
                     key={item.imageName}
                     onClick={() =>
                       handleItemClick(
@@ -56,7 +53,7 @@ export default function Turrets({ onSelect, selectedOption }) {
                       alt={item.imageName}
                     />
                     <p className='option-header'>{item.imageName}</p>
-                  </m.li>
+                  </li>
                 ))}
               </ul>
             </div>
