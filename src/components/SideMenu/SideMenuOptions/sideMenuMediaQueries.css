@@ -1,19 +1,16 @@
 @media screen and (width < 1520px) {
   .sideMenu {
     max-width: 1280px;
-    flex-direction: row;
+    height: 250px;
+    flex-direction: column;
     overflow: auto hidden;
-  }
-
-  .menuHeader {
-    height: 200px;
-    max-width: 117px;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 
   .divider {
-    height: 150px;
+    height: 100%;
     width: 0;
-    margin-right: 0.5rem;
   }
 
   ::-webkit-scrollbar {
@@ -27,29 +24,33 @@
 
   .options-section {
     overflow: auto hidden;
-    max-height: 200px;
+    height: 100%;
 
     & .options-container {
       flex-direction: row;
       align-items: center;
-      overflow: auto hidden;
+      gap: 2rem;
       height: 100%;
-      gap: 1rem;
+      overflow: auto hidden;
 
-      &.ballstop {
+      & .turrets {
         gap: 0;
+        justify-content: center;
       }
 
       & .turret-list {
         flex-wrap: nowrap;
+        gap: 0.3rem;
 
         & li {
-          margin: 0;
+          margin: 0 0.5rem;
+          padding: 0;
         }
 
         & .turret-img {
           height: 90px;
           width: 90px;
+          padding: 0;
         }
       }
 
@@ -57,7 +58,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
         & .option-list {
           display: flex;
 
@@ -69,7 +69,7 @@
     }
 
     & .option {
-      padding: 0;
+      padding: 0.5rem 0;
 
       & .option-rim {
         margin-right: 0.3rem;
@@ -78,10 +78,11 @@
 
     & .option-style {
       gap: 0.5rem;
+      margin-bottom: 0.3rem;
     }
 
     & .option-img {
-      height: 120px;
+      height: 100px;
       max-width: max-content;
     }
   }
@@ -103,8 +104,7 @@
 
   .ballstop-option {
     & .ballstop {
-      height: 90px;
-      max-width: max-content;
+      height: 80px;
     }
   }
 

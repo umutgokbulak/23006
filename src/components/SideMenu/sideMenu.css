@@ -9,7 +9,7 @@
   overflow: hidden scroll;
   user-select: none;
   scrollbar-width: thin;
-  scrollbar-color: #333 #C9C6C6;
+  scrollbar-color: #333 #c9c6c6;
 }
 
 ::-webkit-scrollbar {
@@ -20,8 +20,8 @@
   background: #333;
 }
 
-::-webkit-scrollbar-track{
-  background-color: #C9C6C6;
+::-webkit-scrollbar-track {
+  background-color: #c9c6c6;
 }
 
 .menuHeader {
@@ -39,6 +39,54 @@
   color: #000;
   z-index: 1;
 }
+
+/* < 1520px MENU HEADER */
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.menu-list {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-list li {
+  margin: 10px;
+}
+
+.menu-list span {
+  cursor: pointer;
+  transition: color 0.2s linear;
+  font-size: 1.2rem;
+}
+
+.menu-list span:hover {
+  color: #aa0000;
+}
+
+.menu-item.active {
+  color: #aa0000;
+}
+
+/*               */
 
 .menuHeader .btn {
   transition: scale 0.1s linear;
@@ -71,6 +119,7 @@
 .btn {
   border: none;
   cursor: pointer;
+  display: flex;
   background-color: transparent;
 }
 

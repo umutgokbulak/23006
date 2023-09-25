@@ -1,13 +1,14 @@
 import './sideMenu.css';
 import './SideMenuOptions/sideMenuMediaQueries.css';
-import { BsArrowRight } from 'react-icons/bs';
-import { BsArrowLeft } from 'react-icons/bs';
+import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 import { m } from 'framer-motion';
 import Rims from './SideMenuOptions/Rims.jsx';
 import Turrets from './SideMenuOptions/Turrets.jsx';
 import BallStops from './SideMenuOptions/BallStops';
 import IndexPage from './SideMenuOptions/IndexPage/IndexPage';
 import Numbers from './SideMenuOptions/Numbers';
+import SideMenuHeaderResponsive from './SideMenuHeaderResponsive';
+import { useEffect, useState } from 'react';
 
 export default function SideMenu({
   selectedOptions,
@@ -20,9 +21,23 @@ export default function SideMenu({
   selectedFeature,
   focusNumbers,
   focusTurrets,
-  focusBallTrack
+  focusBallTrack,
+  focusDefault,
 }) {
   const selectFeatures = ['rims', 'ballStops', 'turrets', 'numbers', 'index'];
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <m.div
@@ -32,37 +47,49 @@ export default function SideMenu({
       transition={{ duration: 0.2 }}
       className='sideMenu'
     >
-      <div className='menuHeader'>
-        <button
-          className='page-down btn'
-          onClick={handlePrevious}
-          disabled={currentPage === 1}
-        >
-          <BsArrowLeft className='icon' />
-        </button>
+      {windowWidth > 1520 ? (
+        <div className='menuHeader'>
+          <button
+            className='page-down btn'
+            onClick={handlePrevious}
+            disabled={currentPage === 1}
+          >
+            <BsArrowLeft className='icon' />
+          </button>
 
-        <select
-          value={selectedFeature}
-          onChange={handleFeatureSelect}
-          className='feature-select'
-          name='featureSelect'
-          id='feature-Select'
-        >
-          {selectFeatures.map((feature) => (
-            <option key={feature} value={feature}>
-              {feature.charAt(0).toUpperCase() + feature.slice(1)}
-            </option>
-          ))}
-        </select>
+          <select
+            value={selectedFeature}
+            onChange={handleFeatureSelect}
+            className='feature-select'
+            name='featureSelect'
+            id='feature-Select'
+          >
+            {selectFeatures.map((feature) => (
+              <option key={feature} value={feature}>
+                {feature.charAt(0).toUpperCase() + feature.slice(1)}
+              </option>
+            ))}
+          </select>
 
-        <button
-          className='page-up btn'
-          onClick={handleNext}
-          disabled={currentPage === 5}
-        >
-          <BsArrowRight className='icon' />
-        </button>
-      </div>
+          <button
+            className='page-up btn icon'
+            onClick={handleNext}
+            disabled={currentPage === 5}
+          >
+            <BsArrowRight className='icon' />
+          </button>
+        </div>
+      ) : (
+        <SideMenuHeaderResponsive
+          focusBallTrack={focusBallTrack}
+          focusTurrets={focusTurrets}
+          focusNumbers={focusNumbers}
+          focusDefault={focusDefault}
+          handleNext={handleNext}
+          handlePrevious={handlePrevious}
+          currentPage={currentPage}
+        />
+      )}
 
       {selectedFeature === 'rims' && currentPage === 1 && (
         <Rims

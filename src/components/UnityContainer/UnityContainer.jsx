@@ -112,6 +112,7 @@ export default function UnityContainer({
     }
   };
 
+  //SCREENSHOR
   function handleScreenShot() {
     if (isLoaded == false) return;
 
@@ -126,7 +127,7 @@ export default function UnityContainer({
     a.download = 'Cammegh';
     a.click();
   };
-
+  ////
   function closeModal() {
     setScreenshotModalOpen(false);
   }
@@ -152,6 +153,7 @@ export default function UnityContainer({
     setCurrentPage(5);
   }
 
+  // POINTER LOCK
   const unityRef = useRef(null);
 
   useEffect(() => {
@@ -165,7 +167,9 @@ export default function UnityContainer({
       };
     }
   }, [requestPointerLock]);
+  // //
 
+  //LOADING SCREEN
   const loadingPercentage = Math.round(loadingProgression * 100);
 
   return (
@@ -212,25 +216,25 @@ export default function UnityContainer({
       </div>
 
       <AnimatePresence initial={false}>
-        {openSideMenu && (
-          <LazyMotion features={domAnimation}>
-            <SideMenu
-              selectedOptions={selectedOptions}
-              selectedItems={selectedItems}
-              handleComponentSelect={handleComponentSelect}
-              isSideMenuOpen={openSideMenu}
-              focusBallTrack={focusBallTrack}
-              focusDefault={focusDefault}
-              focusNumbers={focusNumbers}
-              focusTurrets={focusTurrets}
-              handlePrevious={handlePrevious}
-              handleNext={handleNext}
-              selectedFeature={selectedFeature}
-              currentPage={currentPage}
-              handleFeatureSelect={handleFeatureSelect}
-            />
-          </LazyMotion>
-        )}
+        {openSideMenu && isLoaded &&(
+            <LazyMotion features={domAnimation}>
+              <SideMenu
+                selectedOptions={selectedOptions}
+                selectedItems={selectedItems}
+                handleComponentSelect={handleComponentSelect}
+                isSideMenuOpen={openSideMenu}
+                focusBallTrack={focusBallTrack}
+                focusDefault={focusDefault}
+                focusNumbers={focusNumbers}
+                focusTurrets={focusTurrets}
+                handlePrevious={handlePrevious}
+                handleNext={handleNext}
+                selectedFeature={selectedFeature}
+                currentPage={currentPage}
+                handleFeatureSelect={handleFeatureSelect}
+              />
+            </LazyMotion>
+          )}
       </AnimatePresence>
 
       <AnimatePresence>
