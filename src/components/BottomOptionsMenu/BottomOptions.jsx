@@ -16,8 +16,9 @@ export default function BottomOptions({
   setSelectedFeature,
   setCurrentPage,
 }) {
+  // TEMPORARY FUNCTION TO UPDATE SELECTED FEATURE
   function handleRims() {
-    setSelectedFeature('rims');
+    setSelectedFeature('Rims');
     setCurrentPage(1);
   }
 

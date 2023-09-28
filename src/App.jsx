@@ -1,15 +1,14 @@
 import UnityContainer from './components/UnityContainer/UnityContainer';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import {
+  useQueryParams,
+  NumberParam,
+  StringParam,
+  encodeQueryParams,
+} from 'use-query-params';
 
-function App() {
-  const [selectedOptions, setSelectedOptions] = useState({
-    Rims: null,
-    BallStops: null,
-    Turrets: null,
-    Numbers: null,
-  });
-
+export default function App() {
   const [selectedItems, setSelectedItems] = useState({
     Numbers: {
       id: null,
@@ -22,6 +21,7 @@ function App() {
       imagePath: '',
       imageName: '',
       style: '',
+      // quantity: null,
     },
     Rims: {
       id: null,
@@ -37,21 +37,58 @@ function App() {
     },
   });
 
+  const [url, setUrl] = useQueryParams({
+    rimId: NumberParam,
+    rimImg: StringParam,
+    rimName: StringParam,
+    // rimStyle: StringParam,
+
+    ballStopId: NumberParam,
+    ballStopQ: NumberParam,
+    ballStopImg: StringParam,
+    ballStopName: StringParam,
+    ballStopStyle: StringParam,
+
+    turretId: NumberParam,
+    turretImg: StringParam,
+    turretName: StringParam,
+    turretStyle: StringParam,
+
+    numberId: NumberParam,
+    numberImg: StringParam,
+    numberName: StringParam,
+  });
+
+  useEffect(() => {
+    setSelectedItems((prevSelectedItems) => ({
+      ...prevSelectedItems,
+      Rims: {
+        id: url.rimId,
+        imagePath: decodeURIComponent(url.rimImg),
+        imageName: url.rimName,
+      },
+      BallStops: {
+        id: url.ballStopId,
+        imagePath: url.ballStopImg,
+        imageName: url.ballStopName,
+        style: url.ballStopStyle,
+        quantity: url.ballStopQ,
+      },
+      Turrets: {
+        id: url.turretId,
+        imagePath: url.turretImg,
+        imageName: url.turretName,
+        style: url.turretStyle,
+      },
+    }));
+  }, [url]);
+
   const handleComponentSelect = (componentName, selectedItem) => {
     setSelectedItems((prevSelected) => {
       const updatedItem = { ...prevSelected[componentName], ...selectedItem };
 
-      setSelectedOptions((prevSelectedOption) => {
-        prevSelectedOption[componentName] = selectedItem.id;
-
-        return {
-          ...prevSelectedOption,
-        };
-      });
-
       return {
         ...prevSelected,
-
         [componentName]: updatedItem,
       };
     });
@@ -60,12 +97,11 @@ function App() {
   return (
     <div className='App'>
       <UnityContainer
-        selectedOptions={selectedOptions}
         selectedItems={selectedItems}
         handleComponentSelect={handleComponentSelect}
+        setUrl={setUrl}
+        url={url}
       />
     </div>
   );
 }
-
-export default App;

@@ -13,6 +13,10 @@
   flex-direction: column;
 }
 
+.options-container .scrollY {
+  overflow: hidden auto;
+}
+
 .option-style {
   display: flex;
   justify-content: center;
@@ -273,8 +277,6 @@
 }
 
 /* NUMBERS */
-
-.options-container-numbers {
-  width: 395px;
-  height: 720px;
+.options-container-numbers{
+  width: 400px;
 }

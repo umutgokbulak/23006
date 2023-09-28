@@ -1,10 +1,17 @@
 import { BiHelpCircle } from 'react-icons/bi';
 import { Fragment } from 'react';
 import { useState } from 'react';
+import { m } from 'framer-motion';
 import ToolTip from './ToolTip';
 import ballStops from '../../../data/BallStops.json';
-import { m } from 'framer-motion';
-export default function BallStops({ onSelect, selectedOption }) {
+
+export default function BallStops({
+  onSelect,
+  windowWidth,
+  mouseEntered,
+  url,
+  setUrl,
+}) {
   const [itemQuantity, setItemQuantity] = useState(8);
 
   const handleItemClick = (itemID, itemImage, itemImageName, itemStyle) => {
@@ -18,7 +25,11 @@ export default function BallStops({ onSelect, selectedOption }) {
   };
 
   return (
-    <section className='options-section'>
+    <section
+      className={`options-section ${
+        windowWidth < 1520 && mouseEntered ? 'scrollX' : ''
+      } `}
+    >
       <m.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -40,16 +51,26 @@ export default function BallStops({ onSelect, selectedOption }) {
                   <li
                     key={item.imageName}
                     className={`ballstop-option ${
-                      selectedOption === item.id ? 'active' : ''
+                      url.ballStopId === item.id ? 'active' : ''
                     }`}
-                    onClick={() =>
+                    onClick={() => {
                       handleItemClick(
                         item.id,
                         item.imagePath,
                         item.imageName,
                         item.style
-                      )
-                    }
+                      );
+                      setUrl(
+                        {
+                          ballStopId: item.id,
+                          ballStopQ: itemQuantity,
+                          ballStopImg: item.imagePath,
+                          ballStopName: item.imageName,
+                          ballStopStyle: item.style,
+                        },
+                        'replaceIn'
+                      );
+                    }}
                   >
                     <img
                       src={item.imagePath}

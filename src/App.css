@@ -1,9 +1,9 @@
-.App{
+.App {
   display: flex;
 }
 
 @media screen and (width < 1520px) {
-  .App{
+  .App {
     flex-direction: column;
-  } 
+  }
 }

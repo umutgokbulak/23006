@@ -10,13 +10,14 @@ import './unityContainer.css';
 import './modal.css';
 
 export default function UnityContainer({
-  selectedOptions,
+  setUrl,
+  url,
   selectedItems,
   handleComponentSelect,
 }) {
   const [openSideMenu, setOpenSideMenu] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedFeature, setSelectedFeature] = useState('rims');
+  const [selectedFeature, setSelectedFeature] = useState('Rims');
   const [screenshotModalOpen, setScreenshotModalOpen] = useState(false);
   const [screenshotImage, setScreenshotImage] = useState('');
 
@@ -53,26 +54,26 @@ export default function UnityContainer({
   const updateSelectedFeature = (page) => {
     switch (page) {
       case 1:
-        setSelectedFeature('rims');
+        setSelectedFeature('Rims');
         break;
 
       case 2:
-        setSelectedFeature('ballStops');
+        setSelectedFeature('Ball Stops');
         focusBallTrack();
         break;
 
       case 3:
-        setSelectedFeature('turrets');
+        setSelectedFeature('Turrets');
         focusTurrets();
         break;
 
       case 4:
-        setSelectedFeature('numbers');
+        setSelectedFeature('Numbers');
         focusNumbers();
         break;
 
       case 5:
-        setSelectedFeature('index');
+        setSelectedFeature('Index');
         focusDefault();
         break;
     }
@@ -82,27 +83,27 @@ export default function UnityContainer({
     setSelectedFeature(e.target.value);
 
     switch (e.target.value) {
-      case 'rims':
+      case 'Rims':
         setCurrentPage(1);
 
         break;
 
-      case 'ballStops':
+      case 'Ball Stops':
         setCurrentPage(2);
         focusBallTrack();
         break;
 
-      case 'turrets':
+      case 'Turrets':
         setCurrentPage(3);
         focusTurrets();
         break;
 
-      case 'numbers':
+      case 'Numbers':
         setCurrentPage(4);
         focusNumbers();
         break;
 
-      case 'index':
+      case 'Index':
         setCurrentPage(5);
         focusDefault();
         break;
@@ -112,7 +113,7 @@ export default function UnityContainer({
     }
   };
 
-  //SCREENSHOR
+  //SCREENSHOT
   function handleScreenShot() {
     if (isLoaded == false) return;
 
@@ -128,28 +129,29 @@ export default function UnityContainer({
     a.click();
   };
   ////
+
   function closeModal() {
     setScreenshotModalOpen(false);
   }
 
   function focusTurrets() {
     sendMessage('Cameras', 'FocusOnTurrets');
-    setSelectedFeature('turrets');
+    setSelectedFeature('Turrets');
     setCurrentPage(3);
   }
   function focusBallTrack() {
     sendMessage('Cameras', 'FocusOnBallTrack');
-    setSelectedFeature('ballStops');
+    setSelectedFeature('Ball Stops');
     setCurrentPage(2);
   }
   function focusNumbers() {
     sendMessage('Cameras', 'FocusOnWheelNumbers');
-    setSelectedFeature('numbers');
+    setSelectedFeature('Numbers');
     setCurrentPage(4);
   }
   function focusDefault() {
     sendMessage('Cameras', 'UnFocusFromTarget');
-    setSelectedFeature('index');
+    setSelectedFeature('Index');
     setCurrentPage(5);
   }
 
@@ -169,9 +171,9 @@ export default function UnityContainer({
   }, [requestPointerLock]);
   // //
 
-  //LOADING SCREEN
+  //LOADING PERCENTAGE
   const loadingPercentage = Math.round(loadingProgression * 100);
-
+  // //
   return (
     <Fragment>
       <div className='unity-container'>
@@ -216,25 +218,26 @@ export default function UnityContainer({
       </div>
 
       <AnimatePresence initial={false}>
-        {openSideMenu && isLoaded &&(
-            <LazyMotion features={domAnimation}>
-              <SideMenu
-                selectedOptions={selectedOptions}
-                selectedItems={selectedItems}
-                handleComponentSelect={handleComponentSelect}
-                isSideMenuOpen={openSideMenu}
-                focusBallTrack={focusBallTrack}
-                focusDefault={focusDefault}
-                focusNumbers={focusNumbers}
-                focusTurrets={focusTurrets}
-                handlePrevious={handlePrevious}
-                handleNext={handleNext}
-                selectedFeature={selectedFeature}
-                currentPage={currentPage}
-                handleFeatureSelect={handleFeatureSelect}
-              />
-            </LazyMotion>
-          )}
+        {openSideMenu && isLoaded && (
+          <LazyMotion features={domAnimation}>
+            <SideMenu
+              selectedItems={selectedItems}
+              handleComponentSelect={handleComponentSelect}
+              isSideMenuOpen={openSideMenu}
+              focusBallTrack={focusBallTrack}
+              focusDefault={focusDefault}
+              focusNumbers={focusNumbers}
+              focusTurrets={focusTurrets}
+              handlePrevious={handlePrevious}
+              handleNext={handleNext}
+              selectedFeature={selectedFeature}
+              currentPage={currentPage}
+              handleFeatureSelect={handleFeatureSelect}
+              setUrl={setUrl}
+              url={url}
+            />
+          </LazyMotion>
+        )}
       </AnimatePresence>
 
       <AnimatePresence>

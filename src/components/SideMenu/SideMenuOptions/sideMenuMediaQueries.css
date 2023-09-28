@@ -3,9 +3,13 @@
     max-width: 1280px;
     height: 250px;
     flex-direction: column;
-    overflow: auto hidden;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    overflow: hidden;
+    scrollbar-gutter: unset;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .sideMenu.scrollY {
+    overflow: hidden;
   }
 
   .divider {
@@ -23,15 +27,18 @@
   }
 
   .options-section {
-    overflow: auto hidden;
     height: 100%;
+    overflow: hidden;
+
+    &.scrollX {
+      overflow: auto hidden;
+    }
 
     & .options-container {
       flex-direction: row;
       align-items: center;
       gap: 2rem;
       height: 100%;
-      overflow: auto hidden;
 
       & .turrets {
         gap: 0;
@@ -87,6 +94,7 @@
     }
   }
 
+
   .tooltip-container {
     display: flex;
     align-items: center;
@@ -132,7 +140,7 @@
         }
 
         & .Rims {
-          width: 140px;
+          width: 160px;
         }
       }
     }

@@ -3,7 +3,13 @@ import rims from '../../../data/Rims.json';
 import ToolTip from './ToolTip';
 import { m } from 'framer-motion';
 
-export default function Rims({ onSelect, selectedOption }) {
+export default function Rims({
+  onSelect,
+  windowWidth,
+  mouseEntered,
+  setUrl,
+  url,
+}) {
   const handleItemClick = (itemID, itemImage, itemImageName) => {
     onSelect({
       id: itemID,
@@ -17,7 +23,9 @@ export default function Rims({ onSelect, selectedOption }) {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className='options-section'
+      className={`options-section ${
+        windowWidth < 1520 && mouseEntered ? 'scrollX' : ''
+      }`}
     >
       <div className='options-container'>
         <div className='style-container'>
@@ -32,11 +40,20 @@ export default function Rims({ onSelect, selectedOption }) {
               <div className='option' key={item.imageName}>
                 <ul
                   className={`option-rim ${
-                    selectedOption === item.id ? 'active' : ''
+                    url.rimId === item.id ? 'active' : ''
                   }`}
-                  onClick={() =>
-                    handleItemClick(item.id, item.imagePath, item.imageName)
-                  }
+                  onClick={() => {
+                    handleItemClick(item.id, item.imagePath, item.imageName);
+                    setUrl(
+                      {
+                        rimId: item.id,
+                        rimImg: item.imagePath,
+                        rimName: item.imageName,
+                        // rimStyle: item.style,
+                      },
+                      'replaceIn'
+                    );
+                  }}
                 >
                   <li>
                     <img

@@ -3,7 +3,14 @@ import turrets from '../../../data/Turrets.json';
 import ToolTip from './ToolTip';
 import { Fragment } from 'react';
 import { m } from 'framer-motion';
-export default function Turrets({ onSelect, selectedOption }) {
+
+export default function Turrets({
+  onSelect,
+  windowWidth,
+  mouseEntered,
+  setUrl,
+  url,
+}) {
   const handleItemClick = (itemID, itemImage, itemImageName, itemStyle) => {
     onSelect({
       id: itemID,
@@ -20,7 +27,9 @@ export default function Turrets({ onSelect, selectedOption }) {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className='options-container turrets'
+        className={`options-container turrets ${
+          windowWidth < 1520 && mouseEntered ? 'scrollX' : ''
+        } `}
       >
         {turrets.styles.map((style, styleIndex) => (
           <Fragment key={styleIndex}>
@@ -36,18 +45,27 @@ export default function Turrets({ onSelect, selectedOption }) {
                 {style.items.map((item) => (
                   <li
                     key={item.imageName}
-                    onClick={() =>
+                    onClick={() => {
                       handleItemClick(
                         item.id,
                         item.imagePath,
                         item.imageName,
                         item.style
-                      )
-                    }
+                      );
+                      setUrl(
+                        {
+                          turretId: item.id,
+                          turretImg: item.imagePath,
+                          turretName: item.imageName,
+                          turretStyle: item.style,
+                        },
+                        'replaceIn'
+                      );
+                    }}
                   >
                     <img
                       className={`turret-img ${
-                        selectedOption === item.id ? 'active' : ''
+                        url.turretId === item.id ? 'active' : ''
                       }`}
                       src={item.imagePath}
                       alt={item.imageName}

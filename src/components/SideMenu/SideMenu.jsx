@@ -9,9 +9,9 @@ import IndexPage from './SideMenuOptions/IndexPage/IndexPage';
 import Numbers from './SideMenuOptions/Numbers';
 import SideMenuHeaderResponsive from './SideMenuHeaderResponsive';
 import { useEffect, useState } from 'react';
+import { useQueryParams, NumberParam } from 'use-query-params';
 
 export default function SideMenu({
-  selectedOptions,
   selectedItems,
   handleComponentSelect,
   handlePrevious,
@@ -23,10 +23,14 @@ export default function SideMenu({
   focusTurrets,
   focusBallTrack,
   focusDefault,
+  setUrl,
+  url,
 }) {
-  const selectFeatures = ['rims', 'ballStops', 'turrets', 'numbers', 'index'];
+  const selectFeatures = ['Rims', 'Ball Stops', 'Turrets', 'Numbers', 'Index'];
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [mouseEntered, setMouseEntered] = useState(true);
 
+  // FOR UPDATING MENU HEADER FOR NARROW SCREENS
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -39,13 +43,16 @@ export default function SideMenu({
     };
   }, []);
 
+
   return (
     <m.div
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -100 }}
       transition={{ duration: 0.2 }}
-      className='sideMenu'
+      className={`sideMenu ${mouseEntered ? 'scrollY' : ''}`}
+      onMouseEnter={() => setMouseEntered(true)}
+      onMouseLeave={() => setMouseEntered(false)}
     >
       {windowWidth > 1520 ? (
         <div className='menuHeader'>
@@ -66,7 +73,7 @@ export default function SideMenu({
           >
             {selectFeatures.map((feature) => (
               <option key={feature} value={feature}>
-                {feature.charAt(0).toUpperCase() + feature.slice(1)}
+                {feature}
               </option>
             ))}
           </select>
@@ -91,36 +98,50 @@ export default function SideMenu({
         />
       )}
 
-      {selectedFeature === 'rims' && currentPage === 1 && (
+      {selectedFeature === 'Rims' && currentPage === 1 && (
         <Rims
-          selectedOption={selectedOptions['Rims']}
+          windowWidth={windowWidth}
+          mouseEntered={mouseEntered}
           onSelect={(item) => handleComponentSelect('Rims', item)}
+          setUrl={setUrl}
+          url={url}
         />
       )}
 
-      {selectedFeature === 'ballStops' && currentPage === 2 && (
+      {selectedFeature === 'Ball Stops' && currentPage === 2 && (
         <BallStops
+          windowWidth={windowWidth}
+          mouseEntered={mouseEntered}
           onSelect={(item) => handleComponentSelect('BallStops', item)}
-          selectedOption={selectedOptions['BallStops']}
+          setUrl={setUrl}
+          url={url}
         />
       )}
 
-      {selectedFeature === 'turrets' && currentPage === 3 && (
+      {selectedFeature === 'Turrets' && currentPage === 3 && (
         <Turrets
-          selectedOption={selectedOptions['Turrets']}
+          windowWidth={windowWidth}
+          mouseEntered={mouseEntered}
           onSelect={(item) => handleComponentSelect('Turrets', item)}
+          setUrl={setUrl}
+          url={url}
         />
       )}
 
-      {selectedFeature === 'numbers' && currentPage === 4 && (
+      {selectedFeature === 'Numbers' && currentPage === 4 && (
         <Numbers
-          selectedOption={selectedOptions['Numbers']}
+          windowWidth={windowWidth}
+          mouseEntered={mouseEntered}
           onSelect={(item) => handleComponentSelect('Numbers', item)}
+          setUrl={setUrl}
+          url={url}
         />
       )}
 
-      {selectedFeature === 'index' && currentPage === 5 && (
+      {selectedFeature === 'Index' && currentPage === 5 && (
         <IndexPage
+          mouseEntered={mouseEntered}
+          windowWidth={windowWidth}
           selectedItems={selectedItems}
           focusNumbers={focusNumbers}
           focusTurrets={focusTurrets}
