@@ -1,6 +1,6 @@
 @media screen and (width < 1520px) {
   .sideMenu {
-    max-width: 1280px;
+    width: 1280px;
     height: 250px;
     flex-direction: column;
     overflow: hidden;

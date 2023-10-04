@@ -1,14 +1,11 @@
 import UnityContainer from './components/UnityContainer/UnityContainer';
 import './App.css';
 import { useState, useEffect } from 'react';
-import {
-  useQueryParams,
-  NumberParam,
-  StringParam,
-  encodeQueryParams,
-} from 'use-query-params';
+import { useQueryParams, NumberParam, StringParam } from 'use-query-params';
 
 export default function App() {
+  const [itemQuantity, setItemQuantity] = useState(8);
+
   const [selectedItems, setSelectedItems] = useState({
     Numbers: {
       id: null,
@@ -16,12 +13,13 @@ export default function App() {
       imageName: '',
       style: '',
     },
+
     BallStops: {
       id: null,
       imagePath: '',
       imageName: '',
       style: '',
-      // quantity: null,
+      quantity: itemQuantity,
     },
     Rims: {
       id: null,
@@ -60,27 +58,57 @@ export default function App() {
   });
 
   useEffect(() => {
-    setSelectedItems((prevSelectedItems) => ({
-      ...prevSelectedItems,
-      Rims: {
-        id: url.rimId,
-        imagePath: decodeURIComponent(url.rimImg),
-        imageName: url.rimName,
-      },
-      BallStops: {
-        id: url.ballStopId,
-        imagePath: url.ballStopImg,
-        imageName: url.ballStopName,
-        style: url.ballStopStyle,
-        quantity: url.ballStopQ,
-      },
-      Turrets: {
-        id: url.turretId,
-        imagePath: url.turretImg,
-        imageName: url.turretName,
-        style: url.turretStyle,
-      },
+    if (url.rimId >= 0) {
+      setSelectedItems((prevSelected) => ({
+        ...prevSelected,
+        Rims: {
+          id: url.rimId,
+          imagePath: url.rimImg,
+          imageName: url.rimName,
+        },
+      }));
+    }
+
+    if (url.ballStopId) {
+      setSelectedItems((prevSelected) => ({
+        ...prevSelected,
+        BallStops: {
+          id: url.ballStopId,
+          imagePath: url.ballStopImg,
+          quantity: url.ballStopQ,
+          imageName: url.ballStopName,
+          style: url.ballStopStyle,
+        },
+      }));
+    }
+
+    if (url.turretId) {
+      setSelectedItems((prevSelected) => ({
+        ...prevSelected,
+        Turrets: {
+          id: url.turretId,
+          imagePath: url.turretImg,
+          imageName: url.turretName,
+          style: url.turretStyle,
+        },
+      }));
+    }
+
+    if (url.numberId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        Numbers: {
+          id: url.numberId,
+          imagePath: url.numberImg,
+          imageName: url.numberName,
+        },
+      }));
+    }
+
+    setSelectedItems((prevSelected) => ({
+      ...prevSelected,
     }));
+
   }, [url]);
 
   const handleComponentSelect = (componentName, selectedItem) => {
@@ -101,6 +129,8 @@ export default function App() {
         handleComponentSelect={handleComponentSelect}
         setUrl={setUrl}
         url={url}
+        setItemQuantity={setItemQuantity}
+        itemQuantity={itemQuantity}
       />
     </div>
   );

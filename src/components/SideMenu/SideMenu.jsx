@@ -9,7 +9,6 @@ import IndexPage from './SideMenuOptions/IndexPage/IndexPage';
 import Numbers from './SideMenuOptions/Numbers';
 import SideMenuHeaderResponsive from './SideMenuHeaderResponsive';
 import { useEffect, useState } from 'react';
-import { useQueryParams, NumberParam } from 'use-query-params';
 
 export default function SideMenu({
   selectedItems,
@@ -25,6 +24,8 @@ export default function SideMenu({
   focusDefault,
   setUrl,
   url,
+  setItemQuantity,
+  itemQuantity,
 }) {
   const selectFeatures = ['Rims', 'Ball Stops', 'Turrets', 'Numbers', 'Index'];
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -42,7 +43,6 @@ export default function SideMenu({
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
 
   return (
     <m.div
@@ -115,6 +115,8 @@ export default function SideMenu({
           onSelect={(item) => handleComponentSelect('BallStops', item)}
           setUrl={setUrl}
           url={url}
+          setItemQuantity={setItemQuantity}
+          itemQuantity={itemQuantity}
         />
       )}
 

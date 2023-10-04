@@ -95,7 +95,7 @@
   opacity: 0.8;
 }
 
-.option-header {
+.option-name {
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -277,6 +277,6 @@
 }
 
 /* NUMBERS */
-.options-container-numbers{
+.options-container-numbers {
   width: 400px;
 }

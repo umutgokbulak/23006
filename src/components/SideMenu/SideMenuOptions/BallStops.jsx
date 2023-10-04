@@ -11,9 +11,9 @@ export default function BallStops({
   mouseEntered,
   url,
   setUrl,
+  setItemQuantity,
+  itemQuantity,
 }) {
-  const [itemQuantity, setItemQuantity] = useState(8);
-
   const handleItemClick = (itemID, itemImage, itemImageName, itemStyle) => {
     onSelect({
       id: itemID,
@@ -78,11 +78,12 @@ export default function BallStops({
                       className='option-img ballstop'
                     />
                     <div className='select-ballstop-container'>
-                      <p className='option-header'>{item.imageName}</p>
+                      <p className='option-name'>{item.imageName}</p>
                       <select
                         className='ballstop-select'
                         name='ballStop'
                         id='select-ballstop'
+                        value={url.ballStopQ}
                         onChange={(e) => setItemQuantity(e.target.value)}
                       >
                         <option value='8'>x8</option>

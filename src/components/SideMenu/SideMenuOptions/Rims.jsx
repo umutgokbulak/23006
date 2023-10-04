@@ -61,7 +61,7 @@ export default function Rims({
                       alt={item.imageName}
                       className='option-img'
                     />
-                    <p className='option-header'>{item.imageName}</p>
+                    <p className='option-name'>{item.imageName}</p>
                   </li>
                 </ul>
               </div>

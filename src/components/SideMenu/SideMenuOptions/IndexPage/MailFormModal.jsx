@@ -1,9 +1,11 @@
 import { m } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './mailMe.css';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { QRCodeSVG } from 'qrcode.react';
+import axios from 'axios';
 
-function MailFormModal({ toggleMailModal }) {
+export default function MailFormModal({ toggleMailModal }) {
   const [formData, setFormData] = useState({
     email: '',
     name: '',
@@ -18,6 +20,26 @@ function MailFormModal({ toggleMailModal }) {
       [name]: value,
     });
   };
+
+  // const [shortenedUrl, setShortenedUrl] = useState('');
+  // const currentUrl = window.location.href;
+  // console.log(currentUrl);
+  // useEffect(() => {
+  //   const shortenUrl = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://api.shrtco.de/v2/shorten?url=${currentUrl}`
+  //       );
+  //       console.log(response.data.result.full_short_link);
+  //       console.log(shortenUrl);
+  //       setShortenedUrl(response.data.result.full_short_link);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+
+  //   shortenUrl();
+  // }, [currentUrl]);
 
   return (
     <section className='modal-mail-me'>
@@ -49,6 +71,15 @@ function MailFormModal({ toggleMailModal }) {
                   fill out all fields and contact our sales team:
                 </p>
               </div>
+              <div className='qr-container' style={{ paddingRight: '2rem' }}>
+                <QRCodeSVG
+                  value={window.location.href}
+                  width={190}
+                  height={190}
+                />
+                <p>Or you can scan the QR Code of your Preset</p>
+              </div>
+
               <div className='email'>
                 <h4>CONTACT THE SALES TEAM</h4>
                 <p>
@@ -101,22 +132,20 @@ function MailFormModal({ toggleMailModal }) {
                     <div className='message'>
                       <div className='acceptance'>
                         <p>
-                          <p>
-                            <input type='checkbox' />
-                            <label
-                              htmlFor='policy-checkbox'
-                              className='policy-checkbox'
-                            >
-                              I understand GDPR / <span>Privacy Policy</span>
-                            </label>
-                          </p>
-                          <div className='span-captcha'>
-                            <ReCAPTCHA
-                              size='compact'
-                              sitekey='6LcnlAsoAAAAABwH-TbG1EMe5q92sABHXUkVb4yC'
-                            />
-                          </div>
+                          <input type='checkbox' />
+                          <label
+                            htmlFor='policy-checkbox'
+                            className='policy-checkbox'
+                          >
+                            I understand GDPR / <span>Privacy Policy</span>
+                          </label>
                         </p>
+                        <div className='span-captcha'>
+                          <ReCAPTCHA
+                            size='compact'
+                            sitekey='6LcnlAsoAAAAABwH-TbG1EMe5q92sABHXUkVb4yC'
+                          />
+                        </div>
                       </div>
                       <div className='contact-button-container'>
                         <div className='send-my-link'>
@@ -140,5 +169,3 @@ function MailFormModal({ toggleMailModal }) {
     </section>
   );
 }
-
-export default MailFormModal;

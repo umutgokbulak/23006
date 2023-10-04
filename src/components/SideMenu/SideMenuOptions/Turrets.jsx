@@ -70,7 +70,7 @@ export default function Turrets({
                       src={item.imagePath}
                       alt={item.imageName}
                     />
-                    <p className='option-header'>{item.imageName}</p>
+                    <p className='option-name'>{item.imageName}</p>
                   </li>
                 ))}
               </ul>

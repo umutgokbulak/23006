@@ -14,6 +14,8 @@ export default function UnityContainer({
   url,
   selectedItems,
   handleComponentSelect,
+  setItemQuantity,
+  itemQuantity,
 }) {
   const [openSideMenu, setOpenSideMenu] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -218,7 +220,7 @@ export default function UnityContainer({
       </div>
 
       <AnimatePresence initial={false}>
-        {openSideMenu && isLoaded && (
+        {openSideMenu && (
           <LazyMotion features={domAnimation}>
             <SideMenu
               selectedItems={selectedItems}
@@ -235,6 +237,8 @@ export default function UnityContainer({
               handleFeatureSelect={handleFeatureSelect}
               setUrl={setUrl}
               url={url}
+              setItemQuantity={setItemQuantity}
+              itemQuantity={itemQuantity}
             />
           </LazyMotion>
         )}
