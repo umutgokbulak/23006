@@ -1,12 +1,12 @@
 .sideMenu {
   display: flex;
-  width: 400px;
+  width: 420px;
   flex-direction: column;
   background-color: #e2e1e1;
   color: #000;
   overflow: hidden;
   text-align: center;
-  max-height: 720px;
+  max-height: 100vh;
   user-select: none;
   scrollbar-width: thin;
   scrollbar-color: #333 #c9c6c6;
@@ -37,11 +37,10 @@
   width: 100%;
   font-weight: 300;
   font-size: 1.7rem;
-  margin-bottom: 0.5rem;
   gap: 2rem;
   position: sticky;
   top: 0;
-  /* border-bottom: 1px solid black; */
+  border-bottom: 1px solid #a9a6a6;
   background-color: #e2e1e1;
   z-index: 1;
 }
@@ -50,6 +49,7 @@
 
 .menu-container {
   display: flex;
+  min-width: 615px;
   justify-content: space-between;
   align-items: center;
 }

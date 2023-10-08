@@ -199,29 +199,30 @@
   font-weight: 400;
 }
 
+.index-page {
+  display: flex;
+}
+
 .index-section {
   display: flex;
   flex-direction: column;
   font-weight: 300;
-  height: 720px;
 }
 
 .index-container {
-  position: relative;
-  padding: 0;
-  height: 100%;
   width: 395px;
-
+  padding: 0;
+  margin: 2rem 0;
   font-weight: 400;
-  cursor: auto;
   font-size: 0.9rem;
+  cursor: auto;
 }
 
 .chosen-option {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   font-size: 1.1rem;
 }
 

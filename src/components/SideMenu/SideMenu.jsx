@@ -1,5 +1,5 @@
 import './sideMenu.css';
-import './SideMenuOptions/sideMenuMediaQueries.css';
+import '../../mediaQueries.css';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 import { m } from 'framer-motion';
 import Rims from './SideMenuOptions/Rims.jsx';

@@ -77,7 +77,7 @@ export default function MailFormModal({ toggleMailModal }) {
                   width={190}
                   height={190}
                 />
-                <p>Or you can scan the QR Code of your Preset</p>
+                <p>Or you can scan the QR Code of your custom design</p>
               </div>
 
               <div className='email'>

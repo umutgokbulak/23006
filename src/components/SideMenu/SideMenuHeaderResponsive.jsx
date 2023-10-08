@@ -61,7 +61,7 @@ export default function SideMenuHeaderResponsive({
           <BsArrowRight className='icon' />
         </button>
       </div>
-      <hr style={{ width: '1278px', margin: '0' }} />
+      <hr style={{ width: '100%', margin: '0' }} />
     </>
   );
 }

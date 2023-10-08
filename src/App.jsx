@@ -5,7 +5,6 @@ import { useQueryParams, NumberParam, StringParam } from 'use-query-params';
 
 export default function App() {
   const [itemQuantity, setItemQuantity] = useState(8);
-
   const [selectedItems, setSelectedItems] = useState({
     Numbers: {
       id: null,
@@ -21,6 +20,12 @@ export default function App() {
       style: '',
       quantity: itemQuantity,
     },
+    // BallTrack: {
+    //   id: null,
+    //   imagePath: '',
+    //   imageName: '',
+    //   style: '',
+    // },
     Rims: {
       id: null,
       imagePath: '',
@@ -108,7 +113,6 @@ export default function App() {
     setSelectedItems((prevSelected) => ({
       ...prevSelected,
     }));
-
   }, [url]);
 
   const handleComponentSelect = (componentName, selectedItem) => {

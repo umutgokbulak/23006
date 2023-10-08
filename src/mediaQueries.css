@@ -1,7 +1,6 @@
 @media screen and (width < 1520px) {
   .sideMenu {
-    width: 1280px;
-    height: 250px;
+    width: 100%;
     flex-direction: column;
     overflow: hidden;
     scrollbar-gutter: unset;
@@ -29,7 +28,7 @@
   .options-section {
     height: 100%;
     overflow: hidden;
-
+    padding: 0.5rem;
     &.scrollX {
       overflow: auto hidden;
     }
@@ -39,11 +38,6 @@
       align-items: center;
       gap: 2rem;
       height: 100%;
-
-      & .turrets {
-        gap: 0;
-        justify-content: center;
-      }
 
       & .turret-list {
         flex-wrap: nowrap;
@@ -94,7 +88,6 @@
     }
   }
 
-
   .tooltip-container {
     display: flex;
     align-items: center;
@@ -111,14 +104,19 @@
   }
 
   .ballstop-option {
+    padding: 0.5rem;
     & .ballstop {
       height: 80px;
     }
   }
 
   section.index-section {
-    flex-direction: row;
     height: 200px;
+    flex-direction: row;
+
+    &.scrollX {
+      overflow: auto hidden;
+    }
 
     & .divider-index {
       height: 200px;
@@ -126,13 +124,10 @@
 
     & .chosen-option-list {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: row;
 
       & li {
         display: flex;
-        justify-content: center;
         align-items: center;
 
         & .chosen-option {

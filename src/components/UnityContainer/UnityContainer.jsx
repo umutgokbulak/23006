@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect, useRef } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import { Unity, useUnityContext } from 'react-unity-webgl';
 import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
@@ -6,6 +6,7 @@ import BottomOptionsMenu from '../BottomOptionsMenu/BottomOptions';
 import SideMenu from '../SideMenu/SideMenu';
 import Loader from '../Loader/Loader.jsx';
 import ScreenShotModal from './ScreenShotModal';
+import '../../mediaQueries.css';
 import './unityContainer.css';
 import './modal.css';
 
@@ -29,7 +30,6 @@ export default function UnityContainer({
     sendMessage,
     isLoaded,
     loadingProgression,
-    requestPointerLock,
   } = useUnityContext({
     loaderUrl: '/assets/Unity/CMGH_React.loader.js',
     dataUrl: '/assets/Unity/CMGH_React.data',
@@ -115,6 +115,27 @@ export default function UnityContainer({
     }
   };
 
+  const [devicePixelRatio, setDevicePixelRatio] = useState(
+    window.devicePixelRatio
+  );
+
+  useEffect(
+    function () {
+      const updateDevicePixelRatio = function () {
+        setDevicePixelRatio(window.devicePixelRatio);
+        console.log('devicePixelRatio', devicePixelRatio);
+      };
+      const mediaMatcher = window.matchMedia(
+        `screen and (resolution: ${devicePixelRatio}dppx)`
+      );
+      mediaMatcher.addEventListener('change', updateDevicePixelRatio);
+      return function () {
+        mediaMatcher.removeEventListener('change', updateDevicePixelRatio);
+      };
+    },
+    [devicePixelRatio]
+  );
+
   //SCREENSHOT
   function handleScreenShot() {
     if (isLoaded == false) return;
@@ -157,22 +178,6 @@ export default function UnityContainer({
     setCurrentPage(5);
   }
 
-  // POINTER LOCK
-  const unityRef = useRef(null);
-
-  useEffect(() => {
-    const unity = unityRef.current;
-
-    if (unity) {
-      unity.addEventListener('mousedown', requestPointerLock);
-
-      return () => {
-        unity.removeEventListener('mousedown', requestPointerLock);
-      };
-    }
-  }, [requestPointerLock]);
-  // //
-
   //LOADING PERCENTAGE
   const loadingPercentage = Math.round(loadingProgression * 100);
   // //
@@ -193,9 +198,9 @@ export default function UnityContainer({
             id='canvas'
             unityProvider={unityProvider}
             className='unity-canvas'
-            ref={unityRef}
+            devicePixelRatio={devicePixelRatio}
           />
-          {isLoaded !== false && (
+          {isLoaded && (
             <>
               <BottomOptionsMenu
                 focusDefault={focusDefault}
@@ -220,7 +225,7 @@ export default function UnityContainer({
       </div>
 
       <AnimatePresence initial={false}>
-        {openSideMenu && (
+        {openSideMenu && isLoaded && (
           <LazyMotion features={domAnimation}>
             <SideMenu
               selectedItems={selectedItems}

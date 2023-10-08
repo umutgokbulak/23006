@@ -21,15 +21,17 @@ export default function Turrets({
   };
 
   return (
-    <section className='options-section'>
+    <section
+      className={`options-section turrets ${
+        windowWidth < 1520 && mouseEntered ? 'scrollX' : ''
+      } `}
+    >
       <m.div
         layout
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className={`options-container turrets ${
-          windowWidth < 1520 && mouseEntered ? 'scrollX' : ''
-        } `}
+        className='options-container'
       >
         {turrets.styles.map((style, styleIndex) => (
           <Fragment key={styleIndex}>
