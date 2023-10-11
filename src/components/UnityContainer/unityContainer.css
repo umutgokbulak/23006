@@ -1,12 +1,11 @@
 .unity-container {
-  width: 80vw;
+  width: 100vw;
   height: 100vh;
 }
 
 @media screen and (width < 1520px) {
   .unity-container {
-    max-height: 71vh;
-    width: 100vw;
+    min-height: 72vh;
   }
 }
 
@@ -57,9 +56,15 @@
   font-size: 1.3rem;
   cursor: pointer;
   transition: background-color 0.2s linear;
-  color: white;
+  color: #ffffff;
   border-radius: 7px;
   &:hover {
     background-color: rgba(177, 177, 177, 0.3);
+  }
+}
+
+@media screen and (max-width: 1520px) {
+  .sideMenu-btn {
+    position: fixed;
   }
 }

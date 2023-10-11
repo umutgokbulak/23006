@@ -9,6 +9,7 @@ import ScreenShotModal from './ScreenShotModal';
 import '../../mediaQueries.css';
 import './unityContainer.css';
 import './modal.css';
+import BottomOptionsSide from '../BottomOptionsMenu/BottomOptionsSide';
 
 export default function UnityContainer({
   setUrl,
@@ -23,6 +24,20 @@ export default function UnityContainer({
   const [selectedFeature, setSelectedFeature] = useState('Rims');
   const [screenshotModalOpen, setScreenshotModalOpen] = useState(false);
   const [screenshotImage, setScreenshotImage] = useState('');
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  // FOR UPDATING MENU HEADER FOR NARROW SCREENS
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const {
     unityProvider,
@@ -200,8 +215,8 @@ export default function UnityContainer({
             className='unity-canvas'
             devicePixelRatio={devicePixelRatio}
           />
-          {isLoaded && (
-            <>
+          <>
+            {isLoaded && windowWidth > 1520 ? (
               <BottomOptionsMenu
                 focusDefault={focusDefault}
                 focusTurrets={focusTurrets}
@@ -213,14 +228,18 @@ export default function UnityContainer({
                 selectedFeature={selectedFeature}
                 currentPage={currentPage}
               />
+            ) : (
+              <BottomOptionsSide />
+            )}
+            <div className='side-menu-btn-container'>
               <button
                 className='sideMenu-btn'
                 onClick={() => setOpenSideMenu((prev) => !prev)}
               >
                 <DotsVerticalIcon width={20} height={20} />
               </button>
-            </>
-          )}
+            </div>
+          </>
         </div>
       </div>
 
@@ -244,6 +263,7 @@ export default function UnityContainer({
               url={url}
               setItemQuantity={setItemQuantity}
               itemQuantity={itemQuantity}
+              windowWidth={windowWidth}
             />
           </LazyMotion>
         )}

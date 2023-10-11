@@ -26,29 +26,17 @@ export default function SideMenu({
   url,
   setItemQuantity,
   itemQuantity,
+  windowWidth
 }) {
   const selectFeatures = ['Rims', 'Ball Stops', 'Turrets', 'Numbers', 'Index'];
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [mouseEntered, setMouseEntered] = useState(true);
-
-  // FOR UPDATING MENU HEADER FOR NARROW SCREENS
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  
 
   return (
     <m.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
+      initial={windowWidth < 1520 ? { scaleY: 0 } : { scaleX: 0 }}
+      animate={windowWidth < 1520 ? { scaleY: 1 } : { scaleX: 1 }}
+      exit={windowWidth < 1520 ? { scaleY: 0 } : { scaleX: 0 }}
       transition={{ duration: 0.2 }}
       className={`sideMenu ${mouseEntered ? 'scrollY' : ''}`}
       onMouseEnter={() => setMouseEntered(true)}

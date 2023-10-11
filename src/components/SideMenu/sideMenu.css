@@ -1,6 +1,6 @@
 .sideMenu {
   display: flex;
-  width: 420px;
+  width: 530px;
   flex-direction: column;
   background-color: #e2e1e1;
   color: #000;
@@ -11,6 +11,7 @@
   scrollbar-width: thin;
   scrollbar-color: #333 #c9c6c6;
   scrollbar-gutter: stable;
+  transform-origin: left;
 }
 
 .sideMenu.scrollY {

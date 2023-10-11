@@ -7,5 +7,6 @@
 @media screen and (width < 1520px) {
   .App {
     flex-direction: column;
+    justify-content: flex-end;
   }
 }

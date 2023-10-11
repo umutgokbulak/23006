@@ -1,10 +1,11 @@
 @media screen and (width < 1520px) {
   .sideMenu {
     width: 100%;
+    min-height: 240px;
     flex-direction: column;
     overflow: hidden;
     scrollbar-gutter: unset;
-    border-radius: 0 0 1rem 1rem;
+    transform-origin: top;
   }
 
   .sideMenu.scrollY {
