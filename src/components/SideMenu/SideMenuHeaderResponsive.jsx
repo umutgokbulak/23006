@@ -9,6 +9,8 @@ export default function SideMenuHeaderResponsive({
   handlePrevious,
   handleNext,
   currentPage,
+  windowWidth,
+  mouseEntered,
 }) {
   const menuItems = ['Rims', 'Ball Stops', 'Turrets', 'Numbers', 'Index'];
   const [activeItem, setActiveItem] = useState('Rims');
@@ -33,7 +35,11 @@ export default function SideMenuHeaderResponsive({
   };
 
   return (
-    <>
+    <div
+      className={`scrollable-menu ${
+        windowWidth < 590  ? 'scrollX' : ''
+      }`}
+    >
       <div className='menu-container'>
         <button
           className='nav-button page-down btn'
@@ -61,7 +67,6 @@ export default function SideMenuHeaderResponsive({
           <BsArrowRight className='icon' />
         </button>
       </div>
-      <hr style={{ width: '100%', margin: '0' }} />
-    </>
+    </div>
   );
 }

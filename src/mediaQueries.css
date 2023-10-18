@@ -8,7 +8,7 @@
     transform-origin: top;
   }
 
-  .sideMenu.scrollY {
+  .sideMenu .scrollY {
     overflow: hidden;
   }
 
@@ -18,7 +18,7 @@
   }
 
   ::-webkit-scrollbar {
-    height: 10px;
+    height: 7px;
   }
 
   .menuHeader {
@@ -29,7 +29,6 @@
   .options-section {
     height: 100%;
     overflow: hidden;
-    padding: 0.5rem;
     &.scrollX {
       overflow: auto hidden;
     }
@@ -52,7 +51,8 @@
         & .turret-img {
           height: 90px;
           width: 90px;
-          padding: 0;
+        border-radius: 1rem;
+          padding: 1rem;
         }
       }
 
@@ -60,6 +60,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 1rem;
         & .option-list {
           display: flex;
 
@@ -113,11 +114,8 @@
 
   section.index-section {
     height: 200px;
+    min-width: 1038px;
     flex-direction: row;
-
-    &.scrollX {
-      overflow: auto hidden;
-    }
 
     & .divider-index {
       height: 200px;
@@ -140,5 +138,13 @@
         }
       }
     }
+  }
+
+  .index-page {
+    overflow: hidden;
+  }
+
+  .index-page.scrollX {
+    overflow: auto hidden;
   }
 }

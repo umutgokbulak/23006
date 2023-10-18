@@ -131,7 +131,6 @@
 /* TURRETS */
 
 .turret-list {
-  position: relative;
   display: flex;
   justify-content: start;
   flex-wrap: wrap;

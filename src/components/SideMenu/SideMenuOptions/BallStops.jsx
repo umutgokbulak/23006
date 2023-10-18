@@ -1,6 +1,5 @@
 import { BiHelpCircle } from 'react-icons/bi';
 import { Fragment } from 'react';
-import { useState } from 'react';
 import { m } from 'framer-motion';
 import ToolTip from './ToolTip';
 import ballStops from '../../../data/BallStops.json';

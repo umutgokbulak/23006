@@ -7,6 +7,8 @@ export default function IndexPage({
   focusBallTrack,
   focusTurrets,
   focusNumbers,
+  windowWidth,
+  mouseEntered,
 }) {
   const [mailMeModal, setMailMeModal] = useState(false);
   function toggleMailModal() {
@@ -14,7 +16,11 @@ export default function IndexPage({
   }
 
   return (
-    <div className='index-page'>
+    <div
+      className={`index-page ${
+        windowWidth < 1520 && mouseEntered ? 'scrollX' : ''
+      } `}
+    >
       <m.section
         className='index-section '
         initial={{ opacity: 0, y: -20 }}

@@ -1,5 +1,6 @@
 import { Fragment, useState, useEffect } from 'react';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
+import { BsGear } from 'react-icons/bs';
 import { Unity, useUnityContext } from 'react-unity-webgl';
 import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 import BottomOptionsMenu from '../BottomOptionsMenu/BottomOptions';
@@ -20,10 +21,11 @@ export default function UnityContainer({
   itemQuantity,
 }) {
   const [openSideMenu, setOpenSideMenu] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [selectedFeature, setSelectedFeature] = useState('Rims');
   const [screenshotModalOpen, setScreenshotModalOpen] = useState(false);
+  const [openOptions, setOpenOptions] = useState(false);
+  const [selectedFeature, setSelectedFeature] = useState('Rims');
   const [screenshotImage, setScreenshotImage] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // FOR UPDATING MENU HEADER FOR NARROW SCREENS
@@ -216,7 +218,7 @@ export default function UnityContainer({
             devicePixelRatio={devicePixelRatio}
           />
           <>
-            {isLoaded && windowWidth > 1520 ? (
+            {windowWidth > 676 && isLoaded && (
               <BottomOptionsMenu
                 focusDefault={focusDefault}
                 focusTurrets={focusTurrets}
@@ -228,17 +230,44 @@ export default function UnityContainer({
                 selectedFeature={selectedFeature}
                 currentPage={currentPage}
               />
-            ) : (
-              <BottomOptionsSide />
             )}
-            <div className='side-menu-btn-container'>
+
+            <AnimatePresence>
+              {windowWidth < 675 && isLoaded && (
+                <BottomOptionsSide
+                  focusDefault={focusDefault}
+                  focusTurrets={focusTurrets}
+                  focusBallTrack={focusBallTrack}
+                  focusNumbers={focusNumbers}
+                  handleScreenShot={handleScreenShot}
+                  setCurrentPage={setCurrentPage}
+                  setSelectedFeature={setSelectedFeature}
+                  selectedFeature={selectedFeature}
+                  currentPage={currentPage}
+                  openOptions={openOptions}
+                  isLoaded={isLoaded}
+                  isSideMenuOpen={openSideMenu}
+                />
+              )}
+            </AnimatePresence>
+
+            {isLoaded && (
               <button
-                className='sideMenu-btn'
+                className={`sideMenu-btn ${openSideMenu ? 'active' : ''}`}
                 onClick={() => setOpenSideMenu((prev) => !prev)}
               >
                 <DotsVerticalIcon width={20} height={20} />
               </button>
-            </div>
+            )}
+
+            {windowWidth < 675 && isLoaded && (
+              <button
+                className={`bottomMenu-btn ${openOptions ? 'active' : ''}`}
+                onClick={() => setOpenOptions((prev) => !prev)}
+              >
+                <BsGear width={20} height={20} />
+              </button>
+            )}
           </>
         </div>
       </div>

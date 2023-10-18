@@ -1,6 +1,6 @@
 .sideMenu {
   display: flex;
-  width: 530px;
+  width: 520px;
   flex-direction: column;
   background-color: #e2e1e1;
   color: #000;
@@ -55,8 +55,20 @@
   align-items: center;
 }
 
+.scrollable-menu {
+  overflow: hidden;
+}
+
+.scrollable-menu.scrollX {
+  overflow: auto hidden;
+
+  &::-webkit-scrollbar {
+    height: 1px;
+  }
+}
+
 .nav-button {
-  padding: 10px 20px;
+  padding: 10px 5px;
   font-size: 18px;
   background-color: transparent;
   border: none;

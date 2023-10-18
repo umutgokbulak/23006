@@ -8,7 +8,7 @@ import BallStops from './SideMenuOptions/BallStops';
 import IndexPage from './SideMenuOptions/IndexPage/IndexPage';
 import Numbers from './SideMenuOptions/Numbers';
 import SideMenuHeaderResponsive from './SideMenuHeaderResponsive';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function SideMenu({
   selectedItems,
@@ -26,19 +26,30 @@ export default function SideMenu({
   url,
   setItemQuantity,
   itemQuantity,
-  windowWidth
+  windowWidth,
 }) {
   const selectFeatures = ['Rims', 'Ball Stops', 'Turrets', 'Numbers', 'Index'];
   const [mouseEntered, setMouseEntered] = useState(true);
-  
 
   return (
     <m.div
-      initial={windowWidth < 1520 ? { scaleY: 0 } : { scaleX: 0 }}
-      animate={windowWidth < 1520 ? { scaleY: 1 } : { scaleX: 1 }}
-      exit={windowWidth < 1520 ? { scaleY: 0 } : { scaleX: 0 }}
-      transition={{ duration: 0.2 }}
-      className={`sideMenu ${mouseEntered ? 'scrollY' : ''}`}
+      initial={
+        windowWidth < 1520
+          ? { opacity: 0, scaleY: 0 }
+          : { opacity: 0, scaleX: 0 }
+      }
+      animate={
+        windowWidth < 1520
+          ? { opacity: 1, scaleY: 1 }
+          : { opacity: 1, scaleX: 1 }
+      }
+      exit={
+        windowWidth < 1520
+          ? { opacity: 0, scaleY: 0 }
+          : { opacity: 0, scaleX: 0 }
+      }
+      transition={{ duration: 0.3 }}
+      className={`sideMenu ${mouseEntered ? 'scrollY' : 'scrollX'}`}
       onMouseEnter={() => setMouseEntered(true)}
       onMouseLeave={() => setMouseEntered(false)}
     >
@@ -83,6 +94,8 @@ export default function SideMenu({
           handleNext={handleNext}
           handlePrevious={handlePrevious}
           currentPage={currentPage}
+          windowWidth={windowWidth}
+          mouseEntered={mouseEntered}
         />
       )}
 

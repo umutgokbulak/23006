@@ -58,7 +58,7 @@
   transition: background-color 0.2s linear;
   color: #ffffff;
   border-radius: 7px;
-  &:hover {
+  &:hover, &.active {
     background-color: rgba(177, 177, 177, 0.3);
   }
 }

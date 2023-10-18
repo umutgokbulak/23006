@@ -25,36 +25,21 @@ export default function BottomOptions({
   return (
     <LazyMotion features={domAnimation}>
       <div className='bottom-menu'>
-        <m.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.1 }}
-          className='spin bottom-option'
-        >
+        <div className='spin bottom-option'>
           <div className='bottom-option-header'>Spin</div>
           <div className='option-icon'>
             <SymbolIcon width={25} height={25} />
           </div>
-        </m.div>
+        </div>
 
-        <m.div
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.3 }}
-          className='play-game bottom-option'
-        >
+        <div className='play-game bottom-option'>
           <div className='bottom-option-header'>Play Game</div>
           <div className='option-icon'>
             <BsPlay />
           </div>
-        </m.div>
+        </div>
 
-        <m.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.7 }}
-          className='views bottom-option'
-        >
+        <div className='views bottom-option'>
           <div className='bottom-option-header'>Views</div>
           <div className='view-container'>
             <input
@@ -101,43 +86,28 @@ export default function BottomOptions({
             <input className='radio-btn' type='radio' name='radioGroup' />
             <input className='radio-btn' type='radio' name='radioGroup' />
           </div>
-        </m.div>
+        </div>
 
-        <m.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.7 }}
-          className='screenshot bottom-option'
-        >
+        <div className='screenshot bottom-option'>
           <div className='bottom-option-header'>Screenshot</div>
           <div className='option-icon'>
             <FiCamera onClick={handleScreenShot} />
           </div>
-        </m.div>
+        </div>
 
-        <m.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.1 }}
-          className='settings bottom-option'
-        >
+        <div className='settings bottom-option'>
           <div className='bottom-option-header'>Settings</div>
           <div className='option-icon'>
             <CiSettings />
           </div>
-        </m.div>
+        </div>
 
-        <m.div
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.3 }}
-          className='help bottom-option'
-        >
+        <div className='help bottom-option'>
           <div className='bottom-option-header'>Help</div>
           <div className='option-icon'>
             <BiHelpCircle />
           </div>
-        </m.div>
+        </div>
       </div>
     </LazyMotion>
   );

@@ -14,6 +14,7 @@ export default function ScreenshotModal({
         className='screenshot-modal'
       >
         <img src={screenshotImage} alt='screenshot' />
+
         <button onClick={closeModal} className='close-btn modal-btn'>
           Close
         </button>
