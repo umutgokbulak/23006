@@ -29,6 +29,7 @@
   .options-section {
     height: 100%;
     overflow: hidden;
+    padding: 0.5rem 0;
     &.scrollX {
       overflow: auto hidden;
     }
@@ -41,7 +42,6 @@
 
       & .turret-list {
         flex-wrap: nowrap;
-        gap: 0.3rem;
 
         & li {
           margin: 0 0.5rem;
@@ -51,8 +51,7 @@
         & .turret-img {
           height: 90px;
           width: 90px;
-        border-radius: 1rem;
-          padding: 1rem;
+          padding: 0.1rem;
         }
       }
 
