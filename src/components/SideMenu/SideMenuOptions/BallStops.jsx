@@ -1,10 +1,12 @@
 import { BiHelpCircle } from 'react-icons/bi';
-import { Fragment } from 'react';
+import { Fragment, memo } from 'react';
 import { m } from 'framer-motion';
 import ToolTip from './ToolTip';
 import ballStops from '../../../data/BallStops.json';
 
-export default function BallStops({
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+const BallStops = memo(function BallStops({
   onSelect,
   windowWidth,
   mouseEntered,
@@ -71,7 +73,8 @@ export default function BallStops({
                       );
                     }}
                   >
-                    <img
+                    <LazyLoadImage
+                      effect='blur'
                       src={item.imagePath}
                       alt=''
                       className='option-img ballstop'
@@ -98,4 +101,6 @@ export default function BallStops({
       </m.div>
     </section>
   );
-}
+});
+
+export default BallStops;

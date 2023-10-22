@@ -1,10 +1,12 @@
 import { BiHelpCircle } from 'react-icons/bi';
+import { Suspense, memo } from 'react';
 import turrets from '../../../data/Turrets.json';
 import ToolTip from './ToolTip';
 import { Fragment } from 'react';
 import { m } from 'framer-motion';
-
-export default function Turrets({
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+const Turrets = memo(function Turrets({
   onSelect,
   windowWidth,
   mouseEntered,
@@ -65,7 +67,8 @@ export default function Turrets({
                       );
                     }}
                   >
-                    <img
+                    <LazyLoadImage
+                      effect='blur'
                       className={`turret-img ${
                         url.turretId === item.id ? 'active' : ''
                       }`}
@@ -82,4 +85,6 @@ export default function Turrets({
       </m.div>
     </section>
   );
-}
+});
+
+export default Turrets;

@@ -2,8 +2,11 @@ import { BiHelpCircle } from 'react-icons/bi';
 import rims from '../../../data/Rims.json';
 import ToolTip from './ToolTip';
 import { m } from 'framer-motion';
+import { memo } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
-export default function Rims({
+const Rims = memo(function Rims({
   onSelect,
   windowWidth,
   mouseEntered,
@@ -56,11 +59,13 @@ export default function Rims({
                   }}
                 >
                   <li>
-                    <img
+                    <LazyLoadImage
+                      effect='blur'
                       src={item.imagePath}
                       alt={item.imageName}
                       className='option-img'
                     />
+
                     <p className='option-name'>{item.imageName}</p>
                   </li>
                 </ul>
@@ -71,4 +76,6 @@ export default function Rims({
       </div>
     </m.section>
   );
-}
+});
+
+export default Rims;

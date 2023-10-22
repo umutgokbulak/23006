@@ -1,8 +1,8 @@
 import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
 import MailFormModal from './MailFormModal';
-import { useState } from 'react';
+import { useState, memo } from 'react';
 
-export default function IndexPage({
+const IndexPage = memo(function IndexPage({
   selectedItems,
   focusBallTrack,
   focusTurrets,
@@ -98,4 +98,6 @@ export default function IndexPage({
       </m.section>
     </div>
   );
-}
+});
+
+export default IndexPage;

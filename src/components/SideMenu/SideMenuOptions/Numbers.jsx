@@ -1,9 +1,14 @@
+import { Suspense, memo } from 'react';
 import { useQueryParam, NumberParam } from 'use-query-params';
 
-export default function Numbers({ onChoose }) {
+const Numbers = memo(function Numbers({ onChoose }) {
   return (
-    <section className='options-section'>
-      <div className='options-container-numbers'></div>
-    </section>
+    <Suspense fallback={'FALAN FILAN'}>
+      <section className='options-section'>
+        <div className='options-container-numbers'></div>
+      </section>
+    </Suspense>
   );
-}
+});
+
+export default Numbers;

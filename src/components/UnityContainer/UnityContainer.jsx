@@ -1,11 +1,11 @@
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState, useEffect, lazy } from 'react';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import { BsGear } from 'react-icons/bs';
 import { Unity, useUnityContext } from 'react-unity-webgl';
 import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 import BottomOptionsMenu from '../BottomOptionsMenu/BottomOptions';
 import SideMenu from '../SideMenu/SideMenu';
-import Loader from '../Loader/Loader.jsx';
+import Loader from '../Utilities/Loader/Loader.jsx';
 import ScreenShotModal from './ScreenShotModal';
 import '../../mediaQueries.css';
 import './unityContainer.css';
