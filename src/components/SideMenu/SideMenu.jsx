@@ -3,22 +3,20 @@ import '../../mediaQueries.css';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 import { useState, lazy, Suspense } from 'react';
 
-const SkeletonLayout = lazy(async() =>
+const SkeletonLayout = lazy( () =>
   import('../Utilities/Skeleton/SkeletonLayout')
 );
-const SideMenuHeaderResponsive = lazy(async () =>
+const SideMenuHeaderResponsive = lazy( () =>
   import('./SideMenuHeaderResponsive')
 );
 
-const Rims = lazy(async () => import('./SideMenuOptions/Rims.jsx'));
-const BallStops = lazy(async () => import('./SideMenuOptions/BallStops.jsx'));
-const Turrets = lazy(async () => import('./SideMenuOptions/Turrets.jsx'));
-const Numbers = lazy(async () => import('./SideMenuOptions/Numbers.jsx'));
-const BallTracks = lazy(async () => import('./SideMenuOptions/BallTracks.jsx'));
-const Centre = lazy(async () => import('./SideMenuOptions/Centre.jsx'));
-const IndexPage = lazy(async () =>
-  import('./SideMenuOptions/IndexPage/IndexPage')
-);
+const Rims = lazy(() => import('./SideMenuOptions/Rims.jsx'));
+const BallStops = lazy(() => import('./SideMenuOptions/BallStops.jsx'));
+const Turrets = lazy(() => import('./SideMenuOptions/Turrets.jsx'));
+const Numbers = lazy(() => import('./SideMenuOptions/Numbers.jsx'));
+const BallTracks = lazy(() => import('./SideMenuOptions/BallTracks.jsx'));
+const Centre = lazy(() => import('./SideMenuOptions/Centre.jsx'));
+const IndexPage = lazy(() => import('./SideMenuOptions/IndexPage/IndexPage'));
 
 export default function SideMenu({
   selectedItems,

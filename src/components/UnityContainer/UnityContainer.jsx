@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect, lazy } from 'react';
+import { Fragment, useState, useEffect, lazy, Suspense } from 'react';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import { BsGear } from 'react-icons/bs';
 import { Unity, useUnityContext } from 'react-unity-webgl';
@@ -351,26 +351,28 @@ export default function UnityContainer({
       <AnimatePresence initial={false}>
         {openSideMenu && isLoaded && (
           <LazyMotion features={domAnimation}>
-            <SideMenu
-              selectedItems={selectedItems}
-              handleComponentSelect={handleComponentSelect}
-              isSideMenuOpen={openSideMenu}
-              focusBallStops={focusBallStops}
-              focusDefault={focusDefault}
-              focusNumbers={focusNumbers}
-              focusTurrets={focusTurrets}
-              handlePrevious={handlePrevious}
-              handleNext={handleNext}
-              selectedFeature={selectedFeature}
-              currentPage={currentPage}
-              handleFeatureSelect={handleFeatureSelect}
-              setUrl={setUrl}
-              url={url}
-              setItemQuantity={setItemQuantity}
-              itemQuantity={itemQuantity}
-              windowWidth={windowWidth}
-              changeMaterial={changeMaterial}
-            />
+            <Suspense fallback={<Loader />}>
+              <SideMenu
+                selectedItems={selectedItems}
+                handleComponentSelect={handleComponentSelect}
+                isSideMenuOpen={openSideMenu}
+                focusBallStops={focusBallStops}
+                focusDefault={focusDefault}
+                focusNumbers={focusNumbers}
+                focusTurrets={focusTurrets}
+                handlePrevious={handlePrevious}
+                handleNext={handleNext}
+                selectedFeature={selectedFeature}
+                currentPage={currentPage}
+                handleFeatureSelect={handleFeatureSelect}
+                setUrl={setUrl}
+                url={url}
+                setItemQuantity={setItemQuantity}
+                itemQuantity={itemQuantity}
+                windowWidth={windowWidth}
+                changeMaterial={changeMaterial}
+              />
+            </Suspense>
           </LazyMotion>
         )}
       </AnimatePresence>

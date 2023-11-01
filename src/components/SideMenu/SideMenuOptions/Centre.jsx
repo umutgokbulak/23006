@@ -60,7 +60,7 @@ const Centre = memo(function Centre({
                       },
                       'replaceIn'
                     );
-                    changeMaterial(`centre-${item.imageName}`);
+                    changeMaterial(`centre-${url.centreName}`);
                   }}
                 >
                   <li>

@@ -59,7 +59,7 @@ const Rims = memo(function Rims({
                       },
                       'replaceIn'
                     );
-                    changeMaterial(`toprim-${item.imageName}`);
+                    changeMaterial(`toprim-${url.rimName}`);
                   }}
                 >
                   <li>

@@ -10,7 +10,6 @@ export default function SideMenuHeaderResponsive({
   handleNext,
   currentPage,
   windowWidth,
-  mouseEntered,
 }) {
   const menuItems = [
     'Rims',
