@@ -12,6 +12,7 @@ const Turrets = memo(function Turrets({
   mouseEntered,
   setUrl,
   url,
+  changeMaterial,
 }) {
   const handleItemClick = (itemID, itemImage, itemImageName, itemStyle) => {
     onSelect({

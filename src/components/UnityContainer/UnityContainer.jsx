@@ -19,6 +19,7 @@ export default function UnityContainer({
   handleComponentSelect,
   setItemQuantity,
   itemQuantity,
+  handleHelp,
 }) {
   const [openSideMenu, setOpenSideMenu] = useState(true);
   const [screenshotModalOpen, setScreenshotModalOpen] = useState(false);
@@ -40,6 +41,7 @@ export default function UnityContainer({
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  //
 
   const {
     unityProvider,
@@ -63,8 +65,9 @@ export default function UnityContainer({
       updateSelectedFeature(currentPage - 1);
     }
   };
+
   const handleNext = () => {
-    if (currentPage < 5) {
+    if (currentPage < 7) {
       setCurrentPage(currentPage + 1);
       updateSelectedFeature(currentPage + 1);
     }
@@ -77,21 +80,31 @@ export default function UnityContainer({
         break;
 
       case 2:
-        setSelectedFeature('Ball Stops');
+        setSelectedFeature('Ball Tracks');
         focusBallTrack();
         break;
 
       case 3:
+        setSelectedFeature('Centre');
+        focusCentre();
+        break;
+
+      case 4:
+        setSelectedFeature('Ball Stops');
+        focusBallStops();
+        break;
+
+      case 5:
         setSelectedFeature('Turrets');
         focusTurrets();
         break;
 
-      case 4:
+      case 6:
         setSelectedFeature('Numbers');
         focusNumbers();
         break;
 
-      case 5:
+      case 7:
         setSelectedFeature('Index');
         focusDefault();
         break;
@@ -104,26 +117,36 @@ export default function UnityContainer({
     switch (e.target.value) {
       case 'Rims':
         setCurrentPage(1);
-
+        focusRims();
         break;
 
-      case 'Ball Stops':
+      case 'Ball Tracks':
         setCurrentPage(2);
         focusBallTrack();
         break;
 
-      case 'Turrets':
+      case 'Centre':
         setCurrentPage(3);
+        focusCentre();
+        break;
+
+      case 'Ball Stops':
+        setCurrentPage(4);
+        focusBallStops();
+        break;
+
+      case 'Turrets':
+        setCurrentPage(5);
         focusTurrets();
         break;
 
       case 'Numbers':
-        setCurrentPage(4);
+        setCurrentPage(6);
         focusNumbers();
         break;
 
       case 'Index':
-        setCurrentPage(5);
+        setCurrentPage(7);
         focusDefault();
         break;
 
@@ -131,7 +154,7 @@ export default function UnityContainer({
         break;
     }
   };
-
+  // DYMAMIC DEVICE PIXEL RATIO
   const [devicePixelRatio, setDevicePixelRatio] = useState(
     window.devicePixelRatio
   );
@@ -152,7 +175,7 @@ export default function UnityContainer({
     },
     [devicePixelRatio]
   );
-
+  //
   //SCREENSHOT
   function handleScreenShot() {
     if (isLoaded == false) return;
@@ -174,32 +197,71 @@ export default function UnityContainer({
     setScreenshotModalOpen(false);
   }
 
+  // CAMERA FOCUS ANIMATION FUNCTIONS
+
+  function focusRims() {
+    setSelectedFeature('Rims');
+    setCurrentPage(1);
+  }
+
+  function focusBallTrack() {
+    setSelectedFeature('Ball Tracks');
+    setCurrentPage(2);
+  }
+
+  function focusCentre() {
+    setSelectedFeature('Centre');
+    setCurrentPage(3);
+  }
+
+  function focusBallStops() {
+    sendMessage('Cameras', 'FocusOnBallTrack');
+    setSelectedFeature('Ball Stops');
+    setCurrentPage(4);
+  }
   function focusTurrets() {
     sendMessage('Cameras', 'FocusOnTurrets');
     setSelectedFeature('Turrets');
-    setCurrentPage(3);
-  }
-  function focusBallTrack() {
-    sendMessage('Cameras', 'FocusOnBallTrack');
-    setSelectedFeature('Ball Stops');
-    setCurrentPage(2);
+    setCurrentPage(5);
   }
   function focusNumbers() {
     sendMessage('Cameras', 'FocusOnWheelNumbers');
     setSelectedFeature('Numbers');
-    setCurrentPage(4);
+    setCurrentPage(6);
   }
   function focusDefault() {
     sendMessage('Cameras', 'UnFocusFromTarget');
     setSelectedFeature('Index');
-    setCurrentPage(5);
+    setCurrentPage(7);
   }
+  //
+
+  // CHANGINGMATERIAL FUNCTION
+  function changeMaterial(partNmaterial) {
+    sendMessage('ConfigurationManager', 'ChangeMaterialOf', partNmaterial);
+  }
+
+  //
+
+  // SPINING ROULETTE ANIMATION
+  const [changeSpin, setChangeSpin] = useState(false);
+
+  function spinRoulette() {
+    sendMessage('AnimationManager', 'RotateAroundAxis');
+    setChangeSpin(true);
+  }
+
+  function stopRouletteSpin() {
+    sendMessage('AnimationManager', 'StopRotation');
+    setChangeSpin(false);
+  }
+  //
 
   //LOADING PERCENTAGE
   const loadingPercentage = Math.round(loadingProgression * 100);
   // //
   return (
-    <Fragment>
+    <>
       <div className='unity-container'>
         <div className='configurator'>
           {isLoaded == false && (
@@ -222,13 +284,17 @@ export default function UnityContainer({
               <BottomOptionsMenu
                 focusDefault={focusDefault}
                 focusTurrets={focusTurrets}
-                focusBallTrack={focusBallTrack}
+                focusBallStops={focusBallStops}
                 focusNumbers={focusNumbers}
                 handleScreenShot={handleScreenShot}
                 setCurrentPage={setCurrentPage}
                 setSelectedFeature={setSelectedFeature}
                 selectedFeature={selectedFeature}
                 currentPage={currentPage}
+                spinRoulette={spinRoulette}
+                handleHelp={handleHelp}
+                changeSpin={changeSpin}
+                stopRouletteSpin={stopRouletteSpin}
               />
             )}
 
@@ -237,7 +303,7 @@ export default function UnityContainer({
                 <BottomOptionsSide
                   focusDefault={focusDefault}
                   focusTurrets={focusTurrets}
-                  focusBallTrack={focusBallTrack}
+                  focusBallStops={focusBallStops}
                   focusNumbers={focusNumbers}
                   handleScreenShot={handleScreenShot}
                   setCurrentPage={setCurrentPage}
@@ -247,6 +313,10 @@ export default function UnityContainer({
                   openOptions={openOptions}
                   isLoaded={isLoaded}
                   isSideMenuOpen={openSideMenu}
+                  spinRoulette={spinRoulette}
+                  handleHelp={handleHelp}
+                  changeSpin={changeSpin}
+                  stopRouletteSpin={stopRouletteSpin}
                 />
               )}
             </AnimatePresence>
@@ -256,7 +326,10 @@ export default function UnityContainer({
                 className={`sideMenu-btn ${openSideMenu ? 'active' : ''}`}
                 onClick={() => setOpenSideMenu((prev) => !prev)}
               >
-                <DotsVerticalIcon width={20} height={20} />
+                <DotsVerticalIcon
+                  width={20}
+                  height={20}
+                />
               </button>
             )}
 
@@ -265,7 +338,10 @@ export default function UnityContainer({
                 className={`bottomMenu-btn ${openOptions ? 'active' : ''}`}
                 onClick={() => setOpenOptions((prev) => !prev)}
               >
-                <BsGear width={20} height={20} />
+                <BsGear
+                  width={20}
+                  height={20}
+                />
               </button>
             )}
           </>
@@ -279,7 +355,7 @@ export default function UnityContainer({
               selectedItems={selectedItems}
               handleComponentSelect={handleComponentSelect}
               isSideMenuOpen={openSideMenu}
-              focusBallTrack={focusBallTrack}
+              focusBallStops={focusBallStops}
               focusDefault={focusDefault}
               focusNumbers={focusNumbers}
               focusTurrets={focusTurrets}
@@ -293,6 +369,7 @@ export default function UnityContainer({
               setItemQuantity={setItemQuantity}
               itemQuantity={itemQuantity}
               windowWidth={windowWidth}
+              changeMaterial={changeMaterial}
             />
           </LazyMotion>
         )}
@@ -307,6 +384,6 @@ export default function UnityContainer({
           />
         )}
       </AnimatePresence>
-    </Fragment>
+    </>
   );
 }

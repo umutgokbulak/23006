@@ -3,9 +3,11 @@ import { Fragment, memo } from 'react';
 import { m } from 'framer-motion';
 import ToolTip from './ToolTip';
 import ballStops from '../../../data/BallStops.json';
-
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+
+
+
 const BallStops = memo(function BallStops({
   onSelect,
   windowWidth,
@@ -13,6 +15,7 @@ const BallStops = memo(function BallStops({
   url,
   setUrl,
   setItemQuantity,
+  changeMaterial,
   itemQuantity,
 }) {
   const handleItemClick = (itemID, itemImage, itemImageName, itemStyle) => {
@@ -43,7 +46,10 @@ const BallStops = memo(function BallStops({
             <div className='style-container'>
               <div className='option-style'>
                 {style.styleType}
-                <ToolTip className='tooltip-ballstop' text={style.description}>
+                <ToolTip
+                  className='tooltip-ballstop'
+                  text={style.description}
+                >
                   <BiHelpCircle className='side-options-icon' />
                 </ToolTip>
               </div>

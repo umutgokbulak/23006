@@ -1,16 +1,21 @@
 import './sideMenu.css';
 import '../../mediaQueries.css';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
-import { m } from 'framer-motion';
 import { useState, lazy, Suspense } from 'react';
-import SideMenuHeaderResponsive from './SideMenuHeaderResponsive';
-import Skeleton from '../Utilities/Skeleton/Skeleton';
-import SkeletonLayout from '../Utilities/Skeleton/SkeletonLayout';
+
+const SkeletonLayout = lazy(async() =>
+  import('../Utilities/Skeleton/SkeletonLayout')
+);
+const SideMenuHeaderResponsive = lazy(async () =>
+  import('./SideMenuHeaderResponsive')
+);
 
 const Rims = lazy(async () => import('./SideMenuOptions/Rims.jsx'));
 const BallStops = lazy(async () => import('./SideMenuOptions/BallStops.jsx'));
 const Turrets = lazy(async () => import('./SideMenuOptions/Turrets.jsx'));
 const Numbers = lazy(async () => import('./SideMenuOptions/Numbers.jsx'));
+const BallTracks = lazy(async () => import('./SideMenuOptions/BallTracks.jsx'));
+const Centre = lazy(async () => import('./SideMenuOptions/Centre.jsx'));
 const IndexPage = lazy(async () =>
   import('./SideMenuOptions/IndexPage/IndexPage')
 );
@@ -25,35 +30,28 @@ export default function SideMenu({
   selectedFeature,
   focusNumbers,
   focusTurrets,
-  focusBallTrack,
+  focusBallStops,
   focusDefault,
   setUrl,
   url,
   setItemQuantity,
   itemQuantity,
   windowWidth,
+  changeMaterial,
 }) {
-  const selectFeatures = ['Rims', 'Ball Stops', 'Turrets', 'Numbers', 'Index'];
+  const selectFeatures = [
+    'Rims',
+    'Ball Tracks',
+    'Centre',
+    'Ball Stops',
+    'Turrets',
+    'Numbers',
+    'Index',
+  ];
   const [mouseEntered, setMouseEntered] = useState(true);
 
   return (
-    <m.div
-      initial={
-        windowWidth < 1520
-          ? { opacity: 0, scaleY: 0 }
-          : { opacity: 0, scaleX: 0 }
-      }
-      animate={
-        windowWidth < 1520
-          ? { opacity: 1, scaleY: 1 }
-          : { opacity: 1, scaleX: 1 }
-      }
-      exit={
-        windowWidth < 1520
-          ? { opacity: 0, scaleY: 0 }
-          : { opacity: 0, scaleX: 0 }
-      }
-      transition={{ duration: 0.3 }}
+    <div
       className={`sideMenu ${mouseEntered ? 'scrollY' : 'scrollX'}`}
       onMouseEnter={() => setMouseEntered(true)}
       onMouseLeave={() => setMouseEntered(false)}
@@ -76,7 +74,10 @@ export default function SideMenu({
             id='feature-Select'
           >
             {selectFeatures.map((feature) => (
-              <option key={feature} value={feature}>
+              <option
+                key={feature}
+                value={feature}
+              >
                 {feature}
               </option>
             ))}
@@ -85,14 +86,14 @@ export default function SideMenu({
           <button
             className='page-up btn icon'
             onClick={handleNext}
-            disabled={currentPage === 5}
+            disabled={currentPage === 7}
           >
             <BsArrowRight className='icon' />
           </button>
         </div>
       ) : (
         <SideMenuHeaderResponsive
-          focusBallTrack={focusBallTrack}
+          focusBallStops={focusBallStops}
           focusTurrets={focusTurrets}
           focusNumbers={focusNumbers}
           focusDefault={focusDefault}
@@ -112,11 +113,38 @@ export default function SideMenu({
             onSelect={(item) => handleComponentSelect('Rims', item)}
             setUrl={setUrl}
             url={url}
+            changeMaterial={changeMaterial}
           />
         </Suspense>
       )}
 
-      {selectedFeature === 'Ball Stops' && currentPage === 2 && (
+      {selectedFeature === 'Ball Tracks' && currentPage === 2 && (
+        <Suspense fallback={<SkeletonLayout />}>
+          <BallTracks
+            windowWidth={windowWidth}
+            mouseEntered={mouseEntered}
+            onSelect={(item) => handleComponentSelect('BallTracks', item)}
+            setUrl={setUrl}
+            url={url}
+            changeMaterial={changeMaterial}
+          />
+        </Suspense>
+      )}
+
+      {selectedFeature === 'Centre' && currentPage === 3 && (
+        <Suspense fallback={<SkeletonLayout />}>
+          <Centre
+            windowWidth={windowWidth}
+            mouseEntered={mouseEntered}
+            onSelect={(item) => handleComponentSelect('Centre', item)}
+            setUrl={setUrl}
+            url={url}
+            changeMaterial={changeMaterial}
+          />
+        </Suspense>
+      )}
+
+      {selectedFeature === 'Ball Stops' && currentPage === 4 && (
         <Suspense fallback={<SkeletonLayout />}>
           <BallStops
             windowWidth={windowWidth}
@@ -126,35 +154,38 @@ export default function SideMenu({
             url={url}
             setItemQuantity={setItemQuantity}
             itemQuantity={itemQuantity}
+            changeMaterial={changeMaterial}
           />
         </Suspense>
       )}
 
-      {selectedFeature === 'Turrets' && currentPage === 3 && (
+      {selectedFeature === 'Turrets' && currentPage === 5 && (
         <Suspense fallback={<SkeletonLayout />}>
           <Turrets
             windowWidth={windowWidth}
             mouseEntered={mouseEntered}
             onSelect={(item) => handleComponentSelect('Turrets', item)}
             setUrl={setUrl}
+            changeMaterial={changeMaterial}
             url={url}
           />
         </Suspense>
       )}
 
-      {selectedFeature === 'Numbers' && currentPage === 4 && (
+      {selectedFeature === 'Numbers' && currentPage === 6 && (
         <Suspense fallback={<SkeletonLayout />}>
           <Numbers
             windowWidth={windowWidth}
             mouseEntered={mouseEntered}
             onSelect={(item) => handleComponentSelect('Numbers', item)}
             setUrl={setUrl}
+            changeMaterial={changeMaterial}
             url={url}
           />
         </Suspense>
       )}
 
-      {selectedFeature === 'Index' && currentPage === 5 && (
+      {selectedFeature === 'Index' && currentPage === 7 && (
         <Suspense fallback={<SkeletonLayout />}>
           <IndexPage
             mouseEntered={mouseEntered}
@@ -162,10 +193,10 @@ export default function SideMenu({
             selectedItems={selectedItems}
             focusNumbers={focusNumbers}
             focusTurrets={focusTurrets}
-            focusBallTrack={focusBallTrack}
+            focusBallStops={focusBallStops}
           />
         </Suspense>
       )}
-    </m.div>
+    </div>
   );
 }

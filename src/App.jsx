@@ -2,8 +2,10 @@ import UnityContainer from './components/UnityContainer/UnityContainer';
 import './App.css';
 import { useState, useEffect } from 'react';
 import { useQueryParams, NumberParam, StringParam } from 'use-query-params';
+import UserTutorial from './components/BottomOptionsMenu/UserTutorial';
 
 export default function App() {
+  const [openHelp, setOpenHelp] = useState(false);
   const [itemQuantity, setItemQuantity] = useState(8);
   const [selectedItems, setSelectedItems] = useState({
     Numbers: {
@@ -20,16 +22,22 @@ export default function App() {
       style: '',
       quantity: itemQuantity,
     },
-    // BallTrack: {
-    //   id: null,
-    //   imagePath: '',
-    //   imageName: '',
-    //   style: '',
-    // },
+
     Rims: {
       id: null,
       imagePath: '',
       imageName: '',
+    },
+    BallTracks: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+    },
+    Centre:{
+      id: null,
+      imagePath: '',
+      imageName: '',
+      inlayQuantity: '8',
     },
 
     Turrets: {
@@ -40,11 +48,26 @@ export default function App() {
     },
   });
 
+  function handleHelp() {
+    setOpenHelp((prev) => !prev);
+  }
+
   const [url, setUrl] = useQueryParams({
     rimId: NumberParam,
     rimImg: StringParam,
     rimName: StringParam,
     // rimStyle: StringParam,
+
+
+    ballTrackId: NumberParam,
+    ballTrackImg: StringParam,
+    ballTrackName: StringParam,
+    // ballTrackStyle: StringParam,
+
+    centreId :  NumberParam,
+    centreImg : StringParam,
+    centreName : StringParam,
+    // centreInlayQuantity : NumberParam,
 
     ballStopId: NumberParam,
     ballStopQ: NumberParam,
@@ -128,6 +151,7 @@ export default function App() {
 
   return (
     <div className='App'>
+      {openHelp && <UserTutorial handleHelp={handleHelp} />}
       <UnityContainer
         selectedItems={selectedItems}
         handleComponentSelect={handleComponentSelect}
@@ -135,6 +159,7 @@ export default function App() {
         url={url}
         setItemQuantity={setItemQuantity}
         itemQuantity={itemQuantity}
+        handleHelp={handleHelp}
       />
     </div>
   );

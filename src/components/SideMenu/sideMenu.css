@@ -50,7 +50,7 @@
 
 .menu-container {
   display: flex;
-  min-width: 615px;
+  min-width: 772px;
   justify-content: space-between;
   align-items: center;
 }

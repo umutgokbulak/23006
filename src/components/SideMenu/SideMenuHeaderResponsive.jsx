@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 
 export default function SideMenuHeaderResponsive({
-  focusBallTrack,
+  focusBallStops,
   focusTurrets,
   focusNumbers,
   focusDefault,
@@ -12,7 +12,15 @@ export default function SideMenuHeaderResponsive({
   windowWidth,
   mouseEntered,
 }) {
-  const menuItems = ['Rims', 'Ball Stops', 'Turrets', 'Numbers', 'Index'];
+  const menuItems = [
+    'Rims',
+    'Ball Tracks',
+    'Centre',
+    'Ball Stops',
+    'Turrets',
+    'Numbers',
+    'Index',
+  ];
   const [activeItem, setActiveItem] = useState('Rims');
 
   useEffect(() => {
@@ -22,7 +30,7 @@ export default function SideMenuHeaderResponsive({
 
   const handleActiveItem = (item) => {
     item === 'Ball Stops'
-      ? focusBallTrack()
+      ? focusBallStops()
       : item === 'Turrets'
       ? focusTurrets()
       : item === 'Numbers'
@@ -35,11 +43,7 @@ export default function SideMenuHeaderResponsive({
   };
 
   return (
-    <div
-      className={`scrollable-menu ${
-        windowWidth < 590  ? 'scrollX' : ''
-      }`}
-    >
+    <div className={`scrollable-menu ${windowWidth < 771 ? 'scrollX' : ''}`}>
       <div className='menu-container'>
         <button
           className='nav-button page-down btn'
@@ -62,7 +66,7 @@ export default function SideMenuHeaderResponsive({
         <button
           className='nav-button page-down btn'
           onClick={handleNext}
-          disabled={currentPage === 5}
+          disabled={currentPage === 7}
         >
           <BsArrowRight className='icon' />
         </button>

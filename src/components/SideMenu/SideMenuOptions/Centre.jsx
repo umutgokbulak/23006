@@ -1,11 +1,12 @@
 import { BiHelpCircle } from 'react-icons/bi';
-import rims from '../../../data/Rims.json';
+import centre from '../../../data/Centre.json';
 import ToolTip from './ToolTip';
 import { m } from 'framer-motion';
 import { memo } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-const Rims = memo(function Rims({
+
+const Centre = memo(function Centre({
   onSelect,
   windowWidth,
   mouseEntered,
@@ -33,33 +34,33 @@ const Rims = memo(function Rims({
       <div className='options-container'>
         <div className='style-container'>
           <div className='option-style'>
-            {rims.styles[0].styleType}
-            <ToolTip text={rims.styles[0].description}>
+            {centre.styles[0].styleType}
+            <ToolTip text={centre.styles[0].description}>
               <BiHelpCircle className='side-options-icon' />
             </ToolTip>
           </div>
           <div className='option-list'>
-            {rims.styles[0].items.map((item) => (
+            {centre.styles[0].items.map((item) => (
               <div
                 className='option'
                 key={item.imageName}
               >
                 <ul
                   className={`option-rim ${
-                    url.rimId === item.id ? 'active' : ''
+                    url.centreId === item.id ? 'active' : ''
                   }`}
                   onClick={() => {
                     handleItemClick(item.id, item.imagePath, item.imageName);
                     setUrl(
                       {
-                        rimId: item.id,
-                        rimImg: item.imagePath,
-                        rimName: item.imageName,
-                        // rimStyle: item.style,
+                        centreId: item.id,
+                        centreImg: item.imagePath,
+                        centreName: item.imageName,
+                        // centretyle: item.style,
                       },
                       'replaceIn'
                     );
-                    changeMaterial(`toprim-${item.imageName}`);
+                    changeMaterial(`centre-${item.imageName}`);
                   }}
                 >
                   <li>
@@ -82,4 +83,4 @@ const Rims = memo(function Rims({
   );
 });
 
-export default Rims;
+export default Centre;

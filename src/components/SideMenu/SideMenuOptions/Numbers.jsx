@@ -1,7 +1,7 @@
 import { Suspense, memo } from 'react';
 import { useQueryParam, NumberParam } from 'use-query-params';
 
-const Numbers = memo(function Numbers({ onChoose }) {
+const Numbers = memo(function Numbers({ onChoose, changeMaterial }) {
   return (
     <Suspense fallback={'FALAN FILAN'}>
       <section className='options-section'>

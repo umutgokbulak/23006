@@ -1,57 +1,56 @@
 {
   "styles": [
     {
-      "optionName": "toprim",
-      "styleType": "Gloss Finishes",
-      "description": "The lacquered top section of the roulette wheel. Like centre and ball track, this can be veneered, finished in a single colour, or hand-painted with a custom design.",
+      "styleType": "Signature Style",
+      "description": "The lacquered area between the outer rim and the number ring. Like the centre and top rim, this can be veneered, finished in a single colourm or hand-painted with a custom design.",
       "items": [
         {
-          "id": 0,
+          "id": 20,
           "imagePath": "/assets/Rims/rimMahogany.png",
           "imageName": "Mahogany"
         },
         {
-          "id": 1,
+          "id": 21,
           "imagePath": "/assets/Rims/rimIndian.png",
           "imageName": "Indian"
         },
         {
-          "id": 2,
+          "id": 22,
           "imagePath": "/assets/Rims/rimWalnut.png",
           "imageName": "Walnut"
         },
         {
-          "id": 3,
+          "id": 23,
           "imagePath": "/assets/Rims/rimCherry.png",
           "imageName": "Cherry"
         },
         {
-          "id": 4,
+          "id": 24,
           "imagePath": "/assets/Rims/rimMaple.png",
           "imageName": "Maple"
         },
         {
-          "id": 5,
+          "id": 25,
           "imagePath": "/assets/Rims/rimEbony.png",
           "imageName": "Ebony"
         },
         {
-          "id": 6,
+          "id": 26,
           "imagePath": "/assets/Rims/rimOak.png",
           "imageName": "Oak"
         },
         {
-          "id": 7,
+          "id": 27,
           "imagePath": "/assets/Rims/rimElm.png",
           "imageName": "Elm"
         },
         {
-          "id": 8,
+          "id": 28,
           "imagePath": "/assets/Rims/rimSantos.png",
           "imageName": "Santos"
         },
         {
-          "id": 9,
+          "id": 29,
           "imagePath": "/assets/Rims/rimSapele.png",
           "imageName": "Sapele"
         }

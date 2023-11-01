@@ -211,8 +211,7 @@
 .index-container {
   width: 395px;
   padding: 0;
-  margin: 2rem 0;
-  font-weight: 400;
+  margin: 0.3rem 0;
   font-size: 0.9rem;
   cursor: auto;
 }

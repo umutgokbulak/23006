@@ -4,7 +4,7 @@ import { useState, memo } from 'react';
 
 const IndexPage = memo(function IndexPage({
   selectedItems,
-  focusBallTrack,
+  focusBallStops,
   focusTurrets,
   focusNumbers,
   windowWidth,
@@ -42,7 +42,7 @@ const IndexPage = memo(function IndexPage({
                       alt={selectedItem.imageName}
                       onClick={
                         componentName === 'BallStops'
-                          ? focusBallTrack
+                          ? focusBallStops
                           : componentName === 'Turrets'
                           ? focusTurrets
                           : componentName === 'Numbers'
@@ -51,14 +51,23 @@ const IndexPage = memo(function IndexPage({
                       }
                     />
                     <p className='chosen-text'>
-                      {componentName === 'Rims' &&
-                        `${selectedItem.imageName} Top Rim`}
-                      {componentName === 'BallStops' &&
-                        `x${selectedItem.quantity} ${selectedItem.style} Ball Stops in ${selectedItem.imageName}`}
-                      {componentName === 'Turrets' &&
-                        `${selectedItem.style} Turret, ${selectedItem.imageName}`}
                       {componentName === 'Numbers' &&
                         `${componentName} Top Rim`}
+
+                      {componentName === 'Rims' &&
+                        `${selectedItem.imageName} Top Rim`}
+
+                      {componentName === 'BallStops' &&
+                        `x${selectedItem.quantity} ${selectedItem.style} Ball Stops in ${selectedItem.imageName}`}
+
+                      {componentName === 'Turrets' &&
+                        `${selectedItem.style} Turret, ${selectedItem.imageName}`}
+
+                      {componentName === 'BallTracks' &&
+                        `${selectedItem.imageName} Ball Track with 8 Black Inlays`}
+
+                      {componentName === 'Centre' &&
+                        `${selectedItem.imageName} Centre with 8 Black Inlays`}
                     </p>
                   </div>
                 ) : (

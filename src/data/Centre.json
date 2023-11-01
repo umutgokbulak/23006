@@ -1,57 +1,56 @@
 {
   "styles": [
     {
-      "optionName": "toprim",
-      "styleType": "Gloss Finishes",
-      "description": "The lacquered top section of the roulette wheel. Like centre and ball track, this can be veneered, finished in a single colour, or hand-painted with a custom design.",
+      "styleType": "Signature Style",
+      "description": "The lacquered central area inside the pocket ring and beneath the turret. This section is conical when traditional double radius separators require a curved dome.",
       "items": [
         {
-          "id": 0,
+          "id": 30,
           "imagePath": "/assets/Rims/rimMahogany.png",
           "imageName": "Mahogany"
         },
         {
-          "id": 1,
+          "id": 31,
           "imagePath": "/assets/Rims/rimIndian.png",
           "imageName": "Indian"
         },
         {
-          "id": 2,
+          "id": 32,
           "imagePath": "/assets/Rims/rimWalnut.png",
           "imageName": "Walnut"
         },
         {
-          "id": 3,
+          "id": 33,
           "imagePath": "/assets/Rims/rimCherry.png",
           "imageName": "Cherry"
         },
         {
-          "id": 4,
+          "id": 34,
           "imagePath": "/assets/Rims/rimMaple.png",
           "imageName": "Maple"
         },
         {
-          "id": 5,
+          "id": 35,
           "imagePath": "/assets/Rims/rimEbony.png",
           "imageName": "Ebony"
         },
         {
-          "id": 6,
+          "id": 36,
           "imagePath": "/assets/Rims/rimOak.png",
           "imageName": "Oak"
         },
         {
-          "id": 7,
+          "id": 37,
           "imagePath": "/assets/Rims/rimElm.png",
           "imageName": "Elm"
         },
         {
-          "id": 8,
+          "id": 38,
           "imagePath": "/assets/Rims/rimSantos.png",
           "imageName": "Santos"
         },
         {
-          "id": 9,
+          "id": 39,
           "imagePath": "/assets/Rims/rimSapele.png",
           "imageName": "Sapele"
         }

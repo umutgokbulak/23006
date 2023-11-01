@@ -1,14 +1,15 @@
 import { CiSettings } from 'react-icons/ci';
 import { BsPlay, BsPlayFill } from 'react-icons/bs';
-import { BiHelpCircle } from 'react-icons/bi';
+import { BiHelpCircle, BiStop } from 'react-icons/bi';
 import { FiCamera } from 'react-icons/fi';
 import { SymbolIcon } from '@radix-ui/react-icons';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
+import { useState } from 'react';
 
 export default function BottomOptionsSide({
   focusDefault,
   focusTurrets,
-  focusBallTrack,
+  focusBallStops,
   focusNumbers,
   currentPage,
   handleScreenShot,
@@ -17,11 +18,18 @@ export default function BottomOptionsSide({
   openOptions,
   isLoaded,
   isSideMenuOpen,
+  handleHelp,
+  spinRoulette,
+  stopRouletteSpin,
+  changeSpin,
 }) {
   function handleRims() {
     setSelectedFeature('Rims');
     setCurrentPage(1);
   }
+
+  const [openSettings, setOpenSettings] = useState(false);
+
   return (
     <>
       {openOptions && (
@@ -39,13 +47,19 @@ export default function BottomOptionsSide({
           >
             <m.div className='side-options'>
               <div className='side-option spin'>
-                <div className='side-option-text'>Spin</div>
-                <div>
-                  <SymbolIcon
-                    width={30}
-                    height={40}
-                    className='side-option-icon'
-                  />
+                <div className='side-option-text'>
+                  {changeSpin ? 'Stop' : 'Spin'}
+                </div>
+                <div className='side-option-icon'>
+                  {!changeSpin ? (
+                    <SymbolIcon
+                      onClick={spinRoulette}
+                      width={25}
+                      height={25}
+                    />
+                  ) : (
+                    <BiStop onClick={stopRouletteSpin} />
+                  )}
                 </div>
               </div>
               <div className='side-option play'>
@@ -64,15 +78,27 @@ export default function BottomOptionsSide({
                 </div>
               </div>
               <div className='side-option settings'>
+                {openOptions && (
+                  <QualitySettingsSide
+                    classes='quality-side'
+                    openSettings={openSettings}
+                  />
+                )}
                 <div className='side-option-text'>Settings</div>
                 <div>
-                  <CiSettings className='side-option-icon' />
+                  <CiSettings
+                    className='side-option-icon'
+                    onClick={() => setOpenSettings((prev) => !prev)}
+                  />
                 </div>
               </div>
               <div className='side-option help'>
                 <div className='side-option-text'>Help</div>
                 <div className='side-option-icon'>
-                  <BiHelpCircle className='side-option-icon' />
+                  <BiHelpCircle
+                    className='side-option-icon'
+                    onClick={handleHelp}
+                  />
                 </div>
               </div>
             </m.div>
@@ -104,7 +130,7 @@ export default function BottomOptionsSide({
               name='radioGroup'
               id='ballstops'
               checked={currentPage === 2}
-              onChange={focusBallTrack}
+              onChange={focusBallStops}
             />
             <input
               className='radio-btn'
@@ -130,11 +156,37 @@ export default function BottomOptionsSide({
               checked={currentPage === 5}
               onChange={focusDefault}
             />
-            <input className='radio-btn' type='radio' name='radioGroup' />
-            <input className='radio-btn' type='radio' name='radioGroup' />
+            <input
+              className='radio-btn'
+              type='radio'
+              name='radioGroup'
+            />
+            <input
+              className='radio-btn'
+              type='radio'
+              name='radioGroup'
+            />
           </div>
         </div>
       )}
     </>
   );
+}
+
+function QualitySettingsSide({ openSettings, classes }) {
+  return openSettings ? (
+    <m.div
+      initial={{ opacity: 0, x: -5 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.2 }}
+      exit={{ opacity: 0, x: -10 }}
+      className={`quality-settings ${classes}`}
+    >
+      <div className='quality-options'>
+        <div className='quality-option low'>Low</div>
+        <div className='quality-option medium'>Medium</div>
+        <div className='quality-option high'>High</div>
+      </div>
+    </m.div>
+  ) : null;
 }

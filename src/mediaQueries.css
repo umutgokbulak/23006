@@ -113,7 +113,7 @@
 
   section.index-section {
     height: 200px;
-    min-width: 1038px;
+    min-width: 1361px;
     flex-direction: row;
 
     & .divider-index {
@@ -130,6 +130,13 @@
 
         & .chosen-option {
           padding: 1.1rem;
+
+          & .BallStops,
+          & .Centre,
+          & .BallTracks,
+          & .Rims {
+            width: 160px;
+          }
         }
 
         & .Rims {
