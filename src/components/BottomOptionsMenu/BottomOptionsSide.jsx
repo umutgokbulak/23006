@@ -22,6 +22,9 @@ export default function BottomOptionsSide({
   spinRoulette,
   stopRouletteSpin,
   changeSpin,
+  changeQualityLow,
+  changeQualityMedium,
+  changeQualityHigh,
 }) {
   function handleRims() {
     setSelectedFeature('Rims');
@@ -80,8 +83,11 @@ export default function BottomOptionsSide({
               <div className='side-option settings'>
                 {openOptions && (
                   <QualitySettingsSide
-                    classes='quality-side'
+                    changeQualityLow={changeQualityLow}
+                    changeQualityMedium={changeQualityMedium}
+                    changeQualityHigh={changeQualityHigh}
                     openSettings={openSettings}
+                    classes='quality-side'
                   />
                 )}
                 <div className='side-option-text'>Settings</div>
@@ -173,7 +179,13 @@ export default function BottomOptionsSide({
   );
 }
 
-function QualitySettingsSide({ openSettings, classes }) {
+function QualitySettingsSide({
+  openSettings,
+  classes,
+  changeQualityLow,
+  changeQualityMedium,
+  changeQualityHigh,
+}) {
   return openSettings ? (
     <m.div
       initial={{ opacity: 0, x: -5 }}
@@ -183,10 +195,28 @@ function QualitySettingsSide({ openSettings, classes }) {
       className={`quality-settings ${classes}`}
     >
       <div className='quality-options'>
-        <div className='quality-option low'>Low</div>
-        <div className='quality-option medium'>Medium</div>
-        <div className='quality-option high'>High</div>
+        <div
+          className='quality-option low'
+          onClick={changeQualityLow}
+        >
+          Low
+        </div>
+
+        <div
+          className='quality-option medium'
+          onClick={changeQualityMedium}
+        >
+          Medium
+        </div>
+        <div
+          className='quality-option high'
+          onClick={changeQualityHigh}
+        >
+          High
+        </div>
       </div>
     </m.div>
-  ) : null;
+  ) : (
+    ''
+  );
 }

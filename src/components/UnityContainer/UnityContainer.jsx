@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import { BsGear } from 'react-icons/bs';
 import { Unity, useUnityContext } from 'react-unity-webgl';
@@ -257,6 +257,18 @@ export default function UnityContainer({
   }
   //
 
+  // CHANGE QUALITY
+
+  function changeQualityLow() {
+    sendMessage('WebGLManager', `QualitySettingsLow`);
+  }
+  function changeQualityMedium() {
+    sendMessage('WebGLManager', `QualitySettingsMid`);
+  }
+  function changeQualityHigh() {
+    sendMessage('WebGLManager', `QualitySettingsHigh`);
+  }
+
   //LOADING PERCENTAGE
   const loadingPercentage = Math.round(loadingProgression * 100);
   // //
@@ -295,6 +307,9 @@ export default function UnityContainer({
                 handleHelp={handleHelp}
                 changeSpin={changeSpin}
                 stopRouletteSpin={stopRouletteSpin}
+                changeQualityLow={changeQualityLow}
+                changeQualityMedium={changeQualityMedium}
+                changeQualityHigh={changeQualityHigh}
               />
             )}
 
@@ -317,6 +332,9 @@ export default function UnityContainer({
                   handleHelp={handleHelp}
                   changeSpin={changeSpin}
                   stopRouletteSpin={stopRouletteSpin}
+                  changeQualityLow={changeQualityLow}
+                  changeQualityMedium={changeQualityMedium}
+                  changeQualityHigh={changeQualityHigh}
                 />
               )}
             </AnimatePresence>

@@ -20,6 +20,9 @@ export default function BottomOptions({
   handleHelp,
   changeSpin,
   stopRouletteSpin,
+  changeQualityLow,
+  changeQualityMedium,
+  changeQualityHigh,
 }) {
   // TEMPORARY FUNCTION TO UPDATE SELECTED FEATURE
   function handleRims() {
@@ -126,7 +129,12 @@ export default function BottomOptions({
         </div>
 
         <div className='settings bottom-option'>
-          <QualitySettings openSettings={openSettings} />
+          <QualitySettings
+            openSettings={openSettings}
+            changeQualityLow={changeQualityLow}
+            changeQualityMedium={changeQualityMedium}
+            changeQualityHigh={changeQualityHigh}
+          />
           <div className='bottom-option-header'>Settings</div>
           <div className='option-icon'>
             <CiSettings onClick={() => setOpenSettings((prev) => !prev)} />
@@ -144,7 +152,12 @@ export default function BottomOptions({
   );
 }
 
-function QualitySettings({ openSettings, classes }) {
+function QualitySettings({
+  openSettings,
+  changeQualityLow,
+  changeQualityMedium,
+  changeQualityHigh,
+}) {
   return openSettings ? (
     <m.div
       initial={{ opacity: 0, y: 10 }}
@@ -154,9 +167,25 @@ function QualitySettings({ openSettings, classes }) {
       className={`quality-settings`}
     >
       <div className='quality-options'>
-        <div className='quality-option low'>Low</div>
-        <div className='quality-option medium'>Medium</div>
-        <div className='quality-option high'>High</div>
+        <div
+          className='quality-option low'
+          onClick={changeQualityLow}
+        >
+          Low
+        </div>
+
+        <div
+          className='quality-option medium'
+          onClick={changeQualityMedium}
+        >
+          Medium
+        </div>
+        <div
+          className='quality-option high'
+          onClick={changeQualityHigh}
+        >
+          High
+        </div>
       </div>
     </m.div>
   ) : null;
