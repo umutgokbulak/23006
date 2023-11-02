@@ -257,8 +257,7 @@ export default function UnityContainer({
   }
   //
 
-  // CHANGE QUALITY
-
+  // CHANGE QUALITY FUNCTIONS
   function changeQualityLow() {
     sendMessage('WebGLManager', `QualitySettingsLow`);
   }
@@ -268,7 +267,7 @@ export default function UnityContainer({
   function changeQualityHigh() {
     sendMessage('WebGLManager', `QualitySettingsHigh`);
   }
-
+  //
   //LOADING PERCENTAGE
   const loadingPercentage = Math.round(loadingProgression * 100);
   // //

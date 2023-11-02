@@ -1,6 +1,6 @@
 .unity-container {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
 }
 
 @media screen and (width < 1520px) {

@@ -61,7 +61,7 @@ const BallTracks = memo(function Rims({
                       },
                       'replaceIn'
                     );
-                    changeMaterial(`balltrack-${url.ballTrackName}`);
+                    changeMaterial(`balltrack-${item.imageName}`);
                   }}
                 >
                   <li>
