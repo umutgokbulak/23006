@@ -398,7 +398,6 @@ export default function UnityContainer({
           id: url.centreId,
           imagePath: url.centreImg,
           imageName: url.centreName,
-          inlayQuantity: url.centreInlayQuantity,
         },
       }));
       changeMaterial(`centre-${url.centreName}`);
