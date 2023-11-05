@@ -1,7 +1,7 @@
 @media screen and (width < 1520px) {
   .sideMenu {
     width: 100%;
-    min-height: 240px;
+    min-height: 270px;
     flex-direction: column;
     overflow: hidden;
     scrollbar-gutter: unset;
@@ -112,7 +112,6 @@
   }
 
   section.index-section {
-    height: 200px;
     min-width: 1361px;
     flex-direction: row;
 

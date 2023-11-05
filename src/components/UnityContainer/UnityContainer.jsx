@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import { BsGear } from 'react-icons/bs';
 import { Unity, useUnityContext } from 'react-unity-webgl';
@@ -11,12 +11,9 @@ import '../../mediaQueries.css';
 import './unityContainer.css';
 import './modal.css';
 import BottomOptionsSide from '../BottomOptionsMenu/BottomOptionsSide';
+import { NumberParam, StringParam, useQueryParams } from 'use-query-params';
 
 export default function UnityContainer({
-  setUrl,
-  url,
-  selectedItems,
-  handleComponentSelect,
   setItemQuantity,
   itemQuantity,
   handleHelp,
@@ -241,8 +238,6 @@ export default function UnityContainer({
     sendMessage('ConfigurationManager', 'ChangeMaterialOf', partNmaterial);
   }
 
-  //
-
   // SPINING ROULETTE ANIMATION
   const [changeSpin, setChangeSpin] = useState(false);
 
@@ -270,6 +265,171 @@ export default function UnityContainer({
   //
   //LOADING PERCENTAGE
   const loadingPercentage = Math.round(loadingProgression * 100);
+
+  const [url, setUrl] = useQueryParams({
+    rimId: NumberParam,
+    rimImg: StringParam,
+    rimName: StringParam,
+    // rimStyle: StringParam,
+
+    ballTrackId: NumberParam,
+    ballTrackImg: StringParam,
+    ballTrackName: StringParam,
+    // ballTrackStyle: StringParam,
+
+    centreId: NumberParam,
+    centreImg: StringParam,
+    centreName: StringParam,
+    // centreInlayQuantity : NumberParam,
+
+    ballStopId: NumberParam,
+    ballStopQ: NumberParam,
+    ballStopImg: StringParam,
+    ballStopName: StringParam,
+    ballStopStyle: StringParam,
+
+    turretId: NumberParam,
+    turretImg: StringParam,
+    turretName: StringParam,
+    turretStyle: StringParam,
+
+    numberId: NumberParam,
+    numberImg: StringParam,
+    numberName: StringParam,
+  });
+
+  const [selectedItems, setSelectedItems] = useState({
+    Numbers: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
+    },
+
+    BallStops: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
+      quantity: itemQuantity,
+    },
+
+    Rims: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+    },
+    BallTracks: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+    },
+    Centre: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      inlayQuantity: '8',
+    },
+
+    Turrets: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
+    },
+  });
+
+  useEffect(() => {
+    if (url.rimId >= 0) {
+      setSelectedItems((prevSelected) => ({
+        ...prevSelected,
+        Rims: {
+          id: url.rimId,
+          imagePath: url.rimImg,
+          imageName: url.rimName,
+        },
+      }));
+      changeMaterial(`toprim-${url.rimName}`);
+    }
+
+    if (url.ballStopId) {
+      setSelectedItems((prevSelected) => ({
+        ...prevSelected,
+        BallStops: {
+          id: url.ballStopId,
+          imagePath: url.ballStopImg,
+          quantity: url.ballStopQ,
+          imageName: url.ballStopName,
+          style: url.ballStopStyle,
+        },
+      }));
+      // changeMaterial(`ballstop-${url.ballStopName}`);
+    }
+
+    if (url.turretId) {
+      setSelectedItems((prevSelected) => ({
+        ...prevSelected,
+        Turrets: {
+          id: url.turretId,
+          imagePath: url.turretImg,
+          imageName: url.turretName,
+          style: url.turretStyle,
+        },
+      }));
+      // changeMaterial(`turret-${url.turretName}`);
+    }
+
+    if (url.numberId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        Numbers: {
+          id: url.numberId,
+          imagePath: url.numberImg,
+          imageName: url.numberName,
+        },
+      }));
+      // changeMaterial(`number-${url.numberName}`);
+    }
+
+    if (url.centreId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        Centre: {
+          id: url.centreId,
+          imagePath: url.centreImg,
+          imageName: url.centreName,
+          inlayQuantity: url.centreInlayQuantity,
+        },
+      }));
+      changeMaterial(`centre-${url.centreName}`);
+    }
+    if (url.ballTrackId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        BallTracks: {
+          id: url.ballTrackId,
+          imagePath: url.ballTrackImg,
+          imageName: url.ballTrackName,
+        },
+      }));
+      changeMaterial(`balltrack-${url.ballTrackName}`);
+    }
+
+    setSelectedItems((prevSelected) => ({
+      ...prevSelected,
+    }));
+  }, [url, changeMaterial]);
+
+  const handleComponentSelect = (componentName, selectedItem) => {
+    setSelectedItems((prevSelected) => {
+      const updatedItem = { ...prevSelected[componentName], ...selectedItem };
+
+      return {
+        ...prevSelected,
+        [componentName]: updatedItem,
+      };
+    });
+  };
   // //
   return (
     <>

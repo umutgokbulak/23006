@@ -139,7 +139,7 @@ input[type='radio'] {
 /* NARROW QUALITY SETTINGS */
 .quality-side {
   top:0;
-  right: -122px;
+  left: 117px;
   border-radius: 0 1rem 1rem 0;
   backdrop-filter: blur(0);
   transform-origin: left;

@@ -81,15 +81,14 @@ export default function BottomOptionsSide({
                 </div>
               </div>
               <div className='side-option settings'>
-                {openOptions && (
-                  <QualitySettingsSide
-                    changeQualityLow={changeQualityLow}
-                    changeQualityMedium={changeQualityMedium}
-                    changeQualityHigh={changeQualityHigh}
-                    openSettings={openSettings}
-                    classes='quality-side'
-                  />
-                )}
+                <QualitySettingsSide
+                  changeQualityLow={changeQualityLow}
+                  changeQualityMedium={changeQualityMedium}
+                  changeQualityHigh={changeQualityHigh}
+                  openSettings={openSettings}
+                  classes='quality-side'
+                />
+
                 <div className='side-option-text'>Settings</div>
                 <div>
                   <CiSettings
@@ -216,7 +215,5 @@ function QualitySettingsSide({
         </div>
       </div>
     </m.div>
-  ) : (
-    ''
-  );
+  ) : null;
 }

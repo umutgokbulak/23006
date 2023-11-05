@@ -5,7 +5,7 @@
 
 @media screen and (width < 1520px) {
   .unity-container {
-    min-height: 72vh;
+    min-height: 72dvh;
   }
 }
 
