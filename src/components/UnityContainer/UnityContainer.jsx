@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, Suspense, useCallback } from 'react';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import { BsGear } from 'react-icons/bs';
 import { Unity, useUnityContext } from 'react-unity-webgl';
@@ -234,10 +234,12 @@ export default function UnityContainer({
   //
 
   // CHANGINGMATERIAL FUNCTION
-  function changeMaterial(partNmaterial) {
-    sendMessage('ConfigurationManager', 'ChangeMaterialOf', partNmaterial);
-  }
-
+  const changeMaterial = useCallback(
+    (partNmaterial) => {
+      sendMessage('ConfigurationManager', 'ChangeMaterialOf', partNmaterial);
+    },
+    [sendMessage]
+  );
   // SPINING ROULETTE ANIMATION
   const [changeSpin, setChangeSpin] = useState(false);
 
