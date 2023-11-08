@@ -7,47 +7,95 @@
       "items": [
         {
           "id": 10,
-          "imagePath": "/assets/BallStops/bsCanoe.png",
+          "imagePath": "/assets/BallStops/bsSigSteel.jpg",
           "imageName": "Stainless Steel",
           "style": "Signature"
         },
         {
           "id": 11,
-          "imagePath": "/assets/BallStops/bsCanoeGold.png",
-          "imageName": "Gold Plated",
+          "imagePath": "/assets/BallStops/bsSigBrass.jpg",
+          "imageName": "Brass",
           "style": "Signature"
         },
         {
           "id": 12,
-          "imagePath": "/assets/BallStops/bsCanoeBrass.png",
-          "imageName": "Polished Brass",
+          "imagePath": "/assets/BallStops/bsSigGold.jpg",
+          "imageName": "Gold Plated",
+          "style": "Signature"
+        },
+        {
+          "id": 13,
+          "imagePath": "/assets/BallStops/bsSigAliMatte.jpg",
+          "imageName": "Matte Aluminium",
+          "style": "Signature"
+        },
+        {
+          "id": 14,
+          "imagePath": "/assets/BallStops/bsSigBrassMatte.jpg",
+          "imageName": "Matte Brass",
+          "style": "Signature"
+        },
+        {
+          "id": 15,
+          "imagePath": "/assets/BallStops/bsSigGoldMatte.jpg",
+          "imageName": "Matte Gold",
+          "style": "Signature"
+        },
+        {
+          "id": 16,
+          "imagePath": "/assets/BallStops/bsSigRose.jpg",
+          "imageName": "Rose Gold",
           "style": "Signature"
         }
       ]
     },
 
     {
-      "styleType": "Traditional Style",
+      "styleType": "Conical Style",
       "description": "Cammegh's standard ball stops are curved in all 3 axes in order to increase the game's randomness",
 
       "items": [
         {
-          "id": 13,
-          "imagePath": "/assets/BallStops/bsSharp.png",
+          "id": 17,
+          "imagePath": "/assets/BallStops/bsSharpSteel.jpg",
           "imageName": "Stainless Steel",
-          "style": "Traditional"
+          "style": "Conical"
         },
         {
-          "id": 14,
-          "imagePath": "/assets/BallStops/bsSharpGold.png",
+          "id": 18,
+          "imagePath": "/assets/BallStops/bsSharpBrass.jpg",
+          "imageName": "Brass",
+          "style": "Conical"
+        },
+        {
+          "id": 19,
+          "imagePath": "/assets/BallStops/bsSharpGold.jpg",
           "imageName": "Gold Plated",
-          "style": "Traditional"
+          "style": "Conical"
         },
         {
-          "id": 15,
-          "imagePath": "/assets/BallStops/bsSharpBrass.png",
-          "imageName": "Polished Brass",
-          "style": "Traditional"
+          "id": 20,
+          "imagePath": "/assets/BallStops/bsSharpAliMatte.jpg",
+          "imageName": "Matte Aluminium",
+          "style": "Conical"
+        },
+        {
+          "id": 21,
+          "imagePath": "/assets/BallStops/bsSharpBrassMatte.jpg",
+          "imageName": "Matte Brass",
+          "style": "Conical"
+        },
+        {
+          "id": 22,
+          "imagePath": "/assets/BallStops/bsSharpGoldMatte.jpg",
+          "imageName": "Matte Gold",
+          "style": "Conical"
+        },
+        {
+          "id": 23,
+          "imagePath": "/assets/BallStops/bsSharpRose.jpg",
+          "imageName": "Rose Gold",
+          "style": "Conical"
         }
       ]
     }

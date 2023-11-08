@@ -212,22 +212,22 @@ export default function UnityContainer({
   }
 
   function focusBallStops() {
-    sendMessage('Cameras', 'FocusOnBallTrack');
+    // sendMessage('Cameras', 'FocusOnBallTrack');
     setSelectedFeature('Ball Stops');
     setCurrentPage(4);
   }
   function focusTurrets() {
-    sendMessage('Cameras', 'FocusOnTurrets');
+    // sendMessage('Cameras', 'FocusOnTurrets');
     setSelectedFeature('Turrets');
     setCurrentPage(5);
   }
   function focusNumbers() {
-    sendMessage('Cameras', 'FocusOnWheelNumbers');
+    // sendMessage('Cameras', 'FocusOnWheelNumbers');
     setSelectedFeature('Numbers');
     setCurrentPage(6);
   }
   function focusDefault() {
-    sendMessage('Cameras', 'UnFocusFromTarget');
+    // sendMessage('Cameras', 'UnFocusFromTarget');
     setSelectedFeature('Index');
     setCurrentPage(7);
   }
@@ -240,6 +240,7 @@ export default function UnityContainer({
     },
     [sendMessage]
   );
+
   // SPINING ROULETTE ANIMATION
   const [changeSpin, setChangeSpin] = useState(false);
 
@@ -277,7 +278,7 @@ export default function UnityContainer({
     ballTrackId: NumberParam,
     ballTrackImg: StringParam,
     ballTrackName: StringParam,
-    // ballTrackStyle: StringParam,
+    ballTrackStyle: StringParam,
 
     centreId: NumberParam,
     centreImg: StringParam,
@@ -298,6 +299,7 @@ export default function UnityContainer({
     numberId: NumberParam,
     numberImg: StringParam,
     numberName: StringParam,
+    numberStyle: StringParam,
   });
 
   const [selectedItems, setSelectedItems] = useState({
@@ -388,6 +390,7 @@ export default function UnityContainer({
           id: url.numberId,
           imagePath: url.numberImg,
           imageName: url.numberName,
+          style: url.numberStyle,
         },
       }));
       // changeMaterial(`number-${url.numberName}`);

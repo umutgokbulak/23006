@@ -1,0 +1,88 @@
+{
+  "styles": [
+    {
+      "styleType": "Single Zero",
+      "description": "Explore our collection of numbers featuring unique designs and finishes for a truly exceptional gaming experience.",
+      "items": [
+        {
+          "id": 1000,
+          "imagePath": "/assets/Numbers/singleClassicPrimRose.jpg",
+          "imageName": "Classic Prim Rose",
+          "style": "Single Zero"
+        },
+        {
+          "id": 1001,
+          "imagePath": "/assets/Numbers/singleGeometricWhite.jpg",
+          "imageName": "Geometric White",
+          "style": "Single Zero"
+        },
+        {
+          "id": 1002,
+          "imagePath": "/assets/Numbers/singleClearWhite.jpg",
+          "imageName": "Clear White",
+          "style": "Single Zero"
+        },
+        {
+          "id": 1003,
+          "imagePath": "/assets/Numbers/singleDividedWhite.jpg",
+          "imageName": "Divided White",
+          "style": "Single Zero"
+        },
+        {
+          "id": 1004,
+          "imagePath": "/assets/Numbers/singleClassicPrimRose.jpg",
+          "imageName": "Classic PrimRose",
+          "style": "Single Zero"
+        },
+        {
+          "id": 1005,
+          "imagePath": "/assets/Numbers/singleGeometricWhite.jpg",
+          "imageName": "Geometric White",
+          "style": "Single Zero"
+        },
+        {
+          "id": 1006,
+          "imagePath": "/assets/Numbers/singleClearWhite.jpg",
+          "imageName": "Clear White",
+          "style": "Single Zero"
+        }
+      ]
+    },
+    {
+      "styleType": "Double Zero",
+      "description": "Explore our collection of numbers featuring unique designs and finishes for a truly exceptional gaming experience.",
+      "items": [
+        {
+          "id": 1007,
+          "imagePath": "/assets/Numbers/doubleClassicPrimRose.jpg",
+          "imageName": "Classic Prim Rose",
+          "style": "Double Zero"
+        },
+        {
+          "id": 1008,
+          "imagePath": "/assets/Numbers/doubleGeometricWhite.jpg",
+          "imageName": "Geometric White",
+          "style": "Double Zero"
+        },
+        {
+          "id": 1009,
+          "imagePath": "/assets/Numbers/doubleClearWhite.jpg",
+          "imageName": "Clear White",
+          "style": "Double Zero"
+        }
+      ]
+    },
+    {
+      "styleType": "Triple Zero",
+      "description": "Explore our collection of numbers featuring unique designs and finishes for a truly exceptional gaming experience.",
+      "items": [
+        {
+          "id": 1010,
+          "imagePath": "/assets/Numbers/tripleClassicPrimRose.jpg",
+          "imageName": "Classic Prim Rose",
+          "style": "Triple Zero"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,5 @@
-import arrowDown from '/assets/SvgArrows/arrowDown.svg';
-import arrowRight from '/assets/SvgArrows/arrowRight.svg';
 import './UserTutorial.css';
+import SvgLine from '../Utilities/SvgLine/SvgLine';
 export default function UserTutorial({ handleHelp }) {
   return (
     <section className='tutorial-container-overlay'>
@@ -8,18 +7,9 @@ export default function UserTutorial({ handleHelp }) {
         className='btn tutorial-close-btn'
         onClick={handleHelp}
       >
-        Close
+        Close123
       </button>
-      <img
-        className='tutorial-arrow downArrow'
-        src={arrowDown}
-        alt='arrowDown'
-      />
-      <img
-        className='tutorial-arrow rightArrow'
-        src={arrowRight}
-        alt='arrowDown'
-      />
+      <SvgLine />
     </section>
   );
 }

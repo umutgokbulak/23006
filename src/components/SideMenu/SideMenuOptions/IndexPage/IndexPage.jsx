@@ -52,7 +52,7 @@ const IndexPage = memo(function IndexPage({
                     />
                     <p className='chosen-text'>
                       {componentName === 'Numbers' &&
-                        `${componentName} Top Rim`}
+                        `${selectedItem.imageName} Numbers (${selectedItem.style})`}
 
                       {componentName === 'Rims' &&
                         `${selectedItem.imageName} Top Rim`}
