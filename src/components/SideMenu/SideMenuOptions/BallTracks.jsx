@@ -15,11 +15,12 @@ const BallTracks = memo(function BallTracks({
   url,
   changeMaterial,
 }) {
-  const handleItemClick = (itemID, itemImage, itemImageName) => {
+  const handleItemClick = (itemID, itemImage, itemImageName,itemStyle) => {
     onSelect({
       id: itemID,
       imagePath: `${itemImage}`,
       imageName: `${itemImageName}`,
+      style : `balltrack-${itemStyle}`
     });
   };
 

@@ -1,10 +1,11 @@
 import { BiHelpCircle } from 'react-icons/bi';
-import centre from '../../../data/Centre.json';
-import ToolTip from './ToolTip';
 import { m } from 'framer-motion';
-import { memo } from 'react';
+import { Fragment, memo } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import ToolTip from './ToolTip';
+import '../SideMenuOptions/SideMenuOptions.css';
+import centre from '../../../data/Centre.json';
 
 const Centre = memo(function Centre({
   onSelect,
@@ -14,11 +15,12 @@ const Centre = memo(function Centre({
   url,
   changeMaterial,
 }) {
-  const handleItemClick = (itemID, itemImage, itemImageName) => {
+  const handleItemClick = (itemID, itemImage, itemImageName, itemStyle) => {
     onSelect({
       id: itemID,
       imagePath: `${itemImage}`,
       imageName: `${itemImageName}`,
+      style: `${itemStyle}`,
     });
   };
 
@@ -31,36 +33,111 @@ const Centre = memo(function Centre({
         windowWidth < 1520 && mouseEntered ? 'scrollX' : ''
       }`}
     >
+      <m.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className='options-container ballstop'
+      >
+        {centre.styles.map((style, styleIndex) => (
+          <Fragment key={styleIndex}>
+            {styleIndex > 0 && <hr className='divider' />}
+            <div className='style-container'>
+              <div className='option-style'>
+                {style.styleType}
+                <ToolTip text={style.description}>
+                  <BiHelpCircle className='side-options-icon' />
+                </ToolTip>
+              </div>
+              <ul className='option-list'>
+                {style.items.map((item) => (
+                  <li
+                    key={item.id}
+                    className={`ballstop-option ${
+                      url.centreId === item.id ? 'active' : ''
+                    }`}
+                    onClick={() => {
+                      handleItemClick(
+                        item.id,
+                        item.imagePath,
+                        item.imageName,
+                        item.style
+                      );
+                      setUrl(
+                        {
+                          centreId: item.id,
+                          centreImg: item.imagePath,
+                          centreName: item.imageName,
+                          centreStyle: item.style,
+                        },
+                        'replaceIn'
+                      );
+                      changeMaterial(
+                        `centre-${item.imageName}-${item.style}}`
+                      );
+                    }}
+                  >
+                    <LazyLoadImage
+                      effect='blur'
+                      src={item.imagePath}
+                      alt=''
+                      className='option-img ballstop'
+                    />
+                    <div className='select-ballstop-container'>
+                      <p className='option-name'>{item.imageName}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Fragment>
+        ))}
+      </m.div>
+    </m.section>
+  );
+});
+
+export default Centre;
+
+{
+  /* <m.section
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className={`options-section ${
+        windowWidth < 1520 && mouseEntered ? 'scrollX' : ''
+      }`}
+    >
       <div className='options-container'>
         <div className='style-container'>
           <div className='option-style'>
-            {centre.styles[0].styleType}
-            <ToolTip text={centre.styles[0].description}>
+            {ballTracks.styles[0].styleType}
+            <ToolTip text={ballTracks.styles[0].description}>
               <BiHelpCircle className='side-options-icon' />
             </ToolTip>
           </div>
           <div className='option-list'>
-            {centre.styles[0].items.map((item) => (
+            {ballTracks.styles[0].items.map((item) => (
               <div
                 className='option'
                 key={item.imageName}
               >
                 <ul
                   className={`option-rim ${
-                    url.centreId === item.id ? 'active' : ''
+                    url.ballTrackId === item.id ? 'active' : ''
                   }`}
                   onClick={() => {
                     handleItemClick(item.id, item.imagePath, item.imageName);
                     setUrl(
                       {
-                        centreId: item.id,
-                        centreImg: item.imagePath,
-                        centreName: item.imageName,
-                        // centretyle: item.style,
+                        ballTrackId: item.id,
+                        ballTrackImg: item.imagePath,
+                        ballTrackName: item.imageName,
+                        // rimStyle: item.style,
                       },
                       'replaceIn'
                     );
-                    changeMaterial(`centre-${item.imageName}`);
+                    
                   }}
                 >
                   <li>
@@ -79,8 +156,5 @@ const Centre = memo(function Centre({
           </div>
         </div>
       </div>
-    </m.section>
-  );
-});
-
-export default Centre;
+    </m.section> */
+}

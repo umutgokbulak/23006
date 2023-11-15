@@ -273,7 +273,7 @@ export default function UnityContainer({
     rimId: NumberParam,
     rimImg: StringParam,
     rimName: StringParam,
-    // rimStyle: StringParam,
+    rimStyle: StringParam,
 
     ballTrackId: NumberParam,
     ballTrackImg: StringParam,
@@ -283,7 +283,7 @@ export default function UnityContainer({
     centreId: NumberParam,
     centreImg: StringParam,
     centreName: StringParam,
-    // centreInlayQuantity : NumberParam,
+    centreStyle: StringParam,
 
     ballStopId: NumberParam,
     ballStopQ: NumberParam,
@@ -322,6 +322,7 @@ export default function UnityContainer({
       id: null,
       imagePath: '',
       imageName: '',
+      style: '',
     },
     BallTracks: {
       id: null,
@@ -332,7 +333,7 @@ export default function UnityContainer({
       id: null,
       imagePath: '',
       imageName: '',
-      inlayQuantity: '8',
+      style: '',
     },
 
     Turrets: {
@@ -351,6 +352,7 @@ export default function UnityContainer({
           id: url.rimId,
           imagePath: url.rimImg,
           imageName: url.rimName,
+          style: url.rimStyle,
         },
       }));
       changeMaterial(`toprim-${url.rimName}`);
@@ -403,6 +405,7 @@ export default function UnityContainer({
           id: url.centreId,
           imagePath: url.centreImg,
           imageName: url.centreName,
+          style: url.centreStyle,
         },
       }));
       changeMaterial(`centre-${url.centreName}`);
@@ -414,6 +417,7 @@ export default function UnityContainer({
           id: url.ballTrackId,
           imagePath: url.ballTrackImg,
           imageName: url.ballTrackName,
+          style: url.ballTrackStyle,
         },
       }));
       changeMaterial(`balltrack-${url.ballTrackName}`);

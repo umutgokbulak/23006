@@ -6,44 +6,44 @@
 
       "items": [
         {
-          "id": 10,
-          "imagePath": "/assets/BallStops/bsSigSteel.jpg",
+          "id": 12310,
+          "imagePath": "/assets/BallStops/SignatureStyles/bsSigSteel.jpg",
           "imageName": "Stainless Steel",
           "style": "Signature"
         },
         {
-          "id": 11,
-          "imagePath": "/assets/BallStops/bsSigBrass.jpg",
+          "id": 12311,
+          "imagePath": "/assets/BallStops/SignatureStyles/bsSigBrass.jpg",
           "imageName": "Brass",
           "style": "Signature"
         },
         {
-          "id": 12,
-          "imagePath": "/assets/BallStops/bsSigGold.jpg",
+          "id": 12312,
+          "imagePath": "/assets/BallStops/SignatureStyles/bsSigGold.jpg",
           "imageName": "Gold Plated",
           "style": "Signature"
         },
         {
-          "id": 13,
-          "imagePath": "/assets/BallStops/bsSigAliMatte.jpg",
+          "id": 12313,
+          "imagePath": "/assets/BallStops/SignatureStyles/bsSigAliMatte.jpg",
           "imageName": "Matte Aluminium",
           "style": "Signature"
         },
         {
-          "id": 14,
-          "imagePath": "/assets/BallStops/bsSigBrassMatte.jpg",
+          "id": 12314,
+          "imagePath": "/assets/BallStops/SignatureStyles/bsSigBrassMatte.jpg",
           "imageName": "Matte Brass",
           "style": "Signature"
         },
         {
-          "id": 15,
-          "imagePath": "/assets/BallStops/bsSigGoldMatte.jpg",
+          "id": 12315,
+          "imagePath": "/assets/BallStops/SignatureStyles/bsSigGoldMatte.jpg",
           "imageName": "Matte Gold",
           "style": "Signature"
         },
         {
-          "id": 16,
-          "imagePath": "/assets/BallStops/bsSigRose.jpg",
+          "id": 12316,
+          "imagePath": "/assets/BallStops/SignatureStyles/bsSigRose.jpg",
           "imageName": "Rose Gold",
           "style": "Signature"
         }
@@ -56,44 +56,44 @@
 
       "items": [
         {
-          "id": 17,
-          "imagePath": "/assets/BallStops/bsSharpSteel.jpg",
+          "id": 12317,
+          "imagePath": "/assets/BallStops/ConicalStyles/bsSharpSteel.jpg",
           "imageName": "Stainless Steel",
           "style": "Conical"
         },
         {
-          "id": 18,
-          "imagePath": "/assets/BallStops/bsSharpBrass.jpg",
+          "id": 12318,
+          "imagePath": "/assets/BallStops/ConicalStyles/bsSharpBrass.jpg",
           "imageName": "Brass",
           "style": "Conical"
         },
         {
-          "id": 19,
-          "imagePath": "/assets/BallStops/bsSharpGold.jpg",
+          "id": 12319,
+          "imagePath": "/assets/BallStops/ConicalStyles/bsSharpGold.jpg",
           "imageName": "Gold Plated",
           "style": "Conical"
         },
         {
-          "id": 20,
-          "imagePath": "/assets/BallStops/bsSharpAliMatte.jpg",
+          "id": 12320,
+          "imagePath": "/assets/BallStops/ConicalStyles/bsSharpAliMatte.jpg",
           "imageName": "Matte Aluminium",
           "style": "Conical"
         },
         {
-          "id": 21,
-          "imagePath": "/assets/BallStops/bsSharpBrassMatte.jpg",
+          "id": 12321,
+          "imagePath": "/assets/BallStops/ConicalStyles/bsSharpBrassMatte.jpg",
           "imageName": "Matte Brass",
           "style": "Conical"
         },
         {
-          "id": 22,
-          "imagePath": "/assets/BallStops/bsSharpGoldMatte.jpg",
+          "id": 12322,
+          "imagePath": "/assets/BallStops/ConicalStyles/bsSharpGoldMatte.jpg",
           "imageName": "Matte Gold",
           "style": "Conical"
         },
         {
-          "id": 23,
-          "imagePath": "/assets/BallStops/bsSharpRose.jpg",
+          "id": 12323,
+          "imagePath": "/assets/BallStops/ConicalStyles/bsSharpRose.jpg",
           "imageName": "Rose Gold",
           "style": "Conical"
         }

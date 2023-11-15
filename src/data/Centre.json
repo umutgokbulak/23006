@@ -1,58 +1,285 @@
 {
   "styles": [
     {
-      "styleType": "Gloss Finishes",
-      "description": "The lacquered central area inside the pocket ring and beneath the turret. This section is conical when traditional double radius separators require a curved dome.",
+      "styleType": "Natural Wood (Gloss)",
+      "description": "The lacquered area between the outer rim and the number ring. Like the centre and top rim, this can be veneered, finished in a single colourm or hand-painted with a custom design.",
       "items": [
         {
-          "id": 30,
-          "imagePath": "/assets/Rims/rimMahogany.png",
-          "imageName": "Mahogany"
+          "id": 920,
+          "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossMaple.jpg",
+          "imageName": "Maple",
+          "style": "Gloss"
         },
         {
-          "id": 31,
-          "imagePath": "/assets/Rims/rimIndian.png",
-          "imageName": "Indian"
+          "id": 921,
+          "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossOak.jpg",
+          "imageName": "Oak",
+          "style": "Gloss"
         },
         {
-          "id": 32,
-          "imagePath": "/assets/Rims/rimWalnut.png",
-          "imageName": "Walnut"
+          "id": 922,
+          "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossCherry.jpg",
+          "imageName": "Cherry",
+          "style": "Gloss"
         },
         {
-          "id": 33,
-          "imagePath": "/assets/Rims/rimCherry.png",
-          "imageName": "Cherry"
+          "id": 923,
+          "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossSantos.jpg",
+          "imageName": "Santos Rosewood",
+          "style": "Gloss"
         },
         {
-          "id": 34,
-          "imagePath": "/assets/Rims/rimMaple.png",
-          "imageName": "Maple"
+          "id": 924,
+          "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossSapele.jpg",
+          "imageName": "Sapele",
+          "style": "Gloss"
         },
         {
-          "id": 35,
-          "imagePath": "/assets/Rims/rimEbony.png",
-          "imageName": "Ebony"
+          "id": 925,
+          "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossElm.jpg",
+          "imageName": "Burr Elm",
+          "style": "Gloss"
         },
         {
-          "id": 36,
-          "imagePath": "/assets/Rims/rimOak.png",
-          "imageName": "Oak"
+          "id": 926,
+          "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossWalnut.jpg",
+          "imageName": "Walnut Burl",
+          "style": "Gloss"
         },
         {
-          "id": 37,
-          "imagePath": "/assets/Rims/rimElm.png",
-          "imageName": "Elm"
+          "id": 927,
+          "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossMahog.jpg",
+          "imageName": "Mahogany",
+          "style": "Gloss"
         },
         {
-          "id": 38,
-          "imagePath": "/assets/Rims/rimSantos.png",
-          "imageName": "Santos"
+          "id": 928,
+          "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossEbony.jpg",
+          "imageName": "Macassar Ebony",
+          "style": "Gloss"
         },
         {
-          "id": 39,
-          "imagePath": "/assets/Rims/rimSapele.png",
-          "imageName": "Sapele"
+          "id": 929,
+          "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossIndian.jpg",
+          "imageName": "Indian Rosewood",
+          "style": "Gloss"
+        }
+      ]
+    },
+    {
+      "styleType": "Natural Wood (Matte)",
+      "description": "The lacquered area between the outer rim and the number ring. Like the centre and top rim, this can be veneered, finished in a single colourm or hand-painted with a custom design.",
+      "items": [
+        {
+          "id": 930,
+          "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteMaple.jpg",
+          "imageName": "Maple",
+          "style": "Matte"
+        },
+        {
+          "id": 931,
+          "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteOak.jpg",
+          "imageName": "Oak",
+          "style": "Matte"
+        },
+        {
+          "id": 932,
+          "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteCherry.jpg",
+          "imageName": "Cherry",
+          "style": "Matte"
+        },
+        {
+          "id": 933,
+          "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteSantos.jpg",
+          "imageName": "Santos Rosewood",
+          "style": "Matte"
+        },
+        {
+          "id": 934,
+          "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteSapele.jpg",
+          "imageName": "Sapele",
+          "style": "Matte"
+        },
+        {
+          "id": 935,
+          "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteElm.jpg",
+          "imageName": "Burr Elm",
+          "style": "Matte"
+        },
+        {
+          "id": 936,
+          "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteWalnut.jpg",
+          "imageName": "Walnut Burl",
+          "style": "Matte"
+        },
+
+        {
+          "id": 938,
+          "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteMahog.jpg",
+          "imageName": "Mahogany",
+          "style": "Matte"
+        },
+        {
+          "id": 939,
+          "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteEbony.jpg",
+          "imageName": "Macassar Ebony",
+          "style": "Matte"
+        },
+        {
+          "id": 940,
+          "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteIndian.jpg",
+          "imageName": "Indian Rosewood",
+          "style": "Matte"
+        }
+      ]
+    },
+    {
+      "styleType": "Synthetic Materials",
+      "description": "The lacquered area between the outer rim and the number ring. Like the centre and top rim, this can be veneered, finished in a single colourm or hand-painted with a custom design.",
+      "items": [
+        {
+          "id": 941,
+          "imagePath": "/assets/BallTracks/SyntheticFinishes/GlossSynthetic/venGlossCarbon.jpg",
+          "imageName": "Carbon Fibre",
+          "style": "Gloss"
+        },
+        {
+          "id": 942,
+          "imagePath": "/assets/BallTracks/SyntheticFinishes/MatteSynthetic/venMatteCarbon.jpg",
+          "imageName": "Carbon Fibre (Matte)",
+          "style": "Matte"
+        },
+        {
+          "id": 943,
+          "imagePath": "/assets/BallTracks/SyntheticFinishes/GlossSynthetic/venGlossAlpi.jpg",
+          "imageName": "Alpi",
+          "style": "Gloss"
+        },
+        {
+          "id": 944,
+          "imagePath": "/assets/BallTracks/SyntheticFinishes/MatteSynthetic/venMatteAlpi.jpg",
+          "imageName": "Alpi (Matte)",
+          "style": "Matte"
+        }
+      ]
+    },
+    {
+      "styleType": "Single Colours (Gloss)",
+      "description": "The lacquered area between the outer rim and the number ring. Like the centre and top rim, this can be veneered, finished in a single colourm or hand-painted with a custom design.",
+      "items": [
+        {
+          "id": 945,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossBlack.png",
+          "imageName": "Piano Black",
+          "style": "Gloss"
+        },
+        {
+          "id": 946,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossUmber.png",
+          "imageName": "Umber",
+          "style": "Gloss"
+        },
+        {
+          "id": 947,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossSlate.png",
+          "imageName": "Slate",
+          "style": "Gloss"
+        },
+        {
+          "id": 948,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossJade.png",
+          "imageName": "Jade",
+          "style": "Gloss"
+        },
+        {
+          "id": 949,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossIndigo.png",
+          "imageName": "Indigo",
+          "style": "Gloss"
+        },
+        {
+          "id": 950,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossChamp.png",
+          "imageName": "Champagne Gold",
+          "style": "Gloss"
+        },
+        {
+          "id": 951,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossStrawb.png",
+          "imageName": "Strawberry Red",
+          "style": "Gloss"
+        },
+        {
+          "id": 952,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossIvory.png",
+          "imageName": "Ivory",
+          "style": "Gloss"
+        },
+        {
+          "id": 953,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossGrey.png",
+          "imageName": "Warm Grey",
+          "style": "Gloss"
+        }
+      ]
+    },
+    {
+      "styleType": "Single Colours (Matte)",
+      "description": "The lacquered area between the outer rim and the number ring. Like the centre and top rim, this can be veneered, finished in a single colourm or hand-painted with a custom design.",
+      "items": [
+        {
+          "id": 954,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteBlack.png",
+          "imageName": "Piano Black",
+          "style": "Matte"
+        },
+        {
+          "id": 955,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteUmber.png",
+          "imageName": "Umber",
+          "style": "Matte"
+        },
+        {
+          "id": 956,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteUmber.png",
+          "imageName": "Umber",
+          "style": "Matte"
+        },
+        {
+          "id": 957,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteSlate.png",
+          "imageName": "Slate",
+          "style": "Matte"
+        },
+        {
+          "id": 958,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteJade.png",
+          "imageName": "Jade",
+          "style": "Matte"
+        },
+        {
+          "id": 9551,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteIndigo.png",
+          "imageName": "Indigo",
+          "style": "Matte"
+        },
+        {
+          "id": 9561,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteChamp.png",
+          "imageName": "Champagne Gold",
+          "style": "Matte"
+        },
+        {
+          "id": 9572,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteStrawb.png",
+          "imageName": "Strawberry Red",
+          "style": "Matte"
+        },
+        {
+          "id": 9584,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteGrey.png",
+          "imageName": "Warm Grey",
+          "style": "Matte"
         }
       ]
     }

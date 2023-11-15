@@ -30,8 +30,7 @@ export default function MailFormModal({ toggleMailModal }) {
   //       const response = await axios.get(
   //         `https://api.shrtco.de/v2/shorten?url=${currentUrl}`
   //       );
-  //       console.log(response.data.result.full_short_link);
-  //       console.log(shortenUrl);
+  //       
   //       setShortenedUrl(response.data.result.full_short_link);
   //     } catch (error) {
   //       console.error(error);

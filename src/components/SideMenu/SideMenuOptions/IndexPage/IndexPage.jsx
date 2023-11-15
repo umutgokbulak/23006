@@ -50,24 +50,31 @@ const IndexPage = memo(function IndexPage({
                           : undefined
                       }
                     />
+                    {console.log(selectedItem)}
                     <p className='chosen-text'>
                       {componentName === 'Numbers' &&
                         `${selectedItem.imageName} Numbers (${selectedItem.style})`}
-
+                      {/*  */}
                       {componentName === 'Rims' &&
-                        `${selectedItem.imageName} Top Rim`}
-
+                        `${selectedItem.style === 'Matte' ? 'Matte' : ''} ${
+                          selectedItem.imageName
+                        } Top Rim`}
+                      {/*  */}
                       {componentName === 'BallStops' &&
                         `x${selectedItem.quantity} ${selectedItem.style} Ball Stops in ${selectedItem.imageName}`}
-
+                      {/*  */}
                       {componentName === 'Turrets' &&
                         `${selectedItem.style} Turret, ${selectedItem.imageName}`}
-
+                      {/*  */}
                       {componentName === 'BallTracks' &&
-                        `${selectedItem.imageName} Ball Track with 8 Black Inlays`}
-
+                        `${selectedItem.style === 'Matte' ? 'Matte' : ''} ${
+                          selectedItem.imageName
+                        } Ball Track `}
+                      {/*  */}
                       {componentName === 'Centre' &&
-                        `${selectedItem.imageName} Centre with 8 Black Inlays`}
+                        `${selectedItem.style === 'Matte' ? 'Matte' : ''} ${
+                          selectedItem.imageName
+                        } Centre`}{' '}
                     </p>
                   </div>
                 ) : (

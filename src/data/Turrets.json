@@ -7,44 +7,44 @@
       "items": [
         {
           "id": 100,
-          "imagePath": "/assets/Turrets/turrSigNickel.jpg",
+          "imagePath": "/assets/Turrets/SignatureStyle/turrSigNickel.jpg",
           "imageName": "Nickel Plated",
           "style": "Signature Style"
         },
         {
           "id": 101,
-          "imagePath": "/assets/Turrets/turrSigBrass.jpg",
+          "imagePath": "/assets/Turrets/SignatureStyle/turrSigBrass.jpg",
           "imageName": "Polished Brass",
           "style": "Signature Style"
         },
         {
           "id": 102,
-          "imagePath": "/assets/Turrets/turrSigGold.jpg",
+          "imagePath": "/assets/Turrets/SignatureStyle/turrSigGold.jpg",
           "imageName": "Gold Plated",
           "style": "Signature Style"
         },
         {
           "id": 103,
-          "imagePath": "/assets/Turrets/turrSigAliMatte.jpg",
+          "imagePath": "/assets/Turrets/SignatureStyle/turrSigAliMatte.jpg",
           "imageName": "Matte Aluminium",
           "style": "Signature Style"
         },
         {
           "id": 104,
-          "imagePath": "/assets/Turrets/turrSigBrassMatte.jpg",
+          "imagePath": "/assets/Turrets/SignatureStyle/turrSigBrassMatte.jpg",
           "imageName": "Matte Brass",
           "style": "Signature Style"
         },
 
         {
           "id": 105,
-          "imagePath": "/assets/Turrets/turrSigGoldMatte.jpg",
+          "imagePath": "/assets/Turrets/SignatureStyle/turrSigGoldMatte.jpg",
           "imageName": "Matte Gold ",
           "style": "Signature Style"
         },
         {
           "id": 106,
-          "imagePath": "/assets/Turrets/turrSigRose.jpg",
+          "imagePath": "/assets/Turrets/SignatureStyle/turrSigRose.jpg",
           "imageName": "Rose Gold",
           "style": "Signature Style"
         }
@@ -57,44 +57,44 @@
       "items": [
         {
           "id": 107,
-          "imagePath": "/assets/Turrets/turrContNickel.jpg",
+          "imagePath": "/assets/Turrets/ContinentalStyle/turrContNickel.jpg",
           "imageName": "Nickel Plated",
           "style": "Continental Style"
         },
         {
           "id": 108,
-          "imagePath": "/assets/Turrets/turrContBrass.jpg",
+          "imagePath": "/assets/Turrets/ContinentalStyle/turrContBrass.jpg",
           "imageName": "Polished Brass",
           "style": "Continental Style"
         },
         {
           "id": 109,
-          "imagePath": "/assets/Turrets/turrContGold.jpg",
+          "imagePath": "/assets/Turrets/ContinentalStyle/turrContGold.jpg",
           "imageName": "Gold Plated",
           "style": "Continental Style"
         },
         {
           "id": 110,
-          "imagePath": "/assets/Turrets/turrContAliMatte.jpg",
+          "imagePath": "/assets/Turrets/ContinentalStyle/turrContAliMatte.jpg",
           "imageName": "Matte Aluminium",
           "style": "Continental Style"
         },
         {
           "id": 111,
-          "imagePath": "/assets/Turrets/turrContBrassMatte.jpg",
+          "imagePath": "/assets/Turrets/ContinentalStyle/turrContBrassMatte.jpg",
           "imageName": "Matte Brass",
           "style": "Continental Style"
         },
 
         {
           "id": 112,
-          "imagePath": "/assets/Turrets/turrContGoldMatte.jpg",
+          "imagePath": "/assets/Turrets/ContinentalStyle/turrContGoldMatte.jpg",
           "imageName": "Matte Gold ",
           "style": "Continental Style"
         },
         {
           "id": 113,
-          "imagePath": "/assets/Turrets/turrContRose.jpg",
+          "imagePath": "/assets/Turrets/ContinentalStyle/turrContRose.jpg",
           "imageName": "Rose Gold",
           "style": "Continental Style"
         }
@@ -107,44 +107,44 @@
       "items": [
         {
           "id": 114,
-          "imagePath": "/assets/Turrets/turrFrenchNickel.jpg",
+          "imagePath": "/assets/Turrets/FrenchStyle/turrFrenchNickel.jpg",
           "imageName": "Nickel Plated",
           "style": "French Style"
         },
         {
           "id": 115,
-          "imagePath": "/assets/Turrets/turrFrenchBrass.jpg",
+          "imagePath": "/assets/Turrets/FrenchStyle/turrFrenchBrass.jpg",
           "imageName": "Polished Brass",
           "style": "French Style"
         },
         {
           "id": 116,
-          "imagePath": "/assets/Turrets/turrFrenchGold.jpg",
+          "imagePath": "/assets/Turrets/FrenchStyle/turrFrenchGold.jpg",
           "imageName": "Gold Plated",
           "style": "French Style"
         },
         {
           "id": 117,
-          "imagePath": "/assets/Turrets/turrFrenchAliMatte.jpg",
+          "imagePath": "/assets/Turrets/FrenchStyle/turrFrenchAliMatte.jpg",
           "imageName": "Matte Aluminium",
           "style": "French Style"
         },
         {
           "id": 118,
-          "imagePath": "/assets/Turrets/turrFrenchBrassMatte.jpg",
+          "imagePath": "/assets/Turrets/FrenchStyle/turrFrenchBrassMatte.jpg",
           "imageName": "Matte Brass",
           "style": "French Style"
         },
 
         {
           "id": 119,
-          "imagePath": "/assets/Turrets/turrFrenchGoldMatte.jpg",
+          "imagePath": "/assets/Turrets/FrenchStyle/turrFrenchGoldMatte.jpg",
           "imageName": "Matte Gold ",
           "style": "French Style"
         },
         {
           "id": 120,
-          "imagePath": "/assets/Turrets/turrFrenchRose.jpg",
+          "imagePath": "/assets/Turrets/FrenchStyle/turrFrenchRose.jpg",
           "imageName": "Rose Gold",
           "style": "French Style"
         }

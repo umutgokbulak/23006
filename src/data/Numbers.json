@@ -6,43 +6,43 @@
       "items": [
         {
           "id": 1000,
-          "imagePath": "/assets/Numbers/singleClassicPrimRose.jpg",
+          "imagePath": "/assets/Numbers/SingleZero/singleClassicPrimRose.jpg",
           "imageName": "Classic Prim Rose",
           "style": "Single Zero"
         },
         {
           "id": 1001,
-          "imagePath": "/assets/Numbers/singleGeometricWhite.jpg",
+          "imagePath": "/assets/Numbers/SingleZero/singleGeometricWhite.jpg",
           "imageName": "Geometric White",
           "style": "Single Zero"
         },
         {
           "id": 1002,
-          "imagePath": "/assets/Numbers/singleClearWhite.jpg",
+          "imagePath": "/assets/Numbers/SingleZero/singleClearWhite.jpg",
           "imageName": "Clear White",
           "style": "Single Zero"
         },
         {
           "id": 1003,
-          "imagePath": "/assets/Numbers/singleDividedWhite.jpg",
+          "imagePath": "/assets/Numbers/SingleZero/singleDividedWhite.jpg",
           "imageName": "Divided White",
           "style": "Single Zero"
         },
         {
           "id": 1004,
-          "imagePath": "/assets/Numbers/singleClassicPrimRose.jpg",
+          "imagePath": "/assets/Numbers/SingleZero/singleClassicPrimRose.jpg",
           "imageName": "Classic PrimRose",
           "style": "Single Zero"
         },
         {
           "id": 1005,
-          "imagePath": "/assets/Numbers/singleGeometricWhite.jpg",
+          "imagePath": "/assets/Numbers/SingleZero/singleGeometricWhite.jpg",
           "imageName": "Geometric White",
           "style": "Single Zero"
         },
         {
           "id": 1006,
-          "imagePath": "/assets/Numbers/singleClearWhite.jpg",
+          "imagePath": "/assets/Numbers/SingleZero/singleClearWhite.jpg",
           "imageName": "Clear White",
           "style": "Single Zero"
         }
@@ -54,19 +54,19 @@
       "items": [
         {
           "id": 1007,
-          "imagePath": "/assets/Numbers/doubleClassicPrimRose.jpg",
+          "imagePath": "/assets/Numbers/DoubleZero/doubleClassicPrimRose.jpg",
           "imageName": "Classic Prim Rose",
           "style": "Double Zero"
         },
         {
           "id": 1008,
-          "imagePath": "/assets/Numbers/doubleGeometricWhite.jpg",
+          "imagePath": "/assets/Numbers/DoubleZero/doubleGeometricWhite.jpg",
           "imageName": "Geometric White",
           "style": "Double Zero"
         },
         {
           "id": 1009,
-          "imagePath": "/assets/Numbers/doubleClearWhite.jpg",
+          "imagePath": "/assets/Numbers/DoubleZero/doubleClearWhite.jpg",
           "imageName": "Clear White",
           "style": "Double Zero"
         }
@@ -78,7 +78,7 @@
       "items": [
         {
           "id": 1010,
-          "imagePath": "/assets/Numbers/tripleClassicPrimRose.jpg",
+          "imagePath": "/assets/Numbers/TripleZero/tripleClassicPrimRose.jpg",
           "imageName": "Classic Prim Rose",
           "style": "Triple Zero"
         }

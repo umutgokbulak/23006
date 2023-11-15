@@ -100,13 +100,12 @@
     }
   }
 
-  .options-section .options-container-numbers {
-  }
+  
 
   .ballstop-option {
     padding: 0.5rem;
     & .ballstop {
-      height: 80px;
+      height: 100px;
     }
   }
 

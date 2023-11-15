@@ -1,10 +1,11 @@
 import { BiHelpCircle } from 'react-icons/bi';
-import rims from '../../../data/Rims.json';
-import ToolTip from './ToolTip';
 import { m } from 'framer-motion';
-import { memo } from 'react';
+import { Fragment, memo } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import ToolTip from './ToolTip';
+import rims from '../../../data/Rims.json';
+import '../SideMenuOptions/SideMenuOptions.css';
 
 const Rims = memo(function Rims({
   onSelect,
@@ -14,11 +15,12 @@ const Rims = memo(function Rims({
   url,
   changeMaterial,
 }) {
-  const handleItemClick = (itemID, itemImage, itemImageName) => {
+  const handleItemClick = (itemID, itemImage, itemImageName, itemStyle) => {
     onSelect({
       id: itemID,
       imagePath: `${itemImage}`,
       imageName: `${itemImageName}`,
+      style: `${itemStyle}`,
     });
   };
 
@@ -31,36 +33,109 @@ const Rims = memo(function Rims({
         windowWidth < 1520 && mouseEntered ? 'scrollX' : ''
       }`}
     >
+      <m.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className='options-container ballstop'
+      >
+        {rims.styles.map((style, styleIndex) => (
+          <Fragment key={styleIndex}>
+            {styleIndex > 0 && <hr className='divider' />}
+            <div className='style-container'>
+              <div className='option-style'>
+                {style.styleType}
+                <ToolTip text={style.description}>
+                  <BiHelpCircle className='side-options-icon' />
+                </ToolTip>
+              </div>
+              <ul className='option-list'>
+                {style.items.map((item) => (
+                  <li
+                    key={item.id}
+                    className={`ballstop-option ${
+                      url.rimId === item.id ? 'active' : ''
+                    }`}
+                    onClick={() => {
+                      console.log(item.style);
+                      handleItemClick(
+                        item.id,
+                        item.imagePath,
+                        item.imageName,
+                        item.style
+                      );
+                      setUrl(
+                        {
+                          rimId: item.id,
+                          rimImg: item.imagePath,
+                          rimName: item.imageName,
+                          rimStyle: item.style,
+                        },
+                        'replaceIn'
+                      );
+                    }}
+                  >
+                    <LazyLoadImage
+                      effect='blur'
+                      src={item.imagePath}
+                      alt=''
+                      className='option-img ballstop'
+                    />
+                    <div className='select-ballstop-container'>
+                      <p className='option-name'>{item.imageName}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Fragment>
+        ))}
+      </m.div>
+    </m.section>
+  );
+});
+
+export default Rims;
+
+{
+  /* <m.section
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className={`options-section ${
+        windowWidth < 1520 && mouseEntered ? 'scrollX' : ''
+      }`}
+    >
       <div className='options-container'>
         <div className='style-container'>
           <div className='option-style'>
-            {rims.styles[0].styleType}
-            <ToolTip text={rims.styles[0].description}>
+            {ballTracks.styles[0].styleType}
+            <ToolTip text={ballTracks.styles[0].description}>
               <BiHelpCircle className='side-options-icon' />
             </ToolTip>
           </div>
           <div className='option-list'>
-            {rims.styles[0].items.map((item) => (
+            {ballTracks.styles[0].items.map((item) => (
               <div
                 className='option'
                 key={item.imageName}
               >
                 <ul
                   className={`option-rim ${
-                    url.rimId === item.id ? 'active' : ''
+                    url.ballTrackId === item.id ? 'active' : ''
                   }`}
                   onClick={() => {
                     handleItemClick(item.id, item.imagePath, item.imageName);
                     setUrl(
                       {
-                        rimId: item.id,
-                        rimImg: item.imagePath,
-                        rimName: item.imageName,
+                        ballTrackId: item.id,
+                        ballTrackImg: item.imagePath,
+                        ballTrackName: item.imageName,
                         // rimStyle: item.style,
                       },
                       'replaceIn'
                     );
-                    changeMaterial(`toprim-${item.imageName}`);
+                    changeMaterial(`balltrack-${item.imageName}`);
                   }}
                 >
                   <li>
@@ -79,8 +154,5 @@ const Rims = memo(function Rims({
           </div>
         </div>
       </div>
-    </m.section>
-  );
-});
-
-export default Rims;
+    </m.section> */
+}
