@@ -3,10 +3,10 @@ import '../../mediaQueries.css';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 import { useState, lazy, Suspense } from 'react';
 
-const SkeletonLayout = lazy( () =>
+const SkeletonLayout = lazy(() =>
   import('../Utilities/Skeleton/SkeletonLayout')
 );
-const SideMenuHeaderResponsive = lazy( () =>
+const SideMenuHeaderResponsive = lazy(() =>
   import('./SideMenuHeaderResponsive')
 );
 
@@ -26,10 +26,6 @@ export default function SideMenu({
   handleFeatureSelect,
   currentPage,
   selectedFeature,
-  focusNumbers,
-  focusTurrets,
-  focusBallStops,
-  focusDefault,
   setUrl,
   url,
   setItemQuantity,
@@ -37,13 +33,21 @@ export default function SideMenu({
   windowWidth,
   changeMaterial,
 }) {
-  const selectFeatures = [
-    'Rims',
-    'Ball Tracks',
-    'Centre',
-    'Ball Stops',
-    'Turrets',
+  const features = [
+    'Wheel Type',
     'Numbers',
+    'Separator Ring',
+    'Aurora Centre Lightning',
+    'Halo Rim Lightning',
+    'Top Rim Finish',
+    'Ball Track Finish',
+    'Centre Finish',
+    'Inlay Strips',
+    'Turret',
+    'Ball Stops',
+    'Brightwork',
+    'Outer Bowl',
+    'Software Features',
     'Index',
   ];
   const [mouseEntered, setMouseEntered] = useState(true);
@@ -71,7 +75,7 @@ export default function SideMenu({
             name='featureSelect'
             id='feature-Select'
           >
-            {selectFeatures.map((feature) => (
+            {features.map((feature) => (
               <option
                 key={feature}
                 value={feature}
@@ -84,17 +88,13 @@ export default function SideMenu({
           <button
             className='page-up btn icon'
             onClick={handleNext}
-            disabled={currentPage === 7}
+            disabled={currentPage === 15}
           >
             <BsArrowRight className='icon' />
           </button>
         </div>
       ) : (
         <SideMenuHeaderResponsive
-          focusBallStops={focusBallStops}
-          focusTurrets={focusTurrets}
-          focusNumbers={focusNumbers}
-          focusDefault={focusDefault}
           handleNext={handleNext}
           handlePrevious={handlePrevious}
           currentPage={currentPage}
@@ -103,7 +103,7 @@ export default function SideMenu({
         />
       )}
 
-      {selectedFeature === 'Rims' && currentPage === 1 && (
+      {selectedFeature === 'Top Rim Finish' && currentPage === 6 && (
         <Suspense fallback={<SkeletonLayout />}>
           <Rims
             windowWidth={windowWidth}
@@ -116,7 +116,7 @@ export default function SideMenu({
         </Suspense>
       )}
 
-      {selectedFeature === 'Ball Tracks' && currentPage === 2 && (
+      {selectedFeature === 'Ball Track Finish' && currentPage === 7 && (
         <Suspense fallback={<SkeletonLayout />}>
           <BallTracks
             windowWidth={windowWidth}
@@ -129,7 +129,7 @@ export default function SideMenu({
         </Suspense>
       )}
 
-      {selectedFeature === 'Centre' && currentPage === 3 && (
+      {selectedFeature === 'Centre Finish' && currentPage === 8 && (
         <Suspense fallback={<SkeletonLayout />}>
           <Centre
             windowWidth={windowWidth}
@@ -142,7 +142,7 @@ export default function SideMenu({
         </Suspense>
       )}
 
-      {selectedFeature === 'Ball Stops' && currentPage === 4 && (
+      {selectedFeature === 'Ball Stops' && currentPage === 11 && (
         <Suspense fallback={<SkeletonLayout />}>
           <BallStops
             windowWidth={windowWidth}
@@ -157,7 +157,7 @@ export default function SideMenu({
         </Suspense>
       )}
 
-      {selectedFeature === 'Turrets' && currentPage === 5 && (
+      {selectedFeature === 'Turret' && currentPage === 10 && (
         <Suspense fallback={<SkeletonLayout />}>
           <Turrets
             windowWidth={windowWidth}
@@ -170,7 +170,7 @@ export default function SideMenu({
         </Suspense>
       )}
 
-      {selectedFeature === 'Numbers' && currentPage === 6 && (
+      {selectedFeature === 'Numbers' && currentPage === 2 && (
         <Suspense fallback={<SkeletonLayout />}>
           <Numbers
             windowWidth={windowWidth}
@@ -183,15 +183,12 @@ export default function SideMenu({
         </Suspense>
       )}
 
-      {selectedFeature === 'Index' && currentPage === 7 && (
+      {selectedFeature === 'Index' && currentPage === 15 && (
         <Suspense fallback={<SkeletonLayout />}>
           <IndexPage
             mouseEntered={mouseEntered}
             windowWidth={windowWidth}
             selectedItems={selectedItems}
-            focusNumbers={focusNumbers}
-            focusTurrets={focusTurrets}
-            focusBallStops={focusBallStops}
           />
         </Suspense>
       )}

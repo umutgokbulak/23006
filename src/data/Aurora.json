@@ -1,0 +1,22 @@
+{
+  "styles": [
+    {
+      
+      "description": "A placeholder description for the styletype",
+      "items": [
+        {
+          "id": 282804017,
+          "imagePath": "/assets/AuroraCentreLightning/auroraOff.jpg",
+          "imageName": "No",
+          "style": "No Centre Lighting"
+        },
+        {
+          "id": 282804018,
+          "imagePath": "/assets/AuroraCentreLightning/auroraOn.jpg",
+          "imageName": "Yes",
+          "style": "Aurora Centre Lighting"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "styles": [
+    {
+      "styleType": "Single Colours (Gloss)",
+      "description": "A placeholder description for the styletype",
+      "items": [
+        {
+          "id": 9450,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossBlack.png",
+          "imageName": "Piano Black",
+          "style": "Gloss"
+        },
+        {
+          "id": 9461,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossUmber.png",
+          "imageName": "Umber",
+          "style": "Gloss"
+        },
+        {
+          "id": 9472,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossSlate.png",
+          "imageName": "Slate",
+          "style": "Gloss"
+        },
+        {
+          "id": 9483,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossJade.png",
+          "imageName": "Jade",
+          "style": "Gloss"
+        },
+        {
+          "id": 9494,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossIndigo.png",
+          "imageName": "Indigo",
+          "style": "Gloss"
+        },
+        {
+          "id": 9505,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossChamp.png",
+          "imageName": "Champagne Gold",
+          "style": "Gloss"
+        },
+        {
+          "id": 9516,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossStrawb.png",
+          "imageName": "Strawberry Red",
+          "style": "Gloss"
+        },
+        {
+          "id": 9527,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossIvory.png",
+          "imageName": "Ivory",
+          "style": "Gloss"
+        },
+        {
+          "id": 9538,
+          "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossGrey.png",
+          "imageName": "Warm Grey",
+          "style": "Gloss"
+        }
+      ]
+    },
+    {
+      "styleType": "Single Colours (Matte)",
+      "description": "The lacquered area between the outer rim and the number ring. Like the centre and top rim, this can be veneered, finished in a single colourm or hand-painted with a custom design.",
+      "items": [
+        {
+          "id": 9540,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteBlack.png",
+          "imageName": "Piano Black",
+          "style": "Matte"
+        },
+        {
+          "id": 955321,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteUmber.png",
+          "imageName": "Umber",
+          "style": "Matte"
+        },
+        {
+          "id": 956231,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteUmber.png",
+          "imageName": "Umber",
+          "style": "Matte"
+        },
+        {
+          "id": 957111,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteSlate.png",
+          "imageName": "Slate",
+          "style": "Matte"
+        },
+        {
+          "id": 958221,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteJade.png",
+          "imageName": "Jade",
+          "style": "Matte"
+        },
+        {
+          "id": 95541231,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteIndigo.png",
+          "imageName": "Indigo",
+          "style": "Matte"
+        },
+        {
+          "id": 9565461,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteChamp.png",
+          "imageName": "Champagne Gold",
+          "style": "Matte"
+        },
+        {
+          "id": 9574172,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteStrawb.png",
+          "imageName": "Strawberry Red",
+          "style": "Matte"
+        },
+        {
+          "id": 958123512314,
+          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteGrey.png",
+          "imageName": "Warm Grey",
+          "style": "Matte"
+        }
+      ]
+    }
+  ]
+}

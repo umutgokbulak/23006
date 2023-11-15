@@ -1,0 +1,27 @@
+{
+  "styles": [
+    {
+      "description": "A placeholder description for the styletype",
+      "items": [
+        {
+          "id": 182804,
+          "imagePath": "/assets/WheelTypes/wheelM360.jpg",
+          "imageName": "Mercury 360",
+          "style": "mercury360"
+        },
+        {
+          "id": 182805,
+          "imagePath": "/assets/WheelTypes/wheelClas.jpg",
+          "imageName": "Classic(No Sensors)",
+          "style": "classic"
+        },
+        {
+          "id": 182806,
+          "imagePath": "/assets/WheelTypes/wheelCrystal.jpg",
+          "imageName": "Crystal(No Sensors)",
+          "style": "crystal"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "styles": [
+    {
+      "description": "A placeholder description for the styletype",
+      "items": [
+        {
+          "id": 382804017,
+          "imagePath": "/assets/InlayStrips/stripsDark.jpg",
+          "imageName": "Black",
+          "style": "Black Inlay Strips"
+        },
+        {
+          "id": 1241282804018,
+          "imagePath": "/assets/InlayStrips/stripsPale.jpg",
+          "imageName": "Pale",
+          "style": "Pale Inlay Strips"
+        },
+        {
+          "id": 482804018,
+          "imagePath": "/assets/InlayStrips/stripsNone.jpg",
+          "imageName": "None",
+          "style": "No Inlay Strips"
+        }
+      ]
+    }
+  ]
+}

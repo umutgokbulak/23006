@@ -8,10 +8,6 @@ import './BottomOptionsMenu.css';
 import { useState } from 'react';
 
 export default function BottomOptions({
-  focusDefault,
-  focusTurrets,
-  focusBallStops,
-  focusNumbers,
   currentPage,
   handleScreenShot,
   setSelectedFeature,
@@ -66,57 +62,43 @@ export default function BottomOptions({
               className='radio-btn'
               type='radio'
               name='radioGroup'
-              checked={currentPage === 1}
               id='rims'
-              onChange={handleRims}
             />
             <input
               className='radio-btn'
               type='radio'
               name='radioGroup'
               id='balltrack'
-              checked={currentPage === 2}
-              onChange={focusDefault}
             />
             <input
               className='radio-btn'
               type='radio'
               name='radioGroup'
               id='centre'
-              checked={currentPage === 3}
-              onChange={focusDefault}
             />
             <input
               className='radio-btn'
               type='radio'
               name='radioGroup'
               id='ballstops'
-              checked={currentPage === 4}
-              onChange={focusBallStops}
             />
             <input
               className='radio-btn'
               type='radio'
               name='radioGroup'
               id='turrets'
-              checked={currentPage === 5}
-              onChange={focusTurrets}
             />
             <input
               className='radio-btn'
               type='radio'
               name='radioGroup'
               id='numbers'
-              checked={currentPage === 6}
-              onChange={focusNumbers}
             />
             <input
               className='radio-btn'
               type='radio'
               name='radioGroup'
               id='index'
-              checked={currentPage === 7}
-              onChange={focusDefault}
             />
           </div>
         </div>

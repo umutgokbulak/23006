@@ -1,0 +1,21 @@
+{
+  "styles": [
+    {
+      "description": "A placeholder description for the styletype",
+      "items": [
+        {
+          "id": 2829123017,
+          "imagePath": "/assets/Brightwork/brightAli.jpg",
+          "imageName": "Aluminium",
+          "style": "Aluminium Brightwork"
+        },
+        {
+          "id": 282514011123118,
+          "imagePath": "/assets/Brightwork/brightBrass.jpg",
+          "imageName": "Brass",
+          "style": "Brass Brightwork"
+        }
+      ]
+    }
+  ]
+}

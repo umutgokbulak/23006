@@ -1,0 +1,43 @@
+{
+  "styles": [
+    {
+      "styleType": "Polished Aluminium",
+      "description": "A placeholder description for the styletype",
+
+      "items": [
+        {
+          "id": 182804017,
+          "imagePath": "/assets/SeparatorRing/sepDrAli.jpg",
+          "imageName": "Double-Radius",
+          "style": "Double-Radius"
+        },
+        {
+          "id": 182804018,
+          "imagePath": "/assets/SeparatorRing/sepScallAli.jpg",
+          "imageName": "Scalloped",
+          "style": "Scalloped"
+        }
+      ]
+    },
+
+    {
+      "styleType": "Brass",
+      "description": "A placeholder description for the styletype",
+
+      "items": [
+        {
+          "id": 182804019,
+          "imagePath": "/assets/SeparatorRing/sepDrBrass.jpg",
+          "imageName": "Stainless Steel",
+          "style": "Conical"
+        },
+        {
+          "id": 182804020,
+          "imagePath": "/assets/SeparatorRing/sepScallBrass.jpg",
+          "imageName": "Brass",
+          "style": "Conical"
+        }
+      ]
+    }
+  ]
+}

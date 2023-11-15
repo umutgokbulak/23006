@@ -21,7 +21,7 @@ export default function UnityContainer({
   const [openSideMenu, setOpenSideMenu] = useState(true);
   const [screenshotModalOpen, setScreenshotModalOpen] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
-  const [selectedFeature, setSelectedFeature] = useState('Rims');
+  const [selectedFeature, setSelectedFeature] = useState('Top Rim Finish');
   const [screenshotImage, setScreenshotImage] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -64,46 +64,71 @@ export default function UnityContainer({
   };
 
   const handleNext = () => {
-    if (currentPage < 7) {
+    if (currentPage < 15) {
       setCurrentPage(currentPage + 1);
       updateSelectedFeature(currentPage + 1);
     }
   };
 
-  const updateSelectedFeature = (page) => {
-    switch (page) {
+  const updateSelectedFeature = (currentPage) => {
+    switch (currentPage) {
       case 1:
-        setSelectedFeature('Rims');
+        setSelectedFeature('Wheel Type');
         break;
 
       case 2:
-        setSelectedFeature('Ball Tracks');
-        focusBallTrack();
+        setSelectedFeature('Numbers');
         break;
 
       case 3:
-        setSelectedFeature('Centre');
-        focusCentre();
+        setSelectedFeature('Separator Ring');
         break;
-
       case 4:
-        setSelectedFeature('Ball Stops');
-        focusBallStops();
+        setSelectedFeature('Aurora Centre Lightning');
         break;
 
       case 5:
-        setSelectedFeature('Turrets');
-        focusTurrets();
+        setSelectedFeature('Halo Rim Lightning');
         break;
 
       case 6:
-        setSelectedFeature('Numbers');
-        focusNumbers();
+        setSelectedFeature('Top Rim Finish');
         break;
 
       case 7:
+        setSelectedFeature('Ball Track Finish');
+        break;
+
+      case 8:
+        setSelectedFeature('Centre Finish');
+        break;
+
+      case 9:
+        setSelectedFeature('Inlay Strips');
+        break;
+
+      case 10:
+        setSelectedFeature('Turret');
+        break;
+
+      case 11:
+        setSelectedFeature('Ball Stops');
+        break;
+
+      case 12:
+        setSelectedFeature('Brightwork');
+        break;
+
+      case 13:
+        setSelectedFeature('Outer Bowl');
+        break;
+
+      case 14:
+        setSelectedFeature('Software Features');
+        break;
+
+      case 15:
         setSelectedFeature('Index');
-        focusDefault();
         break;
     }
   };
@@ -112,39 +137,64 @@ export default function UnityContainer({
     setSelectedFeature(e.target.value);
 
     switch (e.target.value) {
-      case 'Rims':
+      case 'Wheel Type':
         setCurrentPage(1);
-        focusRims();
-        break;
-
-      case 'Ball Tracks':
-        setCurrentPage(2);
-        focusBallTrack();
-        break;
-
-      case 'Centre':
-        setCurrentPage(3);
-        focusCentre();
-        break;
-
-      case 'Ball Stops':
-        setCurrentPage(4);
-        focusBallStops();
-        break;
-
-      case 'Turrets':
-        setCurrentPage(5);
-        focusTurrets();
         break;
 
       case 'Numbers':
+        setCurrentPage(2);
+        break;
+
+      case 'Separator Ring':
+        setCurrentPage(3);
+        break;
+
+      case 'Aurora Centre Lightning':
+        setCurrentPage(4);
+        break;
+
+      case 'Halo Rim Lightning':
+        setCurrentPage(5);
+        break;
+
+      case 'Rims':
         setCurrentPage(6);
-        focusNumbers();
+        break;
+
+      case 'Ball Track Finish':
+        setCurrentPage(7);
+        break;
+
+      case 'Centre Finish':
+        setCurrentPage(8);
+        break;
+
+      case 'Inlay Strips':
+        setCurrentPage(9);
+        break;
+
+      case 'Turret':
+        setCurrentPage(10);
+        break;
+
+      case 'Ball Stops':
+        setCurrentPage(11);
+        break;
+
+      case 'Brightwork':
+        setCurrentPage(12);
+        break;
+
+      case 'Outer Bowl':
+        setCurrentPage(13);
+        break;
+
+      case 'Software Features':
+        setCurrentPage(14);
         break;
 
       case 'Index':
-        setCurrentPage(7);
-        focusDefault();
+        setCurrentPage(15);
         break;
 
       default:
@@ -196,42 +246,42 @@ export default function UnityContainer({
 
   // CAMERA FOCUS ANIMATION FUNCTIONS
 
-  function focusRims() {
-    setSelectedFeature('Rims');
-    setCurrentPage(1);
-  }
+  // function focusRims() {
+  //   setSelectedFeature('Top Rim Finish');
+  //   setCurrentPage(1);
+  // }
 
-  function focusBallTrack() {
-    setSelectedFeature('Ball Tracks');
-    setCurrentPage(2);
-  }
+  // function focusBallTrack() {
+  //   setSelectedFeature('Ball Track Finish');
+  //   setCurrentPage(2);
+  // }
 
-  function focusCentre() {
-    setSelectedFeature('Centre');
-    setCurrentPage(3);
-  }
+  // function focusCentre() {
+  //   setSelectedFeature('Centre Finish');
+  //   setCurrentPage(3);
+  // }
 
-  function focusBallStops() {
-    // sendMessage('Cameras', 'FocusOnBallTrack');
-    setSelectedFeature('Ball Stops');
-    setCurrentPage(4);
-  }
-  function focusTurrets() {
-    // sendMessage('Cameras', 'FocusOnTurrets');
-    setSelectedFeature('Turrets');
-    setCurrentPage(5);
-  }
-  function focusNumbers() {
-    // sendMessage('Cameras', 'FocusOnWheelNumbers');
-    setSelectedFeature('Numbers');
-    setCurrentPage(6);
-  }
-  function focusDefault() {
-    // sendMessage('Cameras', 'UnFocusFromTarget');
-    setSelectedFeature('Index');
-    setCurrentPage(7);
-  }
-  //
+  // function focusBallStops() {
+  //   // sendMessage('Cameras', 'FocusOnBallTrack');
+  //   setSelectedFeature('Ball Stops');
+  //   setCurrentPage(4);
+  // }
+  // function focusTurrets() {
+  //   // sendMessage('Cameras', 'FocusOnTurrets');
+  //   setSelectedFeature('Turret');
+  //   setCurrentPage(5);
+  // }
+  // function focusNumbers() {
+  //   // sendMessage('Cameras', 'FocusOnWheelNumbers');
+  //   setSelectedFeature('Numbers');
+  //   setCurrentPage(2);
+  // }
+  // function focusDefault() {
+  //   // sendMessage('Cameras', 'UnFocusFromTarget');
+  //   setSelectedFeature('Index');
+  //   setCurrentPage(15);
+  // }
+  // //
 
   // CHANGINGMATERIAL FUNCTION
   const changeMaterial = useCallback(
@@ -300,22 +350,79 @@ export default function UnityContainer({
     numberImg: StringParam,
     numberName: StringParam,
     numberStyle: StringParam,
+
+    wheelId: NumberParam,
+    wheelImg: StringParam,
+    wheelName: StringParam,
+    wheelStyle: StringParam,
+
+    separatorId: NumberParam,
+    separatorImg: StringParam,
+    separatorName: StringParam,
+    separatorStyle: StringParam,
+
+    auroraId: NumberParam,
+    auroraImg: StringParam,
+    auroraName: StringParam,
+    auroraStyle: StringParam,
+
+    haloId: NumberParam,
+    haloImg: StringParam,
+    haloName: StringParam,
+    haloStyle: StringParam,
+
+    inlayId: NumberParam,
+    inlayImg: StringParam,
+    inlayName: StringParam,
+    inlayStyle: StringParam,
+
+    brightworkId: NumberParam,
+    brightworkImg: StringParam,
+    brightworkName: StringParam,
+    brightworkStyle: StringParam,
+
+    outerBowlId: NumberParam,
+    outerBowlImg: StringParam,
+    outerBowlName: StringParam,
+    outerBowlStyle: StringParam,
+
+    softwareId: NumberParam,
+    softwareImg: StringParam,
+    softwareName: StringParam,
+    softwareStyle: StringParam,
   });
 
   const [selectedItems, setSelectedItems] = useState({
-    Numbers: {
+    WheelType: {
       id: null,
       imagePath: '',
       imageName: '',
       style: '',
     },
 
-    BallStops: {
+    Numbers: {
       id: null,
       imagePath: '',
       imageName: '',
       style: '',
-      quantity: itemQuantity,
+    },
+    Separator: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
+    },
+    Aurora: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
+    },
+    Halo: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
     },
 
     Rims: {
@@ -336,7 +443,43 @@ export default function UnityContainer({
       style: '',
     },
 
+    InlayStrips: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
+    },
+
     Turrets: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
+    },
+
+    BallStops: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
+      quantity: itemQuantity,
+    },
+
+    Brightwork: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
+    },
+
+    OuterBowl: {
+      id: null,
+      imagePath: '',
+      imageName: '',
+      style: '',
+    },
+
+    Software: {
       id: null,
       imagePath: '',
       imageName: '',
@@ -345,6 +488,102 @@ export default function UnityContainer({
   });
 
   useEffect(() => {
+    if (url.wheelId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        WheelType: {
+          id: url.wheelId,
+          imagePath: url.wheelImg,
+          imageName: url.wheelName,
+          style: url.wheelStyle,
+        },
+      }));
+    }
+
+    if (url.separatorId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        Separator: {
+          id: url.seperatorId,
+          imagePath: url.seperatorImg,
+          imageName: url.seperatorName,
+          style: url.seperatorStyle,
+        },
+      }));
+    }
+
+    if (url.auroraId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        Aurora: {
+          id: url.auroraId,
+          imagePath: url.auroraImg,
+          imageName: url.auroraName,
+          style: url.auroraStyle,
+        },
+      }));
+    }
+
+    if (url.haloId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        Halo: {
+          id: url.haloId,
+          imagePath: url.haloImg,
+          imageName: url.haloName,
+          style: url.haloStyle,
+        },
+      }));
+    }
+
+    if (url.inlayId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        InlayStrips: {
+          id: url.inlayId,
+          imagePath: url.inlayImg,
+          imageName: url.inlayName,
+          style: url.inlayStyle,
+        },
+      }));
+    }
+
+    if (url.brihghtworkId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        Brightwork: {
+          id: url.brihghtworkId,
+          imagePath: url.brihghtworkImg,
+          imageName: url.brihghtworkName,
+          style: url.brihghtworkStyle,
+        },
+      }));
+    }
+
+    if (url.outerBowlId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        OuterBowl: {
+          id: url.outerBowlId,
+          imagePath: url.outerBowlImg,
+          imageName: url.outerBowlName,
+          style: url.outerBowlStyle,
+        },
+      }));
+    }
+
+    if (url.softwareId) {
+      setSelectedItems((prevselected) => ({
+        ...prevselected,
+        Software: {
+          id: url.softwareId,
+          imagePath: url.softwareImg,
+          imageName: url.softwareName,
+          style: url.softwareStyle,
+        },
+      }));
+    }
+
     if (url.rimId >= 0) {
       setSelectedItems((prevSelected) => ({
         ...prevSelected,
@@ -395,7 +634,6 @@ export default function UnityContainer({
           style: url.numberStyle,
         },
       }));
-      // changeMaterial(`number-${url.numberName}`);
     }
 
     if (url.centreId) {
@@ -439,6 +677,7 @@ export default function UnityContainer({
     });
   };
   // //
+
   return (
     <>
       <div className='unity-container'>
@@ -461,10 +700,7 @@ export default function UnityContainer({
           <>
             {windowWidth > 676 && isLoaded && (
               <BottomOptionsMenu
-                focusDefault={focusDefault}
-                focusTurrets={focusTurrets}
-                focusBallStops={focusBallStops}
-                focusNumbers={focusNumbers}
+               
                 handleScreenShot={handleScreenShot}
                 setCurrentPage={setCurrentPage}
                 setSelectedFeature={setSelectedFeature}
@@ -483,10 +719,7 @@ export default function UnityContainer({
             <AnimatePresence>
               {windowWidth < 675 && isLoaded && (
                 <BottomOptionsSide
-                  focusDefault={focusDefault}
-                  focusTurrets={focusTurrets}
-                  focusBallStops={focusBallStops}
-                  focusNumbers={focusNumbers}
+                 
                   handleScreenShot={handleScreenShot}
                   setCurrentPage={setCurrentPage}
                   setSelectedFeature={setSelectedFeature}
@@ -541,10 +774,7 @@ export default function UnityContainer({
                 selectedItems={selectedItems}
                 handleComponentSelect={handleComponentSelect}
                 isSideMenuOpen={openSideMenu}
-                focusBallStops={focusBallStops}
-                focusDefault={focusDefault}
-                focusNumbers={focusNumbers}
-                focusTurrets={focusTurrets}
+               
                 handlePrevious={handlePrevious}
                 handleNext={handleNext}
                 selectedFeature={selectedFeature}

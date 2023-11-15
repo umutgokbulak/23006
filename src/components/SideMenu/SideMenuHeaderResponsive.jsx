@@ -2,47 +2,51 @@ import { useState, useEffect } from 'react';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 
 export default function SideMenuHeaderResponsive({
-  focusBallStops,
-  focusTurrets,
-  focusNumbers,
-  focusDefault,
   handlePrevious,
   handleNext,
   currentPage,
   windowWidth,
 }) {
-  const menuItems = [
-    'Rims',
-    'Ball Tracks',
-    'Centre',
-    'Ball Stops',
-    'Turrets',
+  const features = [
+    'Wheel Type',
     'Numbers',
+    'Seperator Ring',
+    'Aurora Centre Lightning',
+    'Halo Rim Lightning',
+    'Top Rim Finish',
+    'Ball Track Finish',
+    'Centre Finish',
+    'Inlay Strips',
+    'Turret',
+    'Ball Stops',
+    'Brightwork',
+    'Outer Bowl',
+    'Software Features',
     'Index',
   ];
-  const [activeItem, setActiveItem] = useState('Rims');
+  const [activeItem, setActiveItem] = useState('Wheel Type');
 
   useEffect(() => {
     // Sayfa numarasına göre aktif öğeyi ayarla
-    setActiveItem(menuItems[currentPage - 1]);
+    setActiveItem(features[currentPage - 1]);
   }, [currentPage]);
 
   const handleActiveItem = (item) => {
-    item === 'Ball Stops'
-      ? focusBallStops()
-      : item === 'Turrets'
-      ? focusTurrets()
-      : item === 'Numbers'
-      ? focusNumbers()
-      : item === 'Index'
-      ? focusDefault()
-      : undefined;
+    // item === 'Ball Stops'
+    //   ? focusBallStops()
+    //   : item === 'Turrets'
+    //   ? focusTurrets()
+    //   : item === 'Numbers'
+    //   ? focusNumbers()
+    //   : item === 'Index'
+    //   ? focusDefault()
+    //   : undefined;
 
     setActiveItem(item);
   };
 
   return (
-    <div className={`scrollable-menu ${windowWidth < 771 ? 'scrollX' : ''}`}>
+    <div className={`scrollable-menu ${windowWidth < 1521 ? 'scrollX' : ''}`}>
       <div className='menu-container'>
         <button
           className='nav-button page-down btn'
@@ -52,7 +56,7 @@ export default function SideMenuHeaderResponsive({
           <BsArrowLeft className='icon' />
         </button>
         <ul className='menu-list'>
-          {menuItems.map((item, index) => (
+          {features.map((item, index) => (
             <li
               className={`menu-item ${item === activeItem ? 'active' : ''}`}
               key={index}
@@ -65,7 +69,7 @@ export default function SideMenuHeaderResponsive({
         <button
           className='nav-button page-down btn'
           onClick={handleNext}
-          disabled={currentPage === 7}
+          disabled={currentPage === 15}
         >
           <BsArrowRight className='icon' />
         </button>

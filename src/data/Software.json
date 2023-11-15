@@ -1,0 +1,21 @@
+{
+  "styles": [
+    {
+      "description": "A placeholder description for the styletype",
+      "items": [
+        {
+          "id": 214113234017,
+          "imagePath": "/assets/SoftwareFeatures/rrs.jpg",
+          "imageName": "RRS Security",
+          "style": "RRS Security"
+        },
+        {
+          "id": 2828045464452123118,
+          "imagePath": "/assets/SoftwareFeatures/bonusNums.jpg",
+          "imageName": "Bonus Numbers",
+          "style": "Bonus Numbers"
+        }
+      ]
+    }
+  ]
+}
