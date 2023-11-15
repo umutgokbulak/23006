@@ -2,6 +2,14 @@ import './sideMenu.css';
 import '../../mediaQueries.css';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 import { useState, lazy, Suspense } from 'react';
+import WheelType from './SideMenuOptions/WheelType.jsx';
+import Separators from './SideMenuOptions/Separators.jsx';
+import Aurora from './SideMenuOptions/Aurora.jsx';
+import Halo from './SideMenuOptions/Halo.jsx';
+import InlayStrips from './SideMenuOptions/InlayStrips.jsx';
+import Brightwork from './SideMenuOptions/Brightwork.jsx';
+import OuterBowl from './SideMenuOptions/OuterBowl.jsx';
+import Software from './SideMenuOptions/Software.jsx';
 
 const SkeletonLayout = lazy(() =>
   import('../Utilities/Skeleton/SkeletonLayout')
@@ -103,6 +111,70 @@ export default function SideMenu({
         />
       )}
 
+      {selectedFeature === 'Wheel Type' && currentPage === 1 && (
+        <Suspense fallback={<SkeletonLayout />}>
+          <WheelType
+            windowWidth={windowWidth}
+            mouseEntered={mouseEntered}
+            onSelect={(item) => handleComponentSelect('WheelType', item)}
+            setUrl={setUrl}
+            url={url}
+            changeMaterial={changeMaterial}
+          />
+        </Suspense>
+      )}
+
+      {selectedFeature === 'Numbers' && currentPage === 2 && (
+        <Suspense fallback={<SkeletonLayout />}>
+          <Numbers
+            windowWidth={windowWidth}
+            mouseEntered={mouseEntered}
+            onSelect={(item) => handleComponentSelect('Numbers', item)}
+            setUrl={setUrl}
+            changeMaterial={changeMaterial}
+            url={url}
+          />
+        </Suspense>
+      )}
+
+      {selectedFeature === 'Separator Ring' && currentPage === 3 && (
+        <Suspense fallback={<SkeletonLayout />}>
+          <Separators
+            windowWidth={windowWidth}
+            mouseEntered={mouseEntered}
+            onSelect={(item) => handleComponentSelect('Separator', item)}
+            setUrl={setUrl}
+            url={url}
+            changeMaterial={changeMaterial}
+          />
+        </Suspense>
+      )}
+
+      {selectedFeature === 'Aurora Centre Lightning' && currentPage === 4 && (
+        <Suspense fallback={<SkeletonLayout />}>
+          <Aurora
+            windowWidth={windowWidth}
+            mouseEntered={mouseEntered}
+            onSelect={(item) => handleComponentSelect('Aurora', item)}
+            setUrl={setUrl}
+            changeMaterial={changeMaterial}
+            url={url}
+          />
+        </Suspense>
+      )}
+      {selectedFeature === 'Halo Rim Lightning' && currentPage === 5 && (
+        <Suspense fallback={<SkeletonLayout />}>
+          <Halo
+            windowWidth={windowWidth}
+            mouseEntered={mouseEntered}
+            onSelect={(item) => handleComponentSelect('Halo', item)}
+            setUrl={setUrl}
+            changeMaterial={changeMaterial}
+            url={url}
+          />
+        </Suspense>
+      )}
+
       {selectedFeature === 'Top Rim Finish' && currentPage === 6 && (
         <Suspense fallback={<SkeletonLayout />}>
           <Rims
@@ -142,6 +214,32 @@ export default function SideMenu({
         </Suspense>
       )}
 
+      {selectedFeature === 'Inlay Strips' && currentPage === 9 && (
+        <Suspense fallback={<SkeletonLayout />}>
+          <InlayStrips
+            windowWidth={windowWidth}
+            mouseEntered={mouseEntered}
+            onSelect={(item) => handleComponentSelect('Numbers', item)}
+            setUrl={setUrl}
+            changeMaterial={changeMaterial}
+            url={url}
+          />
+        </Suspense>
+      )}
+
+      {selectedFeature === 'Turret' && currentPage === 10 && (
+        <Suspense fallback={<SkeletonLayout />}>
+          <Turrets
+            windowWidth={windowWidth}
+            mouseEntered={mouseEntered}
+            onSelect={(item) => handleComponentSelect('InlayStrips', item)}
+            setUrl={setUrl}
+            changeMaterial={changeMaterial}
+            url={url}
+          />
+        </Suspense>
+      )}
+
       {selectedFeature === 'Ball Stops' && currentPage === 11 && (
         <Suspense fallback={<SkeletonLayout />}>
           <BallStops
@@ -157,25 +255,36 @@ export default function SideMenu({
         </Suspense>
       )}
 
-      {selectedFeature === 'Turret' && currentPage === 10 && (
+      {selectedFeature === 'Brightwork' && currentPage === 12 && (
         <Suspense fallback={<SkeletonLayout />}>
-          <Turrets
+          <Brightwork
             windowWidth={windowWidth}
             mouseEntered={mouseEntered}
-            onSelect={(item) => handleComponentSelect('Turrets', item)}
+            onSelect={(item) => handleComponentSelect('Brightwork', item)}
             setUrl={setUrl}
             changeMaterial={changeMaterial}
             url={url}
           />
         </Suspense>
       )}
-
-      {selectedFeature === 'Numbers' && currentPage === 2 && (
+      {selectedFeature === 'Outer Bowl' && currentPage === 13 && (
         <Suspense fallback={<SkeletonLayout />}>
-          <Numbers
+          <OuterBowl
             windowWidth={windowWidth}
             mouseEntered={mouseEntered}
-            onSelect={(item) => handleComponentSelect('Numbers', item)}
+            onSelect={(item) => handleComponentSelect('OuterBowl', item)}
+            setUrl={setUrl}
+            changeMaterial={changeMaterial}
+            url={url}
+          />
+        </Suspense>
+      )}
+      {selectedFeature === 'Software Features' && currentPage === 14 && (
+        <Suspense fallback={<SkeletonLayout />}>
+          <Software
+            windowWidth={windowWidth}
+            mouseEntered={mouseEntered}
+            onSelect={(item) => handleComponentSelect('Software', item)}
             setUrl={setUrl}
             changeMaterial={changeMaterial}
             url={url}

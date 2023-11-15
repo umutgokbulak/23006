@@ -4,13 +4,13 @@
       "description": "A placeholder description for the styletype",
       "items": [
         {
-          "id": 282804017,
+          "id": 211223382804017,
           "imagePath": "/assets/HaloRim/haloOff.jpg",
           "imageName": "No",
           "style": "No Rim Lighting"
         },
         {
-          "id": 282804018,
+          "id": 2828999904018,
           "imagePath": "/assets/HaloRim/haloOn.jpg",
           "imageName": "Yes",
           "style": "Halo Rim Lighting"

@@ -21,7 +21,7 @@ export default function UnityContainer({
   const [openSideMenu, setOpenSideMenu] = useState(true);
   const [screenshotModalOpen, setScreenshotModalOpen] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
-  const [selectedFeature, setSelectedFeature] = useState('Top Rim Finish');
+  const [selectedFeature, setSelectedFeature] = useState('Wheel Type');
   const [screenshotImage, setScreenshotImage] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -351,10 +351,10 @@ export default function UnityContainer({
     numberName: StringParam,
     numberStyle: StringParam,
 
-    wheelId: NumberParam,
-    wheelImg: StringParam,
-    wheelName: StringParam,
-    wheelStyle: StringParam,
+    wheelTypeId: NumberParam,
+    wheelTypeImg: StringParam,
+    wheelTypeName: StringParam,
+    wheelTypeStyle: StringParam,
 
     separatorId: NumberParam,
     separatorImg: StringParam,

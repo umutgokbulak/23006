@@ -6,13 +6,13 @@
 
       "items": [
         {
-          "id": 182804017,
+          "id": 1828089231514017,
           "imagePath": "/assets/SeparatorRing/sepDrAli.jpg",
           "imageName": "Double-Radius",
           "style": "Double-Radius"
         },
         {
-          "id": 182804018,
+          "id": 1828123209804018,
           "imagePath": "/assets/SeparatorRing/sepScallAli.jpg",
           "imageName": "Scalloped",
           "style": "Scalloped"
@@ -26,16 +26,16 @@
 
       "items": [
         {
-          "id": 182804019,
+          "id": 18281231204019,
           "imagePath": "/assets/SeparatorRing/sepDrBrass.jpg",
-          "imageName": "Stainless Steel",
-          "style": "Conical"
+          "imageName": "Double-Radius",
+          "style": "Double-Radius"
         },
         {
-          "id": 182804020,
+          "id": 182815155115151504020,
           "imagePath": "/assets/SeparatorRing/sepScallBrass.jpg",
-          "imageName": "Brass",
-          "style": "Conical"
+          "imageName": "Scalloped",
+          "style": "Scalloped"
         }
       ]
     }
