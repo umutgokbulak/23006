@@ -504,10 +504,10 @@ export default function UnityContainer({
       setSelectedItems((prevselected) => ({
         ...prevselected,
         Separator: {
-          id: url.seperatorId,
-          imagePath: url.seperatorImg,
-          imageName: url.seperatorName,
-          style: url.seperatorStyle,
+          id: url.separatorId,
+          imagePath: url.separatorImg,
+          imageName: url.separatorName,
+          style: url.separatorStyle,
         },
       }));
     }
@@ -548,7 +548,7 @@ export default function UnityContainer({
       }));
     }
 
-    if (url.brihghtworkId) {
+    if (url.brightworkId) {
       setSelectedItems((prevselected) => ({
         ...prevselected,
         Brightwork: {

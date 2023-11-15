@@ -70,7 +70,7 @@ const WheelType = memo(function WheelType({
                       effect='blur'
                       src={item.imagePath}
                       alt=''
-                      className='option-img ballstop'
+                      className='option-img ballstop wheeltype'
                     />
                     <div className='select-ballstop-container'>
                       <p className='option-name'>{item.imageName}</p>
