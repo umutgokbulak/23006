@@ -1,8 +1,8 @@
 import { m } from 'framer-motion';
-import { Fragment, memo } from 'react';
+import { Fragment, memo, useEffect, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import wheelType from '../../../data/WheelType.json';
+import wheelTypeData from '../../../data/WheelType.json';
 import '../SideMenuOptions/SideMenuOptions.css';
 
 const WheelType = memo(function WheelType({
@@ -22,6 +22,26 @@ const WheelType = memo(function WheelType({
     });
   };
 
+  const [preventSelection, setPreventSelection] = useState(false);
+  const [hiddenFeatures, setHiddenFeatures] = useState([]);
+  const [hiddenOptionGroups, setHiddenOptionGroups] = useState([]);
+
+  useEffect(() => {
+    const foundWheelType = wheelTypeData.styles
+      .map((style) => style.items)
+      .flat()
+      .find((item) => item.id === url.wheelTypeId);
+
+    if (foundWheelType) {
+      const hiddenFeatureForSelectedStyle = foundWheelType.hiddenFeatures || [];
+      const hiddenOptionGroupsForSelectedStyle =
+        foundWheelType.hiddenOptionGroups || [];
+
+      setHiddenOptionGroups(hiddenOptionGroupsForSelectedStyle);
+      setHiddenFeatures(hiddenFeatureForSelectedStyle);
+    }
+  }, [url]);
+
   return (
     <m.section
       initial={{ opacity: 0, y: -50 }}
@@ -37,7 +57,7 @@ const WheelType = memo(function WheelType({
         transition={{ duration: 0.3 }}
         className='options-container ballstop'
       >
-        {wheelType.styles.map((style, styleIndex) => (
+        {wheelTypeData.styles.map((style, styleIndex) => (
           <Fragment key={styleIndex}>
             {styleIndex > 0 && <hr className='divider' />}
             <div className='style-container'>

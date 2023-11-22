@@ -6,57 +6,66 @@
       "items": [
         {
           "id": 9450,
+          "matId": "ColourBlack",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossBlack.png",
           "imageName": "Piano Black",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 9461,
+          "matId": "ColourUmber",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossUmber.png",
           "imageName": "Umber",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 9472,
+          "matId": "ColourSlate",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossSlate.png",
           "imageName": "Slate",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 9483,
+          "matId": "ColourJade",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossJade.png",
           "imageName": "Jade",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 9494,
+          "matId": "ColourIndigo",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossIndigo.png",
           "imageName": "Indigo",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 9505,
+          "matId": "ChampagneGold",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossChamp.png",
           "imageName": "Champagne Gold",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 9516,
+          "matId": "ColourRed",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossStrawb.png",
           "imageName": "Strawberry Red",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 9527,
+          "matId": "ColourIvory",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossIvory.png",
           "imageName": "Ivory",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 9538,
+          "matId": "ColourGrey",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossGrey.png",
           "imageName": "Warm Grey",
-          "style": "Gloss"
+          "style": "Glossy"
         }
       ]
     },
@@ -66,54 +75,56 @@
       "items": [
         {
           "id": 9540,
+          "matId": "ColourBlack",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteBlack.png",
           "imageName": "Piano Black",
           "style": "Matte"
         },
         {
           "id": 955321,
-          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteUmber.png",
-          "imageName": "Umber",
-          "style": "Matte"
-        },
-        {
-          "id": 956231,
+          "matId": "ColourUmber",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteUmber.png",
           "imageName": "Umber",
           "style": "Matte"
         },
         {
           "id": 957111,
+          "matId": "ColourSlate",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteSlate.png",
           "imageName": "Slate",
           "style": "Matte"
         },
         {
           "id": 958221,
+          "matId": "ColourJade",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteJade.png",
           "imageName": "Jade",
           "style": "Matte"
         },
         {
           "id": 95541231,
+          "matId": "ColourIndigo",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteIndigo.png",
           "imageName": "Indigo",
           "style": "Matte"
         },
         {
           "id": 9565461,
+          "matId": "ChampagneGold",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteChamp.png",
           "imageName": "Champagne Gold",
           "style": "Matte"
         },
         {
           "id": 9574172,
+          "matId": "ColourRed",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteStrawb.png",
           "imageName": "Strawberry Red",
           "style": "Matte"
         },
         {
           "id": 958123512314,
+          "matId": "ColourGrey",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteGrey.png",
           "imageName": "Warm Grey",
           "style": "Matte"

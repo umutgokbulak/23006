@@ -15,13 +15,30 @@ const Centre = memo(function Centre({
   url,
   changeMaterial,
 }) {
-  const handleItemClick = (itemID, itemImage, itemImageName, itemStyle) => {
+  const handleItemClick = (
+    itemID,
+    itemImage,
+    itemImageName,
+    itemStyle,
+    matId
+  ) => {
     onSelect({
       id: itemID,
       imagePath: `${itemImage}`,
       imageName: `${itemImageName}`,
-      style: `${itemStyle}`,
+      style: `balltrack-${itemStyle}`,
     });
+
+    setUrl(
+      {
+        centreId: itemID,
+        centreImg: itemImage,
+        centreName: itemImageName,
+        centreStyle: itemStyle,
+      },
+      'replaceIn'
+    );
+    changeMaterial(`centre-${matId}-${itemStyle}`);
   };
 
   return (
@@ -61,19 +78,8 @@ const Centre = memo(function Centre({
                         item.id,
                         item.imagePath,
                         item.imageName,
-                        item.style
-                      );
-                      setUrl(
-                        {
-                          centreId: item.id,
-                          centreImg: item.imagePath,
-                          centreName: item.imageName,
-                          centreStyle: item.style,
-                        },
-                        'replaceIn'
-                      );
-                      changeMaterial(
-                        `centre-${item.imageName}-${item.style}}`
+                        item.style,
+                        item.matId
                       );
                     }}
                   >

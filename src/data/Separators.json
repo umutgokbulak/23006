@@ -38,6 +38,25 @@
           "style": "Scalloped"
         }
       ]
+    },
+    {
+      "styleType": "Slingshot",
+      "description": "A placeholder description for the styletype",
+
+      "items": [
+        {
+          "id": 182812311231313204019,
+          "imagePath": "/assets/SeparatorRing/sepDrBrass.jpg",
+          "imageName": "Double-Radius",
+          "style": "Double-Radius"
+        },
+        {
+          "id": 1828151551154123515235151504020,
+          "imagePath": "/assets/SeparatorRing/sepScallBrass.jpg",
+          "imageName": "Scalloped",
+          "style": "Scalloped"
+        }
+      ]
     }
   ]
 }

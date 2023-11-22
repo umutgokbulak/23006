@@ -157,7 +157,7 @@ export default function UnityContainer({
         setCurrentPage(5);
         break;
 
-      case 'Rims':
+      case 'Top Rim Finish':
         setCurrentPage(6);
         break;
 
@@ -700,7 +700,6 @@ export default function UnityContainer({
           <>
             {windowWidth > 676 && isLoaded && (
               <BottomOptionsMenu
-               
                 handleScreenShot={handleScreenShot}
                 setCurrentPage={setCurrentPage}
                 setSelectedFeature={setSelectedFeature}
@@ -719,7 +718,6 @@ export default function UnityContainer({
             <AnimatePresence>
               {windowWidth < 675 && isLoaded && (
                 <BottomOptionsSide
-                 
                   handleScreenShot={handleScreenShot}
                   setCurrentPage={setCurrentPage}
                   setSelectedFeature={setSelectedFeature}
@@ -774,7 +772,6 @@ export default function UnityContainer({
                 selectedItems={selectedItems}
                 handleComponentSelect={handleComponentSelect}
                 isSideMenuOpen={openSideMenu}
-               
                 handlePrevious={handlePrevious}
                 handleNext={handleNext}
                 selectedFeature={selectedFeature}

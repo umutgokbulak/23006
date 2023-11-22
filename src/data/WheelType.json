@@ -2,24 +2,40 @@
   "styles": [
     {
       "description": "A placeholder description for the styletype",
+
       "items": [
         {
           "id": 182804,
           "imagePath": "/assets/WheelTypes/wheelM360.jpg",
           "imageName": "Mercury 360",
-          "style": "mercury360"
+          "style": "mercury360",
+          "hiddenFeatures": ["BallTrack"],
+          "hiddenOptionGroups": [
+            "Ball Track-Printed Effect",
+            "Centre Finishes-Printed Effect"
+          ]
         },
         {
           "id": 182805,
           "imagePath": "/assets/WheelTypes/wheelClas.jpg",
           "imageName": "Classic(No Sensors)",
-          "style": "classic"
+          "style": "classic",
+          "hiddenFeatures": ["Aurora", "Halo", "Software"],
+          "hiddenOptionGroups": [
+            "Ball Track-Printed Effect",
+            "Centre Finishes-Printed Effect"
+          ]
         },
         {
           "id": 182806,
           "imagePath": "/assets/WheelTypes/wheelCrystal.jpg",
           "imageName": "Crystal(No Sensors)",
-          "style": "crystal"
+          "style": "crystal",
+          "hiddenFeatures": ["Centre"],
+          "hiddenOptionGroups": [
+            "Ball Track-Printed Effect",
+            "Centre Finishes-Printed Effect"
+          ]
         }
       ]
     }

@@ -15,13 +15,30 @@ const BallTracks = memo(function BallTracks({
   url,
   changeMaterial,
 }) {
-  const handleItemClick = (itemID, itemImage, itemImageName,itemStyle) => {
+  const handleItemClick = (
+    itemID,
+    itemImage,
+    itemImageName,
+    itemStyle,
+    matId
+  ) => {
     onSelect({
       id: itemID,
       imagePath: `${itemImage}`,
       imageName: `${itemImageName}`,
-      style : `balltrack-${itemStyle}`
+      style: `balltrack-${itemStyle}`,
     });
+
+    setUrl(
+      {
+        ballTrackId: itemID,
+        ballTrackImg: itemImage,
+        ballTrackName: itemImageName,
+        ballTrackStyle: itemStyle,
+      },
+      'replaceIn'
+    );
+    changeMaterial(`balltrack-${matId}-${itemStyle}`);
   };
 
   return (
@@ -45,9 +62,7 @@ const BallTracks = memo(function BallTracks({
             <div className='style-container'>
               <div className='option-style'>
                 {style.styleType}
-                <ToolTip
-                  text={style.description}
-                >
+                <ToolTip text={style.description}>
                   <BiHelpCircle className='side-options-icon' />
                 </ToolTip>
               </div>
@@ -59,21 +74,12 @@ const BallTracks = memo(function BallTracks({
                       url.ballTrackId === item.id ? 'active' : ''
                     }`}
                     onClick={() => {
-                      console.log(item.style);
                       handleItemClick(
                         item.id,
                         item.imagePath,
                         item.imageName,
-                        item.style
-                      );
-                      setUrl(
-                        {
-                          ballTrackId: item.id,
-                          ballTrackImg: item.imagePath,
-                          ballTrackName: item.imageName,
-                          ballTrackStyle: item.style,
-                        },
-                        'replaceIn'
+                        item.style,
+                        item.matId
                       );
                     }}
                   >
@@ -99,8 +105,8 @@ const BallTracks = memo(function BallTracks({
 
 export default BallTracks;
 
-
-{/* <m.section
+{
+  /* <m.section
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
@@ -156,4 +162,5 @@ export default BallTracks;
           </div>
         </div>
       </div>
-    </m.section> */}
+    </m.section> */
+}

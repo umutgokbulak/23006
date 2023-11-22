@@ -6,63 +6,73 @@
       "items": [
         {
           "id": 11220,
+          "matId": "Maple",
           "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossMaple.jpg",
           "imageName": "Maple",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11221,
+          "matId": "Oak",
           "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossOak.jpg",
           "imageName": "Oak",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11222,
+          "matId": "Cherry",
           "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossCherry.jpg",
           "imageName": "Cherry",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11223,
+          "matId": "Santos",
           "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossSantos.jpg",
           "imageName": "Santos Rosewood",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11224,
+          "matId": "Sapele",
           "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossSapele.jpg",
           "imageName": "Sapele",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11225,
+          "matId": "Elm",
           "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossElm.jpg",
           "imageName": "Burr Elm",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11226,
+          "matId": "Walnut",
           "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossWalnut.jpg",
           "imageName": "Walnut Burl",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11227,
+          "matId": "Mahog",
           "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossMahog.jpg",
           "imageName": "Mahogany",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11228,
+          "matId": "Ebony",
           "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossEbony.jpg",
           "imageName": "Macassar Ebony",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11229,
+          "matId": "Indian",
           "imagePath": "/assets/BallTracks/NaturalWoodGlossFinishes/venGlossIndian.jpg",
           "imageName": "Indian Rosewood",
-          "style": "Gloss"
+          "style": "Glossy"
         }
       ]
     },
@@ -72,42 +82,49 @@
       "items": [
         {
           "id": 11230,
+          "matId": "Maple",
           "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteMaple.jpg",
           "imageName": "Maple",
           "style": "Matte"
         },
         {
           "id": 11231,
+          "matId": "Oak",
           "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteOak.jpg",
           "imageName": "Oak",
           "style": "Matte"
         },
         {
           "id": 11232,
+          "matId": "Cherry",
           "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteCherry.jpg",
           "imageName": "Cherry",
           "style": "Matte"
         },
         {
           "id": 11233,
+          "matId": "Santos",
           "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteSantos.jpg",
           "imageName": "Santos Rosewood",
           "style": "Matte"
         },
         {
           "id": 11234,
+          "matId": "Sapele",
           "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteSapele.jpg",
           "imageName": "Sapele",
           "style": "Matte"
         },
         {
           "id": 11235,
+          "matId": "Elm",
           "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteElm.jpg",
           "imageName": "Burr Elm",
           "style": "Matte"
         },
         {
           "id": 11236,
+          "matId": "Walnut",
           "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteWalnut.jpg",
           "imageName": "Walnut Burl",
           "style": "Matte"
@@ -115,18 +132,21 @@
 
         {
           "id": 11238,
+          "matId": "Mahog",
           "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteMahog.jpg",
           "imageName": "Mahogany",
           "style": "Matte"
         },
         {
           "id": 11239,
+          "matId": "Ebony",
           "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteEbony.jpg",
           "imageName": "Macassar Ebony",
           "style": "Matte"
         },
         {
           "id": 11240,
+          "matId": "Indian",
           "imagePath": "/assets/BallTracks/NaturalWoodMatteFinishes/venMatteIndian.jpg",
           "imageName": "Indian Rosewood",
           "style": "Matte"
@@ -139,24 +159,28 @@
       "items": [
         {
           "id": 11241,
+          "matId": "CarbonFibre",
           "imagePath": "/assets/BallTracks/SyntheticFinishes/GlossSynthetic/venGlossCarbon.jpg",
           "imageName": "Carbon Fibre",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11242,
+          "matId": "CarbonFibre",
           "imagePath": "/assets/BallTracks/SyntheticFinishes/MatteSynthetic/venMatteCarbon.jpg",
           "imageName": "Carbon Fibre (Matte)",
           "style": "Matte"
         },
         {
           "id": 11243,
+          "matId": "Alpi",
           "imagePath": "/assets/BallTracks/SyntheticFinishes/GlossSynthetic/venGlossAlpi.jpg",
           "imageName": "Alpi",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11244,
+          "matId": "Alpi",
           "imagePath": "/assets/BallTracks/SyntheticFinishes/MatteSynthetic/venMatteAlpi.jpg",
           "imageName": "Alpi (Matte)",
           "style": "Matte"
@@ -169,57 +193,66 @@
       "items": [
         {
           "id": 11245,
+          "matId": "ColourBlack",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossBlack.png",
           "imageName": "Piano Black",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11246,
+          "matId": "ColourUmber",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossUmber.png",
           "imageName": "Umber",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11247,
+          "matId": "ColourSlate",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossSlate.png",
           "imageName": "Slate",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11248,
+          "matId": "ColourJade",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossJade.png",
           "imageName": "Jade",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11249,
+          "matId": "ColourIndigo",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossIndigo.png",
           "imageName": "Indigo",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11250,
+          "matId": "ChampagneGold",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossChamp.png",
           "imageName": "Champagne Gold",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11251,
+          "matId": "ColourRed",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossStrawb.png",
           "imageName": "Strawberry Red",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11252,
+          "matId": "ColourIvory",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossIvory.png",
           "imageName": "Ivory",
-          "style": "Gloss"
+          "style": "Glossy"
         },
         {
           "id": 11253,
+          "matId": "ColourGrey",
           "imagePath": "/assets/BallTracks/SingleColoursGloss/colGlossGrey.png",
           "imageName": "Warm Grey",
-          "style": "Gloss"
+          "style": "Glossy"
         }
       ]
     },
@@ -229,54 +262,56 @@
       "items": [
         {
           "id": 11254,
+          "matId": "ColourBlack",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteBlack.png",
           "imageName": "Piano Black",
           "style": "Matte"
         },
         {
-          "id": 11255,
-          "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteUmber.png",
-          "imageName": "Umber",
-          "style": "Matte"
-        },
-        {
           "id": 11256,
+          "matId": "ColourUmber",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteUmber.png",
           "imageName": "Umber",
           "style": "Matte"
         },
         {
           "id": 11257,
+          "matId": "ColourSlate",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteSlate.png",
           "imageName": "Slate",
           "style": "Matte"
         },
         {
           "id": 11258,
+          "matId": "ColourJade",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteJade.png",
           "imageName": "Jade",
           "style": "Matte"
         },
         {
           "id": 11259,
+          "matId": "ColourIndigo",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteIndigo.png",
           "imageName": "Indigo",
           "style": "Matte"
         },
         {
           "id": 11260,
+          "matId": "ChampagneGold",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteChamp.png",
           "imageName": "Champagne Gold",
           "style": "Matte"
         },
         {
           "id": 11261,
+          "matId": "ColourRed",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteStrawb.png",
           "imageName": "Strawberry Red",
           "style": "Matte"
         },
         {
           "id": 11262,
+          "matId": "ColourGrey",
           "imagePath": "/assets/BallTracks/SingleColoursMatte/colMatteGrey.png",
           "imageName": "Warm Grey",
           "style": "Matte"

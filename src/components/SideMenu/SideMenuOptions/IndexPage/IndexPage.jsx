@@ -50,7 +50,6 @@ const IndexPage = memo(function IndexPage({
                           : undefined
                       }
                     />
-                    {console.log(selectedItem)}
                     <p className='chosen-text'>
                       {componentName === 'Numbers' &&
                         `${selectedItem.imageName} Numbers (${selectedItem.style})`}

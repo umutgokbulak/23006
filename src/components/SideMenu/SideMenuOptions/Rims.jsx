@@ -15,13 +15,30 @@ const Rims = memo(function Rims({
   url,
   changeMaterial,
 }) {
-  const handleItemClick = (itemID, itemImage, itemImageName, itemStyle) => {
+  const handleItemClick = (
+    itemID,
+    itemImage,
+    itemImageName,
+    itemStyle,
+    matId
+  ) => {
     onSelect({
       id: itemID,
       imagePath: `${itemImage}`,
       imageName: `${itemImageName}`,
-      style: `${itemStyle}`,
+      style: `balltrack-${itemStyle}`,
     });
+
+    setUrl(
+      {
+        rimId: itemID,
+        rimImg: itemImage,
+        rimName: itemImageName,
+        rimStyle: itemStyle,
+      },
+      'replaceIn'
+    );
+    changeMaterial(`toprim-${matId}-${itemStyle}`);
   };
 
   return (
@@ -57,21 +74,12 @@ const Rims = memo(function Rims({
                       url.rimId === item.id ? 'active' : ''
                     }`}
                     onClick={() => {
-                      console.log(item.style);
                       handleItemClick(
                         item.id,
                         item.imagePath,
                         item.imageName,
-                        item.style
-                      );
-                      setUrl(
-                        {
-                          rimId: item.id,
-                          rimImg: item.imagePath,
-                          rimName: item.imageName,
-                          rimStyle: item.style,
-                        },
-                        'replaceIn'
+                        item.style,
+                        item.matId
                       );
                     }}
                   >

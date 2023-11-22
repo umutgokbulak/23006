@@ -15,13 +15,30 @@ const OuterBowl = memo(function OuterBowl({
   url,
   changeMaterial,
 }) {
-  const handleItemClick = (itemID, itemImage, itemImageName, itemStyle) => {
+  const handleItemClick = (
+    itemID,
+    itemImage,
+    itemImageName,
+    itemStyle,
+    matId
+  ) => {
     onSelect({
       id: itemID,
       imagePath: `${itemImage}`,
       imageName: `${itemImageName}`,
-      style: `${itemStyle}`,
+      style: `balltrack-${itemStyle}`,
     });
+
+    setUrl(
+      {
+        outerBowlId: itemID,
+        outerBowlImg: itemImage,
+        outerBowlName: itemImageName,
+        outerBowlStyle: itemStyle,
+      },
+      'replaceIn'
+    );
+    changeMaterial(`outerBowl-${matId}-${itemStyle}`);
   };
 
   return (
@@ -61,16 +78,8 @@ const OuterBowl = memo(function OuterBowl({
                         item.id,
                         item.imagePath,
                         item.imageName,
-                        item.style
-                      );
-                      setUrl(
-                        {
-                          outerBowlId: item.id,
-                          outerBowlImg: item.imagePath,
-                          outerBowlName: item.imageName,
-                          outerBowltyle: item.style,
-                        },
-                        'replaceIn'
+                        item.style,
+                        item.matId
                       );
                     }}
                   >
