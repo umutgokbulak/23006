@@ -58,6 +58,7 @@ export default function SideMenu({
     'Software Features',
     'Index',
   ];
+
   const [mouseEntered, setMouseEntered] = useState(true);
 
   return (

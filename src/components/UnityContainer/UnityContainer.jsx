@@ -54,8 +54,11 @@ export default function UnityContainer({
     webglContextAttributes: {
       preserveDrawingBuffer: true,
     },
+    streamingAssetsUrl: '/assets/Unity/StreamingAssets',
   });
 
+
+  // PAGINATION FUNCTIONS
   const handlePrevious = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
@@ -70,6 +73,7 @@ export default function UnityContainer({
     }
   };
 
+  // UPDATING SELECTED FEATURE
   const updateSelectedFeature = (currentPage) => {
     switch (currentPage) {
       case 1:
@@ -133,6 +137,8 @@ export default function UnityContainer({
     }
   };
 
+
+  // SELECT FEATURE FUNCTION
   const handleFeatureSelect = (e) => {
     setSelectedFeature(e.target.value);
 
@@ -201,7 +207,8 @@ export default function UnityContainer({
         break;
     }
   };
-  // DYMAMIC DEVICE PIXEL RATIO
+
+  // RESPONSIVE UNITY CANVAS
   const [devicePixelRatio, setDevicePixelRatio] = useState(
     window.devicePixelRatio
   );
@@ -223,6 +230,7 @@ export default function UnityContainer({
     [devicePixelRatio]
   );
   //
+  
   //SCREENSHOT
   function handleScreenShot() {
     if (isLoaded == false) return;
@@ -240,6 +248,7 @@ export default function UnityContainer({
   };
   ////
 
+  // MODAL FUNCTIONS
   function closeModal() {
     setScreenshotModalOpen(false);
   }

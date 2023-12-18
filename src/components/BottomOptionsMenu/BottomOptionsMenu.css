@@ -136,6 +136,7 @@ input[type='radio'] {
   color: #f3f3f3;
   transform-origin: bottom;
 }
+
 /* NARROW QUALITY SETTINGS */
 .quality-side {
   top:0;
@@ -145,6 +146,8 @@ input[type='radio'] {
   transform-origin: left;
 }
 /*  */
+
+
 .quality-options {
   display: flex;
   flex-direction: column;

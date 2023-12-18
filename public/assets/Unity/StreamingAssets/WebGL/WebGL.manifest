@@ -1,0 +1,11 @@
+ManifestFileVersion: 0
+CRC: 1976143867
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: roulette
+      Dependencies:
+        Dependency_0: roulette_materials
+    Info_1:
+      Name: roulette_materials
+      Dependencies: {}

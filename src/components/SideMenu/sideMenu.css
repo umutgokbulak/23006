@@ -6,7 +6,7 @@
   color: #000;
   overflow: hidden;
   text-align: center;
-  max-height: 100vh;
+  max-height: 100dvh;
   user-select: none;
   scrollbar-width: thin;
   scrollbar-color: #333 #c9c6c6;
@@ -97,13 +97,11 @@
   font-size: 1.2rem;
 }
 
-.menu-list span:hover {
+.menu-list span:hover, .menu-item.active {
   color: #aa0000;
 }
 
-.menu-item.active {
-  color: #aa0000;
-}
+
 
 /*               */
 

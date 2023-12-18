@@ -181,7 +181,7 @@
 }
 
 .ballstop-select {
-  padding: 8px;
+  padding: .5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #eeebeb;

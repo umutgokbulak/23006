@@ -1,0 +1,49 @@
+ManifestFileVersion: 0
+CRC: 1674690203
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ac6e1f6237832ed788ec209988a21b72
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 08b06495a6be8d0a19d5d32f4a91f7ee
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 75f82f03739e4499282c234601d0b1ad, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a61054baeb3b12e49a0650a7db4b2c57, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a8d54814f26c97f43a1c80237d48aad1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3101231a5d70acc4e84fcab50de3154e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1303c7085746200438550c3d454bf2fc, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 215
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: NamedMaterial
+- AssemblyName: ScreenSpaceReflections
+  ClassName: ShinySSRR.SubMeshSettingsData
+Assets:
+- Assets/Models/Roulette_Optimised/LowPoly_Roulette.fbx
+- Assets/Models/Roulette_Optimised/LowPoly_Roulette.prefab
+Dependencies:
+- C:/Users/aktan/Cammegh_POC_v3.2/Assets/StreamingAssets/WebGL/roulette_materials

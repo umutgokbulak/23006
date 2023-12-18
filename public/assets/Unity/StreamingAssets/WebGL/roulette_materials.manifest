@@ -1,0 +1,139 @@
+ManifestFileVersion: 0
+CRC: 1808102295
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b4da3c04a21f602a00231e035913212f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5b47f08a77e5fd33ba133dc07dcef228
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Materials/Roulette/Veneer/Santos8/Santos_Glossy_Cone.mat
+- Assets/Materials/Roulette/Veneer/Alpi8/mpdRimAlpi8.tif
+- Assets/Textures/mpdRotor37Santos8.tif
+- Assets/Materials/Roulette/Veneer/Indian8/Indian8_Glossy_Cone.mat
+- Assets/Materials/Roulette/Veneer/Alpi8/Alpi8_Glossy_Balltrack.mat
+- Assets/Materials/Roulette/Numbers/mpdArcs38Std.tif
+- Assets/Materials/Roulette/Numbers/mpdRotor38/Numbers.mat
+- Assets/Materials/Roulette/Metal/Nickel 1.mat
+- Assets/Materials/Roulette/Veneer/Alpi8/mpdConeAlpi8.tif
+- Assets/Materials/Roulette/Veneer/CarbonFibre/Carbonfibre_Glossy_Rim.mat
+- Assets/Materials/Roulette/Veneer/Mahog8/MAhog_Glossy_Cone.mat
+- Assets/Materials/Roulette/Metal/Aluminum_Brushed/Aluminum_Brushed.mat
+- Assets/Materials/Roulette/Metal/GoldEngrave.mat
+- Assets/Materials/Roulette/SingleColours/Ivory_Glossy.mat
+- Assets/Materials/SceneBowl_DarkGray.mat
+- Assets/Materials/Roulette/Veneer/CarbonFibre/Carbonfibre_Glossy_Cone.mat
+- Assets/Materials/Roulette/Veneer/Sapele8/Sapele_Glossy_Cone.mat
+- Assets/Materials/Roulette/Numbers/mpdArcs37Std.tif
+- Assets/Materials/Roulette/Metal/RoseGoldEngraving.mat
+- Assets/Materials/Roulette/Metal/Aluminum_Brushed/Aluminum_Brushed_Occlusion.jpg
+- Assets/Materials/Roulette/SingleColours/Png/PANTONE 295 CP.png
+- Assets/Materials/Roulette/Veneer/Cherry8/Cherry_Glossy_Cone.mat
+- Assets/Materials/Roulette/SingleColours/Png/PANTONE 15-0730 TPX.png
+- Assets/Materials/Roulette/Veneer/Alpi8/Alpi8_Glossy_Rim.mat
+- Assets/Materials/Roulette/Veneer/Alpi8/Alpi8_Glossy_Cone.mat
+- Assets/Textures/mpdRimSapele8.tif
+- Assets/Materials/Roulette/Numbers/mpdArcs39Geo.tif
+- Assets/Materials/Roulette/Veneer/Ebony8/Ebony_Glossy_Rim.mat
+- Assets/Materials/Roulette/SingleColours/Png/PANTONE 3305 CP.png
+- Assets/Materials/Roulette/Veneer/Elm8/Elm_Glossy_Rim.mat
+- Assets/Textures/Logo2010.png
+- Assets/Materials/Roulette/Veneer/Elm8/Elm_Glossy_Balltrack.mat
+- Assets/Textures/mpdRotor37Sapele8.tif
+- Assets/Materials/Roulette/Numbers/mpdArcs37M35.tif
+- Assets/Materials/Roulette/Veneer/Oak8/Oak_Glossy_Rim.mat
+- Assets/Materials/Roulette/SingleColours/Png/Pantone 11-0507.png
+- Assets/Materials/Roulette/Surfaces/Wood_IndianRosewood/Glossy/TestScene3/BallTrack_TopRim_IndianRosewood_Glossy
+  1.mat
+- Assets/Textures/Logo2010-190x80.png
+- Assets/Materials/Roulette/Veneer/Maple8/Maple_Glossy_Balltrack.mat
+- Assets/Materials/Roulette/Numbers/mpdArcs38M14.tif
+- Assets/Materials/Roulette/Surfaces/Wood_IndianRosewood/Glossy/TestScene3/TopRim_IndianRosewood_Glossy
+  1.mat
+- Assets/Materials/Roulette/SingleColours/Png/Pantone 19-1757.png
+- Assets/Materials/Roulette/Numbers/mpdArcs37M1.tif
+- Assets/Materials/Roulette/Veneer/Ebony8/Ebony_Glossy_Cone.mat
+- Assets/Textures/mpdBowlMahog8.tif
+- Assets/Materials/Roulette/Metal/Gold.mat
+- Assets/Materials/Roulette/Veneer/Walnut8/Walnut_Glossy_Cone.mat
+- Assets/Materials/Roulette/Metal/Aluminum_Brushed/Aluminum_Brushed_Diffuse.jpg
+- Assets/Materials/Roulette/Veneer/Oak8/Oak_Glossy_Cone.mat
+- Assets/Materials/Roulette/Surfaces/Wood_IndianRosewood/Glossy/BallTrack_TopRim_IndianRosewood_Glossy.mat
+- Assets/Textures/mpdRimWalnut8.tif
+- Assets/Materials/Roulette/Veneer/Indian8/Indian8_Glossy_Balltrack.mat
+- Assets/Materials/Roulette/Numbers/mpdArcs38M2.tif
+- Assets/Materials/Roulette/Veneer/Alpi8/mpdBalltrackAlpi8.tif
+- Assets/Materials/Roulette/Numbers/mpdArcs39M69.tif
+- Assets/Materials/Roulette/Numbers/mpdArcs37Geo.tif
+- Assets/Materials/Roulette/SingleColours/Png/black.tif
+- Assets/Materials/Roulette/Veneer/Mahog8/Mahog_Glossy_Balltrack.mat
+- Assets/Materials/Roulette/Veneer/Sapele8/Sapele_Glossy_Balltrack.mat
+- Assets/Materials/Roulette/SingleColours/Slate_Glossy.mat
+- Assets/Materials/Roulette/Veneer/Oak8/Oak_Glossy_Balltrack.mat
+- Assets/Materials/Roulette/Veneer/Cherry8/Cherry_Glossy_Balltrack.mat
+- Assets/Materials/Roulette/Veneer/Santos8/Santos_Glossy_Balltrack.mat
+- Assets/Textures/mpdStripsCentre8.tif
+- Assets/Materials/Roulette/Metal/RoseGold.mat
+- Assets/Materials/Roulette/Surfaces/Wood_IndianRosewood/Glossy/TestScene3/Centre_BallTrack_IndianRosewood_Glossy
+  1.mat
+- Assets/Materials/Roulette/Rim.mat
+- Assets/Materials/Roulette/SingleColours/WarmGrey_Glossy.mat
+- Assets/Materials/Roulette/Metal/NormalMap (4).png
+- Assets/Materials/Roulette/Veneer/Walnut8/Walnut_Glossy_Balltrack.mat
+- Assets/Materials/Roulette/SingleColours/Png/Pantone 19-4021.png
+- Assets/Materials/Roulette/Veneer/Indian8/Indian8_Glossy_Rim.mat
+- Assets/Materials/Roulette/Numbers/mpdArcs39Std.tif
+- Assets/Materials/Roulette/Veneer/Maple8/MAple_Glossy_Rim.mat
+- Assets/Materials/Roulette/Numbers/mpdRotor38/mpdRotor38PaleEbony 1.tif
+- Assets/Textures/mpdBowlSantos8.tif
+- Assets/Materials/Roulette/Surfaces/Wood_IndianRosewood/Glossy/Centre_BallTrack_IndianRosewood_Glossy.mat
+- Assets/Materials/Roulette/SingleColours/ChampagneGold_Glossy.mat
+- Assets/Textures/mpdBowlWalnut8.tif
+- Assets/Materials/Roulette/Numbers/mpdArcs38Geo.tif
+- Assets/Materials/Roulette/Veneer/Cherry8/Cherry_Glossy_Rim.mat
+- Assets/Materials/Roulette/Metal/Nickel.mat
+- Assets/Materials/Roulette/SingleColours/Png/Pantone Black 4 C.png
+- Assets/Textures/18_Fabriano watercolor paper texture-seamless_hr.jpg
+- Assets/Materials/Roulette/Metal/Aluminum_Brushed/Aluminum_Brushed_Normal.jpg
+- Assets/Materials/Roulette/SingleColours/Jade_Glossy.mat
+- Assets/Materials/Roulette/Metal/Nickel_wEngravement.mat
+- Assets/Materials/Roulette/SingleColours/PianoBlack_Glossy.mat
+- Assets/Textures/mpdStripsBalltrack8.tif
+- Assets/Materials/Roulette/SingleColours/StrawberryRed_Glossy.mat
+- Assets/Materials/Roulette/Numbers/mpdArcs38M4.tif
+- Assets/Materials/Roulette/SingleColours/Umber_Glossy.mat
+- Assets/Materials/Roulette/Numbers/mpdRotor38/Numbers_OnlyColors.mat
+- Assets/Textures/mpdRimMahog8.tif
+- Assets/Materials/Roulette/Metal/Artboard 5.png
+- Assets/Materials/Roulette/Veneer/Sapele8/Sapele_Glossy_Rim.mat
+- Assets/Materials/Roulette/Veneer/CarbonFibre/Carbonfibre_Glossy_Balltrack.mat
+- Assets/Materials/Roulette/Veneer/Walnut8/Walnut_Glossy_Rim.mat
+- Assets/Materials/Roulette/SingleColours/Indigo_Glossy.mat
+- Assets/Textures/mpdBowlSapele8.tif
+- Assets/Materials/Roulette/Surfaces/Wood_IndianRosewood/Glossy/TopRim_IndianRosewood_Glossy.mat
+- Assets/Textures/mpdRimSantos8.tif
+- Assets/Materials/Roulette/Veneer/Mahog8/Mahog_Glossy_Rim.mat
+- Assets/Materials/Roulette/SingleColours/Png/PANTONE 2333 C.png
+- Assets/Materials/Roulette/Veneer/Ebony8/Ebony_Glossy_Balltrack.mat
+- Assets/Textures/mpdRotor37Mahog8.tif
+- Assets/Materials/Roulette/Numbers/mpdArcs37M11.tif
+- Assets/Materials/Roulette/Veneer/Elm8/Elm_Glossy_Cone.mat
+- Assets/Materials/Roulette/Metal/NickelEngraving.mat
+- Assets/Materials/Roulette/Veneer/Maple8/Maple_Glossy_Cone.mat
+- Assets/Materials/Roulette/Numbers/mpdArcs37M3.tif
+- Assets/Materials/Roulette/Metal/NormalMap (5).png
+- Assets/Textures/mpdRotor37Walnut8.tif
+- Assets/Materials/Roulette/Veneer/Santos8/Santos_Glossy_Rim.mat
+Dependencies: []
